@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8tplkd32g4nh"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_xf0ww"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_w1fth"]
+radius = 0.519753
+height = 2.03744
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7668n"]
+size = Vector3(1.04055, 0.254862, 1.06409)
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_xf0ww")
+
+[node name="Body" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_w1fth")
+
+[node name="Feet" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_7668n")
+
+[node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Gun" type="Node3D" parent="Pivot"]
+
+[node name="Camera3D" type="Camera3D" parent="Pivot"]
