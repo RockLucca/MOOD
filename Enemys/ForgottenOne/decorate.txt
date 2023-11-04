@@ -1,0 +1,71 @@
+Actor ForgottenOne
+{
+  Obituary "A Forgotten One rammed %o"
+  Health 40
+  Radius 14
+  Height 30
+  Mass 50
+  Speed 8
+  PainChance 230
+  Scale 0.7
+  PainSound "Forgotten/Pain"
+  DeathSound "Forgotten/Death"
+  ActiveSound "Forgotten/Active"
+  Damage 3
+  Monster
+  +FloorClip
+  +Float
+  +NoGravity
+  +NoIceDeath
+  +DontFall
+  +FloatBob
+  +NoBlood
+  States
+  {
+  Spawn:
+    FRGO A 0 Bright
+    FRGO A 0 Bright A_ChangeFlag("FloatBob", 1)
+    FRGO AAAAAABBBBBB 1 Bright A_Look
+    Loop
+  See:
+    FRGO A 0 A_ChangeFlag("FloatBob", 1)
+    FRGO AABB 3 Bright A_Chase
+    Loop
+  Missile:
+    FRGO C 0 A_ChangeFlag("FloatBob", 0)
+    FRGO CCDDC 2 Bright A_FaceTarget
+    FRGO D 0 Bright A_PlaySound("Forgotten/Attack")
+    FRGO D 2 Bright A_SkullAttack
+    FRGO C 2 Bright
+    FRGO C 0 Bright A_JumpIfTargetInLOS(4, 75)
+    FRGO C 0 A_Jump(24, "StopCharge")
+    FRGO DC 2 Bright
+    Goto Missile+10
+    FRGO C 0 Bright
+    Goto Missile+7
+  StopCharge:
+    FRGO C 0 A_Stop
+    Goto See
+  Pain:
+    FRGO E 0 A_ChangeFlag("FloatBob", 1)
+    FRGO E 3 Bright
+    FRGO E 3 Bright A_Pain
+    Goto See
+  Death:
+    FRGO E 0 A_ChangeFlag("FloatBob", 0)
+    FRGO E 0 A_Stop
+    FRGO EF 4 Bright
+    FRGO G 6 Bright A_Scream
+    FRGO H 6 Bright
+    FRGO I 6 Bright A_NoBlocking
+    FRGO J 6 Bright
+    Stop
+  }
+}
+
+//==========Credits
+//Decorate: Ghastly_dragon
+//GLDefs: Ghastly_dragon
+//Sprites: Id Software
+//Sprite Edit: Captain Toenail
+//Sounds: Id Software

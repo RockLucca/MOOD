@@ -11,6 +11,7 @@ size = Vector3(1.04055, 0.254862, 1.06409)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_xf0ww")
+mouse_sensitivity = 0.001
 
 [node name="Body" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -25,3 +26,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 [node name="Gun" type="Node3D" parent="Pivot"]
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Pivot"]
+spot_range = 10.0
