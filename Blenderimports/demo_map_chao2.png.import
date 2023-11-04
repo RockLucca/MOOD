@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1ds8cuj02gor"
-path.s3tc="res://.godot/imported/mapa1_b_blck06.png-d3e37eb6ea3e722e34144bcc7847de42.s3tc.ctex"
+uid="uid://cyhjchdovv00t"
+path.s3tc="res://.godot/imported/demo_map_chao2.png-953a08cf95502e71ab1c7d844ebec987.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://Blenderimports/mapa1_b_blck06.png"
-dest_files=["res://.godot/imported/mapa1_b_blck06.png-d3e37eb6ea3e722e34144bcc7847de42.s3tc.ctex"]
+source_file="res://Blenderimports/demo_map_chao2.png"
+dest_files=["res://.godot/imported/demo_map_chao2.png-953a08cf95502e71ab1c7d844ebec987.s3tc.ctex"]
 
 [params]
 

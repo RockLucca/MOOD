@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cnx744xxb1p6n"]
 
-[ext_resource type="PackedScene" uid="uid://ortke4dlr33a" path="res://MOOD/Blenderimports/mapa1.glb" id="1_sn2ij"]
+[ext_resource type="PackedScene" uid="uid://sxq2it2s5d6f" path="res://Blenderimports/demo_map.glb" id="1_27xvt"]
 
 [node name="demomap" type="Node3D"]
 
-[node name="mapa1" parent="." instance=ExtResource("1_sn2ij")]
+[node name="demo_map" parent="." instance=ExtResource("1_27xvt")]
