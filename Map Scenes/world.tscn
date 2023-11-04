@@ -4,8 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://b8tplkd32g4nh" path="res://Player/player.tscn" id="2_sgfnp"]
 
 [node name="World" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.87098)
 
 [node name="demomap" parent="." instance=ExtResource("1_26tyv")]
 
 [node name="Player" parent="." instance=ExtResource("2_sgfnp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.82341, 1.15602, 13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.82341, 6.67263, 12.2201)
