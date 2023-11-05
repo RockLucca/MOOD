@@ -1,0 +1,15 @@
+Name: Repeater Zombie
+Difficulty: Medium/Hard
+Connection: Uses the Repeater, on the Armory
+Summon: RepeaterZombie
+Melee: No
+Distance: Hitscan
+Type: Human, Undead
+Brightmaps: No
+Actor modification: No
+ACS: No
+
+
+A dangerous zombie with an interesting weapon. After a wind-up period, the Repater Zombie rapidly
+fires a slightly-explosive hitscan attack. If it fires for long enough, the weapon overheats and
+spins back down. Dangerous when allowed to keep firing, but very vulnerable until it does.

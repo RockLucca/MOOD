@@ -1,0 +1,8 @@
+Name: Forgotten One
+Difficulty: Very Easy
+Connections: None
+Summon: ForgottenOne
+Melee: No
+Distance: Charge
+Type: Demon
+Added States: No
