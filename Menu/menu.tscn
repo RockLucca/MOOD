@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqm5fmocqh6uu"]
+[gd_scene load_steps=4 format=3 uid="uid://bqm5fmocqh6uu"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_gxsbu"]
+[ext_resource type="FontFile" uid="uid://bkxeojtx5wpg2" path="res://Font/AmazDooMLeft2.ttf" id="2_3kore"]
 [ext_resource type="PackedScene" uid="uid://cvrxvlo0hfqad" path="res://Menu/Button/button.tscn" id="2_5ia32"]
 
 [node name="Menu" type="Control"]
@@ -17,6 +18,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -19.0
+offset_right = -30.0
+offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.4, 0, 0.109804, 1)
@@ -37,17 +42,21 @@ grow_vertical = 2
 
 [node name="Titulo" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3kore")
 text = "MOOD"
 horizontal_alignment = 1
 
 [node name="Jogar" parent="VBoxContainer" instance=ExtResource("2_5ia32")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3kore")
 _scene = "res://Map Scenes/world.tscn"
 
 [node name="Opcoes" parent="VBoxContainer" instance=ExtResource("2_5ia32")]
 layout_mode = 2
-text = "OPÇÕES"
+theme_override_fonts/font = ExtResource("2_3kore")
+text = "OPCOES"
 
 [node name="Creditos" parent="VBoxContainer" instance=ExtResource("2_5ia32")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3kore")
 text = "CREDITOS"
