@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c00vx3vht87yu"]
+
+[ext_resource type="Script" path="res://Enemy.gd" id="1_lk6ok"]
+[ext_resource type="Texture2D" uid="uid://cafmrjsu3c4e7" path="res://Enemys/RepeaterZombie/SPRITES/rpzmd1.png" id="2_y1h3a"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_20yr5"]
+height = 2.37
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c43lg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_y1h3a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RepeaterEnemy" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01096, 0)
+script = ExtResource("1_lk6ok")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_20yr5")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.0432395, 0)
+billboard = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_c43lg")
