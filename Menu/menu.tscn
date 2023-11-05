@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqm5fmocqh6uu"]
+
+[ext_resource type="Script" path="res://Menu/menu.gd" id="1_gxsbu"]
+[ext_resource type="PackedScene" uid="uid://cvrxvlo0hfqad" path="res://Menu/Button/button.tscn" id="2_5ia32"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gxsbu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4, 0, 0.109804, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -13.0
+offset_right = 26.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Titulo" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "MOOD"
+horizontal_alignment = 1
+
+[node name="Jogar" parent="VBoxContainer" instance=ExtResource("2_5ia32")]
+layout_mode = 2
+_scene = "res://Map Scenes/world.tscn"
+
+[node name="Opcoes" parent="VBoxContainer" instance=ExtResource("2_5ia32")]
+layout_mode = 2
+text = "OPÇÕES"
+
+[node name="Creditos" parent="VBoxContainer" instance=ExtResource("2_5ia32")]
+layout_mode = 2
+text = "CREDITOS"
