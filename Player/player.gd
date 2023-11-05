@@ -6,6 +6,7 @@ const JUMP_VELOCITY = 4.5
 
 #Basic Variables
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") # Get the gravity from the project settings to be synced with RigidBody nodes.
+@export var mouse_sensitivity = 0.08
 
 #Gun Variables
 
@@ -44,7 +45,10 @@ func _physics_process(delta):
 """
 
 func _unhandled_input(event):
-	pass
+	if event is InputEventMouseMotion:
+		rotate_y(-event.relative.x * mouse_sensitivity)
+		$Pivot.rotate_x(-event.relative.y * mouse_sensitivity)
+		$Pivot.rotation.x = clamp($Pivot.rotation.x, -1.5, 1.5)
 
 func _physics_process(delta):
 	# Add the gravity.
