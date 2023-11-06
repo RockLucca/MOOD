@@ -7,7 +7,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") # Get th
 @export var JUMP_VELOCITY = 4.5
 
 #Gun Variables
-@export var current_gun = "pistol"
+@export var current_gun = "12"
 const _bullet_hole_res = preload("res://Bullet/bullet_hole.tscn")
 
 #Functions
