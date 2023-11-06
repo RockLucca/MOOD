@@ -9,7 +9,7 @@ height = 2.03744
 [sub_resource type="BoxShape3D" id="BoxShape3D_7668n"]
 size = Vector3(1.04055, 0.254862, 1.06409)
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_xf0ww")
 mouse_sensitivity = 0.001
 
