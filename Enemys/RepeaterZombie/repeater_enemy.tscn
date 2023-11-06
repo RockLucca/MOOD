@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c00vx3vht87yu"]
 
 [ext_resource type="Script" path="res://Enemy.gd" id="1_lk6ok"]
-[ext_resource type="Texture2D" uid="uid://cafmrjsu3c4e7" path="res://Enemys/RepeaterZombie/SPRITES/rpzmd1.png" id="2_y1h3a"]
+[ext_resource type="Texture2D" uid="uid://0rt4yg21yiw1" path="res://Enemys/RepeaterZombie/zumbi.png" id="2_fkhxl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_20yr5"]
 height = 2.37
@@ -10,7 +10,7 @@ height = 2.37
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_y1h3a")
+"texture": ExtResource("2_fkhxl")
 }],
 "loop": true,
 "name": &"default",
