@@ -32,3 +32,5 @@ animation = &"idle"
 [node name="RayCast3D" type="RayCast3D" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." groups=["enemies"]]
