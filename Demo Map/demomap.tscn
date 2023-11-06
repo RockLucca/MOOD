@@ -13,7 +13,7 @@ data = PackedVector3Array(-10, 0, 6, -11, 0, 7, -11, 0, 6, -10, 0, 6, -10, 0, 7,
 [node name="demomap" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." groups=["NavMesh"]]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.941882, 0)
 navigation_mesh = SubResource("NavigationMesh_id5jp")
 

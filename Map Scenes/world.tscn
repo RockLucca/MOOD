@@ -1,11 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://cod58iasn8e20"]
+[gd_scene load_steps=5 format=3 uid="uid://cod58iasn8e20"]
 
 [ext_resource type="PackedScene" uid="uid://cnx744xxb1p6n" path="res://Demo Map/demomap.tscn" id="1_26tyv"]
 [ext_resource type="PackedScene" uid="uid://b8tplkd32g4nh" path="res://Player/player.tscn" id="2_sgfnp"]
+[ext_resource type="PackedScene" uid="uid://c00vx3vht87yu" path="res://Enemys/RepeaterZombie/repeater_enemy.tscn" id="3_eicew"]
+[ext_resource type="PackedScene" uid="uid://do43od5wofort" path="res://Enemys/Lost Soul/enemy_basic_grunt.tscn" id="4_o2oin"]
 
 [node name="World" type="Node3D"]
 
 [node name="demomap" parent="." instance=ExtResource("1_26tyv")]
 
+[node name="RepeaterEnemy" parent="." instance=ExtResource("3_eicew")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5139, 1.05816, -0.643761)
+
 [node name="Player" parent="." instance=ExtResource("2_sgfnp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.82341, 1.15602, 13)
+
+[node name="EnemyBasicGrunt" parent="." instance=ExtResource("4_o2oin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80261, 2.69645, -0.693439)

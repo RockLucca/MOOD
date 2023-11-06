@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cafmrjsu3c4e7"
-path.s3tc="res://.godot/imported/rpzmd1.png-1adc04e7bad52bab55db1483d0907f15.s3tc.ctex"
+uid="uid://c3cytuhf1vdn7"
+path.s3tc="res://.godot/imported/BulletHole.png-7daaa634a88299e8fd28a58926b68c7d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Enemys/RepeaterZombie/SPRITES/rpzmd1.png"
-dest_files=["res://.godot/imported/rpzmd1.png-1adc04e7bad52bab55db1483d0907f15.s3tc.ctex"]
+source_file="res://Bullet/BulletHole.png"
+dest_files=["res://.godot/imported/BulletHole.png-7daaa634a88299e8fd28a58926b68c7d.s3tc.ctex"]
 
 [params]
 
