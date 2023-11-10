@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqroa8eoghf3v"]
+
+[ext_resource type="Script" path="res://Map Generator/MapGenerator.gd" id="1_w3k6j"]
+[ext_resource type="PackedScene" uid="uid://fcfm08412vf0" path="res://Map Generator/chao_tile.tscn" id="2_kxoji"]
+[ext_resource type="PackedScene" uid="uid://b8tplkd32g4nh" path="res://Player/player.tscn" id="3_d1u2v"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_h6sc2"]
+scenes/1/scene = ExtResource("2_kxoji")
+scenes/1/display_placeholder = ExtResource("2_kxoji")
+
+[sub_resource type="TileSet" id="TileSet_r0350"]
+sources/0 = SubResource("TileSetScenesCollectionSource_h6sc2")
+
+[node name="MapGenTest" type="Node3D"]
+
+[node name="MapGenerator" type="Node2D" parent="."]
+script = ExtResource("1_w3k6j")
+
+[node name="Map" type="TileMap" parent="MapGenerator"]
+tile_set = SubResource("TileSet_r0350")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 65536, 65536, 0, 65536, 131072, 0, 65536, 196608, 0, 65536, 196609, 0, 65536, 131073, 0, 65536, 65537, 0, 65536, 1, 0, 65536, 2, 0, 65536, 65538, 0, 65536, 131074, 0, 65536, 196610, 0, 65536)
+
+[node name="Player" parent="." instance=ExtResource("3_d1u2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67351, 0)
