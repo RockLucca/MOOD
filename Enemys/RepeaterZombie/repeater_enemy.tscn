@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c00vx3vht87yu"]
 
-[ext_resource type="Script" path="res://Enemy.gd" id="1_lk6ok"]
+[ext_resource type="Script" path="res://Enemys/Enemy.gd" id="1_lk6ok"]
 [ext_resource type="Texture2D" uid="uid://0rt4yg21yiw1" path="res://Enemys/RepeaterZombie/zumbi.png" id="2_fkhxl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_20yr5"]
