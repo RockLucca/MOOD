@@ -1,9 +1,96 @@
-[gd_scene format=3 uid="uid://bgo3rbluvk1nj"]
+[gd_scene load_steps=13 format=3 uid="uid://bgo3rbluvk1nj"]
 
-[node name="HUD" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="Script" path="res://HUD/hud.gd" id="1_xkqll"]
+[ext_resource type="Texture2D" uid="uid://45xc636pb7my" path="res://Sprites/UI/HUD.png" id="2_mia2k"]
+[ext_resource type="Texture2D" uid="uid://dpibuonh3cg3" path="res://Sprites/Weapons/Chainsaw/chainsaw.png" id="3_5730w"]
+[ext_resource type="Texture2D" uid="uid://bggltp8a28ejf" path="res://Sprites/Weapons/Pistol/pistol.png" id="4_qo0tw"]
+[ext_resource type="Texture2D" uid="uid://cn3rf3737akq2" path="res://Sprites/Weapons/Shotgun/shotgun.png" id="5_4yfs5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hs63"]
+atlas = ExtResource("3_5730w")
+region = Rect2(0, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_af5sa"]
+atlas = ExtResource("3_5730w")
+region = Rect2(64, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_veech"]
+atlas = ExtResource("4_qo0tw")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hh6tc"]
+atlas = ExtResource("4_qo0tw")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p7wq"]
+atlas = ExtResource("4_qo0tw")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vphip"]
+atlas = ExtResource("5_4yfs5")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8c0wr"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"chainsaw_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hs63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_af5sa")
+}],
+"loop": false,
+"name": &"chainsaw_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_veech")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hh6tc")
+}],
+"loop": true,
+"name": &"pistol_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2p7wq")
+}],
+"loop": true,
+"name": &"pistol_idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"shotgun_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vphip")
+}],
+"loop": true,
+"name": &"shotgun_idle",
+"speed": 5.0
+}]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_xkqll")
+
+[node name="Sprite_hud" type="Sprite2D" parent="."]
+position = Vector2(320, 441)
+texture = ExtResource("2_mia2k")
+
+[node name="Weapons" type="AnimatedSprite2D" parent="."]
+position = Vector2(330, 330)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_8c0wr")
+animation = &"shotgun_idle"
+autoplay = "chainsaw_idle"
