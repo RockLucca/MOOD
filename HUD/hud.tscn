@@ -125,7 +125,7 @@ texture = ExtResource("2_mia2k")
 position = Vector2(330, 330)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_8c0wr")
-animation = &"pistol_idle"
+animation = &"pistol_attack"
 autoplay = "chainsaw_idle"
 
 [node name="Healf_name" type="Label" parent="."]
