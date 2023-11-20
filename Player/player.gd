@@ -5,7 +5,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") # Get th
 @export var mouse_sensitivity = 0.01
 @export var SPEED = 5.0
 @export var JUMP_VELOCITY = 4.5
-@export var current_gun = "12"
+const _bullet_hole_res = preload("res://Sprites/Weapons/Bullet/bullet_hole.tscn")
 
 #Functions
 func _ready():
@@ -36,8 +36,8 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
-
-const _bullet_hole_res = preload("res://Sprites/Weapons/Bullet/bullet_hole.tscn")
+	if Input.is_action_just_pressed("shoot"):
+		shoot(Global.current_weapon)
 
 # Codigo de mostrar um ponto no 3D retirado desse repositorio: https://github.com/Ryan-Mirch/Line-and-Sphere-Drawing/blob/main/Draw3D.gd
 func point(pos:Vector3, radius = 0.05, color = Color.WHITE_SMOKE, persist_ms = 0):
