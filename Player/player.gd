@@ -1,11 +1,10 @@
 extends CharacterBody3D
 
-#Basic Variables
+#Variables
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") # Get the gravity from the project settings to be synced with RigidBody nodes.
 @export var mouse_sensitivity = 0.01
 @export var SPEED = 5.0
 @export var JUMP_VELOCITY = 4.5
-
 #Gun Variables
 @export var current_gun = "12"
 const _bullet_hole_res = preload("res://Bullet/bullet_hole.tscn")
@@ -14,30 +13,6 @@ const _blood_partile_res = preload("res://Particles/blood_particle.tscn")
 #Functions
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
-# Codigo de mostrar um ponto no 3D retirado desse repositorio: https://github.com/Ryan-Mirch/Line-and-Sphere-Drawing/blob/main/Draw3D.gd
-func point(pos:Vector3, radius = 0.05, color = Color.WHITE_SMOKE, persist_ms = 0):
-	var mesh_instance := MeshInstance3D.new()
-	var sphere_mesh := SphereMesh.new()
-	var material := ORMMaterial3D.new()
-		
-	mesh_instance.mesh = sphere_mesh
-	mesh_instance.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-	mesh_instance.position = pos
-	
-	sphere_mesh.radius = radius
-	sphere_mesh.height = radius*2
-	sphere_mesh.material = material
-	
-	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	material.albedo_color = color
-	
-	get_tree().get_root().add_child(mesh_instance)
-	if persist_ms:
-		await get_tree().create_timer(persist_ms).timeout
-		mesh_instance.queue_free()
-	else:
-		return mesh_instance
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -48,16 +23,12 @@ func _unhandled_input(event):
 		print(event.position)
 
 func _physics_process(delta):
-	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
@@ -68,9 +39,8 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
-	
 	if Input.is_action_just_pressed("shoot"):
-		shoot(current_gun)
+		shoot(Global.current_weapon)
 
 func shoot(gun):
 	var camera3d = $Pivot/Camera3D
@@ -85,14 +55,13 @@ func shoot(gun):
 		spread = Vector2.ZERO
 		damage = 1
 	
-	if gun == "12":
+	if gun == "shotgun":
 		shotsFired = 8
 		spread = Vector2(200, 200)
 		damage = 0.3
 
 	for i in range(shotsFired):
-		
-		var from = 	camera3d.project_ray_origin(origin)
+		var from = camera3d.project_ray_origin(origin)
 		
 		var destiny = origin
 		destiny.x += randf_range(-spread.x/2, spread.x/2)
@@ -118,11 +87,5 @@ func shoot(gun):
 				blood.create_blood(hitPos, normal)
 				get_tree().get_root().add_child(blood)
 			else:
-				point(result.position, 0.05, Color.WHITE_SMOKE, 10)
 				print(hit)
 
-func change_gun(gun):
-	pass
-
-func _process(delta):
-	pass

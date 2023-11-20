@@ -17,7 +17,14 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-PlayerStats="*res://Player/PlayerStats.gd"
+PlayerStats="res://Player/PlayerStats.gd"
+Global="*res://Global.gd"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=480
+window/stretch/mode="canvas_items"
 
 [input]
 

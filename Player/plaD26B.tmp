@@ -13,6 +13,9 @@ size = Vector3(1.04055, 0.254862, 1.06409)
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_xf0ww")
 mouse_sensitivity = 0.001
+SPEED = null
+JUMP_VELOCITY = null
+current_gun = null
 
 [node name="Body" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
