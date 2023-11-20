@@ -9,6 +9,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") # Get th
 #Gun Variables
 @export var current_gun = "12"
 const _bullet_hole_res = preload("res://Bullet/bullet_hole.tscn")
+const _blood_partile_res = preload("res://Particles/blood_particle.tscn")
 
 #Functions
 func _ready():
@@ -113,6 +114,9 @@ func shoot(gun):
 				get_tree().get_root().add_child(hole)
 			elif hit.is_in_group("enemy"):
 				hit.deal_damage(damage)
+				var blood = _blood_partile_res.instantiate()
+				blood.create_blood(hitPos, normal)
+				get_tree().get_root().add_child(blood)
 			else:
 				point(result.position, 0.05, Color.WHITE_SMOKE, 10)
 				print(hit)
