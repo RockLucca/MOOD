@@ -3,7 +3,6 @@ extends CanvasLayer
 var time_since_last_shot = 0.0
 var fire_rate = 1.0
 
-
 func _ready():
 	$Weapons.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
 	$Weapons.play(Global.current_weapon + "_idle")
@@ -16,7 +15,7 @@ func _process(delta):
 		Global.current_weapon = "chainsaw"
 		$Weapons.play("chainsaw_idle")
 	
-	if Input.is_action_pressed("ui_select") and can_shoot:
+	if Input.is_action_just_pressed("shoot") and can_shoot:
 		
 		if Global.current_weapon == "chainsaw":
 			$Weapons.play("chainsaw_attack")
@@ -32,9 +31,9 @@ func _process(delta):
 	match Global.current_weapon:
 		"pistol":
 			fire_rate = 3.0
-		"machine":
+		"shotgun":
 			fire_rate = 6.0
-		"mini":
+		"minigun":
 			fire_rate = 10.0
 		"chainsaw":
 			fire_rate = 2.0
@@ -43,4 +42,3 @@ func _process(delta):
 			
 func _on_AnimatedSprite2D_animation_finished():
 	$Weapons.play(Global.current_weapon + "_idle")
-

@@ -33,7 +33,7 @@ region = Rect2(0, 0, 64, 64)
 [sub_resource type="SpriteFrames" id="SpriteFrames_8c0wr"]
 animations = [{
 "frames": [],
-"loop": true,
+"loop": false,
 "name": &"chainsaw_attack",
 "speed": 5.0
 }, {
@@ -48,6 +48,16 @@ animations = [{
 "name": &"chainsaw_idle",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": false,
+"name": &"minigun_attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"minigun_idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_veech")
@@ -55,7 +65,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hh6tc")
 }],
-"loop": true,
+"loop": false,
 "name": &"pistol_attack",
 "speed": 5.0
 }, {
@@ -63,12 +73,12 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2p7wq")
 }],
-"loop": true,
+"loop": false,
 "name": &"pistol_idle",
 "speed": 5.0
 }, {
 "frames": [],
-"loop": true,
+"loop": false,
 "name": &"shotgun_attack",
 "speed": 5.0
 }, {
@@ -76,7 +86,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vphip")
 }],
-"loop": true,
+"loop": false,
 "name": &"shotgun_idle",
 "speed": 5.0
 }]

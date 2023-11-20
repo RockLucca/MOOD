@@ -5,38 +5,11 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") # Get th
 @export var mouse_sensitivity = 0.01
 @export var SPEED = 5.0
 @export var JUMP_VELOCITY = 4.5
-
-#Gun Variables
 @export var current_gun = "12"
-const _bullet_hole_res = preload("res://Sprites/Weapons/Bullet/bullet_hole.tscn")
 
 #Functions
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
-# Codigo de mostrar um ponto no 3D retirado desse repositorio: https://github.com/Ryan-Mirch/Line-and-Sphere-Drawing/blob/main/Draw3D.gd
-func point(pos:Vector3, radius = 0.05, color = Color.WHITE_SMOKE, persist_ms = 0):
-	var mesh_instance := MeshInstance3D.new()
-	var sphere_mesh := SphereMesh.new()
-	var material := ORMMaterial3D.new()
-		
-	mesh_instance.mesh = sphere_mesh
-	mesh_instance.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-	mesh_instance.position = pos
-	
-	sphere_mesh.radius = radius
-	sphere_mesh.height = radius*2
-	sphere_mesh.material = material
-	
-	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	material.albedo_color = color
-	
-	get_tree().get_root().add_child(mesh_instance)
-	if persist_ms:
-		await get_tree().create_timer(persist_ms).timeout
-		mesh_instance.queue_free()
-	else:
-		return mesh_instance
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -63,9 +36,33 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+const _bullet_hole_res = preload("res://Sprites/Weapons/Bullet/bullet_hole.tscn")
+
+# Codigo de mostrar um ponto no 3D retirado desse repositorio: https://github.com/Ryan-Mirch/Line-and-Sphere-Drawing/blob/main/Draw3D.gd
+func point(pos:Vector3, radius = 0.05, color = Color.WHITE_SMOKE, persist_ms = 0):
+	var mesh_instance := MeshInstance3D.new()
+	var sphere_mesh := SphereMesh.new()
+	var material := ORMMaterial3D.new()
+		
+	mesh_instance.mesh = sphere_mesh
+	mesh_instance.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	mesh_instance.position = pos
 	
-	if Input.is_action_just_pressed("shoot"):
-		shoot(current_gun)
+	sphere_mesh.radius = radius
+	sphere_mesh.height = radius*2
+	sphere_mesh.material = material
+	
+	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	material.albedo_color = color
+	
+	get_tree().get_root().add_child(mesh_instance)
+	if persist_ms:
+		await get_tree().create_timer(persist_ms).timeout
+		mesh_instance.queue_free()
+	else:
+		return mesh_instance
+
 
 func shoot(gun):
 	var camera3d = $Pivot/Camera3D
