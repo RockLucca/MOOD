@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bgo3rbluvk1nj"]
+[gd_scene load_steps=17 format=3 uid="uid://bgo3rbluvk1nj"]
 
 [ext_resource type="Script" path="res://HUD/hud.gd" id="1_xkqll"]
 [ext_resource type="Texture2D" uid="uid://45xc636pb7my" path="res://Sprites/UI/HUD.png" id="2_mia2k"]
@@ -114,21 +114,65 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_4xama"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"100%",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"15%",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"30%",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"45%",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"60%",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"75%",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"90%",
+"speed": 5.0
+}]
+
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_xkqll")
-
-[node name="Sprite_hud" type="Sprite2D" parent="."]
-position = Vector2(320, 441)
-texture = ExtResource("2_mia2k")
 
 [node name="Weapons" type="AnimatedSprite2D" parent="."]
 position = Vector2(330, 330)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_8c0wr")
-animation = &"pistol_attack"
+animation = &"shotgun_idle"
 autoplay = "chainsaw_idle"
 
-[node name="Healf_name" type="Label" parent="."]
+[node name="Sprite_hud" type="Sprite2D" parent="."]
+position = Vector2(320, 441)
+texture = ExtResource("2_mia2k")
+
+[node name="Wepons_icons" type="AnimatedSprite2D" parent="."]
+position = Vector2(583, 429)
+scale = Vector2(3.48386, 3.48386)
+sprite_frames = SubResource("SpriteFrames_j241g")
+animation = &"shotgun_icon"
+
+[node name="Health_name" type="Label" parent="."]
 offset_left = 2.0
 offset_top = 442.0
 offset_right = 124.0
@@ -138,11 +182,11 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_wm0qk")
 theme_override_font_sizes/font_size = 32
-text = "H E A L F"
+text = "H E A L T H"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Healf_value" type="Label" parent="."]
+[node name="Health_value" type="Label" parent="."]
 offset_left = 2.0
 offset_top = 404.0
 offset_right = 42.0
@@ -220,8 +264,6 @@ text = "G U N"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(583, 429)
-scale = Vector2(3.48386, 3.48386)
-sprite_frames = SubResource("SpriteFrames_j241g")
-animation = &"pistol_icon"
+[node name="Face" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4xama")
+animation = &"15%"

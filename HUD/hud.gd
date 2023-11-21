@@ -29,22 +29,24 @@ func _process(delta):
 		if Global.current_weapon != "chainsaw":
 			if Global.ammo > 0:
 				Global.ammo -= 1
+				update_ammo_label()
 	
 	match Global.current_weapon:
+		"chainsaw":
+			fire_rate = 2.0
 		"pistol":
 			fire_rate = 3.0
 		"shotgun":
 			fire_rate = 6.0
 		"minigun":
 			fire_rate = 10.0
-		"chainsaw":
-			fire_rate = 2.0
 		_:
 			fire_rate = 1.0
-	
+	#Fazer array com a ordem das armas
 	update_health_label()
 	update_armor_label()
 	update_ammo_label()
+	update_face_animation(Global.player_health)
 
 
 func update_health_label():
@@ -58,6 +60,28 @@ func update_score_label():
 
 func update_ammo_label():
 	$Ammo_value.text = str(Global.ammo)
+
+func change_weapon():
+	
+	pass
+
+func update_face_animation(health):
+	var face_health = ""
+	if health > 90:
+		face_health = "100%"
+	elif health > 75:
+		face_health = "90%"
+	elif health > 60:
+		face_health = "75%"
+	elif health > 45:
+		face_health = "60%"
+	elif health > 30:
+		face_health = "45%"
+	elif health > 15:
+		face_health = "30%"
+	else:
+		face_health = "15%"
+	$Face.play(face_health)
 
 func _on_AnimatedSprite2D_animation_finished():
 	$Weapons.play(Global.current_weapon + "_idle")
