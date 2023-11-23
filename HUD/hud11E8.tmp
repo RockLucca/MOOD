@@ -1,11 +1,10 @@
-[gd_scene load_steps=40 format=3 uid="uid://bgo3rbluvk1nj"]
+[gd_scene load_steps=39 format=3 uid="uid://bgo3rbluvk1nj"]
 
 [ext_resource type="Script" path="res://HUD/hud.gd" id="1_xkqll"]
 [ext_resource type="Texture2D" uid="uid://45xc636pb7my" path="res://Sprites/UI/HUD.png" id="2_mia2k"]
 [ext_resource type="Texture2D" uid="uid://dpibuonh3cg3" path="res://Sprites/Weapons/Chainsaw/chainsaw.png" id="3_5730w"]
 [ext_resource type="Texture2D" uid="uid://bggltp8a28ejf" path="res://Sprites/Weapons/Pistol/pistol.png" id="4_qo0tw"]
 [ext_resource type="Texture2D" uid="uid://cn3rf3737akq2" path="res://Sprites/Weapons/Shotgun/shotgun.png" id="5_4yfs5"]
-[ext_resource type="Texture2D" uid="uid://bf1kr3e3yen7o" path="res://Sprites/Weapons/Minigun/minigun_icon.png" id="6_ti8b8"]
 [ext_resource type="FontFile" uid="uid://dl4lcy5dpw30y" path="res://Font/AmazDooMLeft.ttf" id="6_wm0qk"]
 [ext_resource type="Texture2D" uid="uid://y2fglfsupl0h" path="res://Sprites/Weapons/Pistol/icon_pistol.png" id="7_0q4am"]
 [ext_resource type="Texture2D" uid="uid://diosw0x6170tj" path="res://Sprites/Player/bjface.png" id="8_h2ap1"]
@@ -104,19 +103,11 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_ti8b8")
-}],
-"loop": false,
-"name": &"minigun_icon",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("7_0q4am")
 }],
 "loop": false,
 "name": &"pistol_icon",
-"speed": 1.0
+"speed": 5.0
 }, {
 "frames": [],
 "loop": false,
@@ -324,8 +315,8 @@ position = Vector2(320, 441)
 texture = ExtResource("2_mia2k")
 
 [node name="Wepons_icons" type="AnimatedSprite2D" parent="."]
-position = Vector2(581, 430)
-scale = Vector2(2.90222, 2.90222)
+position = Vector2(583, 429)
+scale = Vector2(3.48386, 3.48386)
 sprite_frames = SubResource("SpriteFrames_j241g")
 animation = &"pistol_icon"
 

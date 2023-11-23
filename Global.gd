@@ -10,12 +10,12 @@ var player_health: int = 100
 
 #Guns Ammo
 var current_weapon = "pistol"
-var chainsaw_ammo = 100       #1
-var pistol_ammo = 10          #2
-var shotgun_ammo = 14         #3
-var minigun_ammo = 0          #4
-var rocket_launcher_ammo = 2  #5
-var plasma_ammo = 0
+var chainsaw_ammo: int = 100       #1
+var pistol_ammo: int = 20          #2
+var shotgun_ammo: int = 14         #3
+var minigun_ammo: int = 0          #4
+var rpg_ammo: int = 2              #5
+var plasma_ammo: int = 0           #6
 
 var ammo = 20
 var lives = 3

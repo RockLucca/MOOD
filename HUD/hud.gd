@@ -2,6 +2,7 @@ extends CanvasLayer
 
 var time_since_last_shot = 0.0
 var fire_rate = 1.0
+var option:int
 
 func _ready():
 	$Weapons.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
@@ -12,45 +13,56 @@ func _process(delta):
 	time_since_last_shot += delta
 	var can_shoot = time_since_last_shot >= (1.0 / fire_rate)
 	
+	#Change to chainsaw if player is out of ammo
 	if Global.current_weapon != "chainsaw" and Global.ammo <= 0:
 		Global.current_weapon = "chainsaw"
 		$Weapons.play("chainsaw_idle")
 		$Weapons.play("chainsaw_icon")
+		print(Global.current_weapon + "_ammo")
 	
+	#Shoot control
 	if Input.is_action_just_pressed("shoot") and can_shoot:
-		
 		if Global.current_weapon == "chainsaw":
-			$Weapons.play("chainsaw_attack")
-		else:
 			$Weapons.play(Global.current_weapon + "_attack")
-			
-		time_since_last_shot = 0.0
 		
+		time_since_last_shot = 0.0
 		if Global.current_weapon != "chainsaw":
 			if Global.ammo > 0:
 				Global.ammo -= 1
-				update_ammo_label()
+			#update_ammo_label(Global.current_weapon)
 	
 	match Global.current_weapon:
 		"chainsaw":
 			fire_rate = 2.0
+			option = 1
 		"pistol":
 			fire_rate = 3.0
+			option = 2
 		"shotgun":
 			fire_rate = 6.0
+			option = 3
 		"minigun":
 			fire_rate = 10.0
+			option = 4
+		"rpg":
+			fire_rate = 1.0
+			option = 5
+		"plasma":
+			fire_rate = 10.0
+			option = 6
 		_:
 			fire_rate = 1.0
+			option = -1
 	#Fazer array com a ordem das armas
 	update_health_label()
 	update_armor_label()
-	update_ammo_label()
+	#update_ammo_label(Global.current_weapon)
 	update_face_animation(Global.player_health)
+	change_weapon()
 
 
 func update_health_label():
-	$Healf_value.text = str(Global.player_health)
+	$Health_value.text = str(Global.player_health)
 
 func update_armor_label():
 	$Armor_value.text = str(Global.player_armor)
@@ -58,12 +70,22 @@ func update_armor_label():
 func update_score_label():
 	$SCORE.text = str(Global.player_score)
 
-func update_ammo_label():
-	$Ammo_value.text = str(Global.ammo)
+func update_ammo_label(gun):
+	#var ammo =
+	#if gun == 'pistol' and ammo > 0:
+		#Global.pistol_ammo -= 1
+		$Ammo_value.text = str(Global.pistol_ammo)
 
 func change_weapon():
-	
-	pass
+	if Input.is_action_just_pressed("set_chainsaw"):
+		Global.current_weapon = "chainsaw"
+	elif Input.is_action_just_pressed("set_pistol"):
+		Global.current_weapon = "pistol"
+	elif Input.is_action_just_pressed("set_shotgun"):
+		Global.current_weapon = "shotgun"
+	elif Input.is_action_just_pressed("set_minigun"):
+		Global.current_weapon = "minigun"
+		pass
 
 func update_face_animation(health):
 	var face_health = ""
