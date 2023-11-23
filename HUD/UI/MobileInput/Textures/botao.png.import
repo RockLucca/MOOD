@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://45xc636pb7my"
-path="res://.godot/imported/HUD.png-6a2e3b06dac2c4bd33c469ad7aec3a6a.ctex"
+uid="uid://kieo050vlong"
+path="res://.godot/imported/botao.png-4ae8a27de7f39c4f16d739de0775b9d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/HUD.png"
-dest_files=["res://.godot/imported/HUD.png-6a2e3b06dac2c4bd33c469ad7aec3a6a.ctex"]
+source_file="res://HUD/UI/MobileInput/Textures/botao.png"
+dest_files=["res://.godot/imported/botao.png-4ae8a27de7f39c4f16d739de0775b9d5.ctex"]
 
 [params]
 

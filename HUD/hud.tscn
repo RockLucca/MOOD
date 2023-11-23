@@ -1,14 +1,16 @@
-[gd_scene load_steps=40 format=3 uid="uid://bgo3rbluvk1nj"]
+[gd_scene load_steps=42 format=3 uid="uid://bgo3rbluvk1nj"]
 
 [ext_resource type="Script" path="res://HUD/hud.gd" id="1_xkqll"]
-[ext_resource type="Texture2D" uid="uid://45xc636pb7my" path="res://Sprites/UI/HUD.png" id="2_mia2k"]
 [ext_resource type="Texture2D" uid="uid://dpibuonh3cg3" path="res://Sprites/Weapons/Chainsaw/chainsaw.png" id="3_5730w"]
 [ext_resource type="Texture2D" uid="uid://bggltp8a28ejf" path="res://Sprites/Weapons/Pistol/pistol.png" id="4_qo0tw"]
 [ext_resource type="Texture2D" uid="uid://cn3rf3737akq2" path="res://Sprites/Weapons/Shotgun/shotgun.png" id="5_4yfs5"]
+[ext_resource type="Texture2D" uid="uid://45xc636pb7my" path="res://HUD/UI/HUD.png" id="5_fdnls"]
 [ext_resource type="Texture2D" uid="uid://bf1kr3e3yen7o" path="res://Sprites/Weapons/Minigun/minigun_icon.png" id="6_ti8b8"]
 [ext_resource type="FontFile" uid="uid://dl4lcy5dpw30y" path="res://Font/AmazDooMLeft.ttf" id="6_wm0qk"]
 [ext_resource type="Texture2D" uid="uid://y2fglfsupl0h" path="res://Sprites/Weapons/Pistol/icon_pistol.png" id="7_0q4am"]
 [ext_resource type="Texture2D" uid="uid://diosw0x6170tj" path="res://Sprites/Player/bjface.png" id="8_h2ap1"]
+[ext_resource type="Texture2D" uid="uid://nkhrpukaw261" path="res://Sprites/Weapons/Shotgun/shotgun_icon.png" id="8_qpj0r"]
+[ext_resource type="PackedScene" uid="uid://dxfmjk3a1rfvo" path="res://HUD/UI/MobileInput/Joystick.tscn" id="10_fv7dy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7hs63"]
 atlas = ExtResource("3_5730w")
@@ -108,7 +110,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"minigun_icon",
-"speed": 1.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -116,9 +118,12 @@ animations = [{
 }],
 "loop": false,
 "name": &"pistol_icon",
-"speed": 1.0
+"speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_qpj0r")
+}],
 "loop": false,
 "name": &"shotgun_icon",
 "speed": 5.0
@@ -321,13 +326,13 @@ autoplay = "chainsaw_idle"
 
 [node name="Sprite_hud" type="Sprite2D" parent="."]
 position = Vector2(320, 441)
-texture = ExtResource("2_mia2k")
+texture = ExtResource("5_fdnls")
 
 [node name="Wepons_icons" type="AnimatedSprite2D" parent="."]
 position = Vector2(581, 430)
 scale = Vector2(2.90222, 2.90222)
 sprite_frames = SubResource("SpriteFrames_j241g")
-animation = &"pistol_icon"
+animation = &"shotgun_icon"
 
 [node name="Face" type="AnimatedSprite2D" parent="."]
 position = Vector2(319, 443)
@@ -426,3 +431,7 @@ theme_override_font_sizes/font_size = 32
 text = "G U N"
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="JoystickBase" parent="." instance=ExtResource("10_fv7dy")]
+position = Vector2(0, 270)
+scale = Vector2(1.01563, 1.01563)
