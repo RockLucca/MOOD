@@ -1,10 +1,3 @@
-# Simulate touch events with mouse:
-#
-# Project Settings
-#    Input Devices
-#       Pointing:
-#          Generate touch from mouse: ON
-
 class_name VirtualJoystick
 extends TouchScreenButton
 

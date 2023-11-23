@@ -6,8 +6,9 @@ var fire_rate = 1.0
 func _ready():
 	$Weapons.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
 	$Weapons.play(Global.current_weapon + "_idle")
-	$Weapons.play(Global.current_weapon + "_icon")
-	print(Global.current_weapon + "_ammo")
+	$Wepons_icons.play(Global.current_weapon + "_icon")
+	update_ammo_label(Global.current_weapon)
+	$Ammo_value.text = str(Global.current_weapon + "_ammo")
 
 func _process(delta):
 	time_since_last_shot += delta
@@ -17,7 +18,7 @@ func _process(delta):
 	if Global.current_weapon != "chainsaw" and Global.ammo <= 0:
 		Global.current_weapon = "chainsaw"
 		$Weapons.play("chainsaw_idle")
-		$Weapons.play("chainsaw_icon")
+		$Wepons_icons.play("chainsaw_icon")
 	
 	#Shoot control
 	if Input.is_action_just_pressed("shoot") and can_shoot:
@@ -26,9 +27,7 @@ func _process(delta):
 		
 		time_since_last_shot = 0.0
 		if Global.current_weapon != "chainsaw":
-			if Global.ammo > 0:
-				Global.ammo -= 1
-			#update_ammo_label(Global.current_weapon)
+			update_ammo_label(Global.current_weapon) 
 	
 	match Global.current_weapon:
 		"chainsaw":
@@ -59,24 +58,33 @@ func update_health_label():
 func update_armor_label():
 	$Armor_value.text = str(Global.player_armor)
 
-func update_score_label():
-	$SCORE.text = str(Global.player_score)
-
+#Update ammo values when shoot
 func update_ammo_label(gun):
-	#var ammo =
-	#if gun == 'pistol' and ammo > 0:
-		#Global.pistol_ammo -= 1
-		$Ammo_value.text = str(Global.pistol_ammo)
+	#$Ammo_value.text = str(Global.pistol_ammo)
+	if gun == "pistol" and Global.pistol_ammo > 0:
+		Global.pistol_ammo -= 1
+		$Ammo_value.text = str(Global.shotgun_ammo)
+	elif gun == "shotgun" and Global.shotgun_ammo > 0:
+		Global.shotgun_ammo -= 2
+		$Ammo_value.text = str(Global.shotgun_ammo)
+	elif gun == "minigun" and Global.minigun_ammo > 0:
+		Global.minigun_ammo -= 1
+		$Ammo_value.text = str(Global.minigun_ammo)
 
+#
 func change_weapon():
 	if Input.is_action_just_pressed("set_chainsaw"):
 		Global.current_weapon = "chainsaw"
+		$Ammo_value.text = str("∞")
 	elif Input.is_action_just_pressed("set_pistol"):
 		Global.current_weapon = "pistol"
+		$Ammo_value.text = str(Global.pistol_ammo)
 	elif Input.is_action_just_pressed("set_shotgun"):
 		Global.current_weapon = "shotgun"
+		$Ammo_value.text = str(Global.shotgun_ammo)
 	elif Input.is_action_just_pressed("set_minigun"):
 		Global.current_weapon = "minigun"
+		$Ammo_value.text = str(Global.minigun_ammo)
 		pass
 
 func update_face_animation(health):

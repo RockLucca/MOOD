@@ -1,10 +1,11 @@
-[gd_scene load_steps=42 format=3 uid="uid://bgo3rbluvk1nj"]
+[gd_scene load_steps=43 format=3 uid="uid://bgo3rbluvk1nj"]
 
 [ext_resource type="Script" path="res://HUD/hud.gd" id="1_xkqll"]
 [ext_resource type="Texture2D" uid="uid://dpibuonh3cg3" path="res://Sprites/Weapons/Chainsaw/chainsaw.png" id="3_5730w"]
 [ext_resource type="Texture2D" uid="uid://bggltp8a28ejf" path="res://Sprites/Weapons/Pistol/pistol.png" id="4_qo0tw"]
 [ext_resource type="Texture2D" uid="uid://cn3rf3737akq2" path="res://Sprites/Weapons/Shotgun/shotgun.png" id="5_4yfs5"]
 [ext_resource type="Texture2D" uid="uid://45xc636pb7my" path="res://HUD/UI/HUD.png" id="5_fdnls"]
+[ext_resource type="Texture2D" uid="uid://d2ttd3a64q2ng" path="res://Sprites/Weapons/Chainsaw/chainsaw_icon.png" id="6_q7j5n"]
 [ext_resource type="Texture2D" uid="uid://bf1kr3e3yen7o" path="res://Sprites/Weapons/Minigun/minigun_icon.png" id="6_ti8b8"]
 [ext_resource type="FontFile" uid="uid://dl4lcy5dpw30y" path="res://Font/AmazDooMLeft.ttf" id="6_wm0qk"]
 [ext_resource type="Texture2D" uid="uid://y2fglfsupl0h" path="res://Sprites/Weapons/Pistol/icon_pistol.png" id="7_0q4am"]
@@ -99,7 +100,10 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j241g"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_q7j5n")
+}],
 "loop": false,
 "name": &"chainsaw_icon",
 "speed": 5.0
@@ -321,8 +325,7 @@ script = ExtResource("1_xkqll")
 position = Vector2(330, 330)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_8c0wr")
-animation = &"pistol_idle"
-autoplay = "chainsaw_idle"
+animation = &"chainsaw_idle"
 
 [node name="Sprite_hud" type="Sprite2D" parent="."]
 position = Vector2(320, 441)
@@ -332,7 +335,7 @@ texture = ExtResource("5_fdnls")
 position = Vector2(581, 430)
 scale = Vector2(2.90222, 2.90222)
 sprite_frames = SubResource("SpriteFrames_j241g")
-animation = &"shotgun_icon"
+animation = &"chainsaw_icon"
 
 [node name="Face" type="AnimatedSprite2D" parent="."]
 position = Vector2(319, 443)
@@ -411,7 +414,7 @@ offset_left = 410.0
 offset_top = 405.0
 offset_right = 450.0
 offset_bottom = 446.0
-scale = Vector2(2.77755, 1.4738)
+scale = Vector2(2.75432, 1.32094)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_wm0qk")
 theme_override_font_sizes/font_size = 30
