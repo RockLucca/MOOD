@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bgo3rbluvk1nj"]
+[gd_scene load_steps=45 format=3 uid="uid://bgo3rbluvk1nj"]
 
 [ext_resource type="Script" path="res://HUD/hud.gd" id="1_xkqll"]
 [ext_resource type="Texture2D" uid="uid://dpibuonh3cg3" path="res://Sprites/Weapons/Chainsaw/chainsaw.png" id="3_5730w"]
@@ -21,17 +21,25 @@ region = Rect2(0, 0, 64, 48)
 atlas = ExtResource("3_5730w")
 region = Rect2(64, 0, 64, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_veech"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcb8v"]
 atlas = ExtResource("4_qo0tw")
-region = Rect2(0, 0, 48, 48)
+region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hh6tc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_15w6e"]
 atlas = ExtResource("4_qo0tw")
-region = Rect2(48, 0, 48, 48)
+region = Rect2(192, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2p7wq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpcgm"]
 atlas = ExtResource("4_qo0tw")
-region = Rect2(0, 0, 48, 48)
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdtrf"]
+atlas = ExtResource("4_qo0tw")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njqtf"]
+atlas = ExtResource("4_qo0tw")
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vphip"]
 atlas = ExtResource("5_4yfs5")
@@ -67,10 +75,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_veech")
+"texture": SubResource("AtlasTexture_wcb8v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hh6tc")
+"texture": SubResource("AtlasTexture_15w6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpcgm")
 }],
 "loop": false,
 "name": &"pistol_attack",
@@ -78,7 +89,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2p7wq")
+"texture": SubResource("AtlasTexture_rdtrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njqtf")
 }],
 "loop": false,
 "name": &"pistol_idle",
@@ -325,7 +339,7 @@ script = ExtResource("1_xkqll")
 position = Vector2(330, 330)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_8c0wr")
-animation = &"chainsaw_idle"
+animation = &"pistol_attack"
 
 [node name="Sprite_hud" type="Sprite2D" parent="."]
 position = Vector2(320, 441)

@@ -62,12 +62,15 @@ func update_armor_label():
 func update_ammo_label(gun):
 	#$Ammo_value.text = str(Global.pistol_ammo)
 	if gun == "pistol" and Global.pistol_ammo > 0:
+		$Weapons.play(Global.current_weapon + "_attack")
 		Global.pistol_ammo -= 1
 		$Ammo_value.text = str(Global.pistol_ammo)
 	elif gun == "shotgun" and Global.shotgun_ammo > 0:
+		$Weapons.play(Global.current_weapon + "_attack")
 		Global.shotgun_ammo -= 2
 		$Ammo_value.text = str(Global.shotgun_ammo)
 	elif gun == "minigun" and Global.minigun_ammo > 0:
+		$Weapons.play(Global.current_weapon + "_attack")
 		Global.minigun_ammo -= 1
 		$Ammo_value.text = str(Global.minigun_ammo)
 
