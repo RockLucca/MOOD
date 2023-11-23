@@ -7,8 +7,8 @@ func _ready():
 	$Weapons.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
 	$Weapons.play(Global.current_weapon + "_idle")
 	$Wepons_icons.play(Global.current_weapon + "_icon")
-	update_ammo_label(Global.current_weapon)
-	$Ammo_value.text = str(Global.current_weapon + "_ammo")
+	#update_ammo_label(Global.current_weapon)
+	$Ammo_value.text = str(Global.pistol_ammo)
 
 func _process(delta):
 	time_since_last_shot += delta
@@ -63,7 +63,7 @@ func update_ammo_label(gun):
 	#$Ammo_value.text = str(Global.pistol_ammo)
 	if gun == "pistol" and Global.pistol_ammo > 0:
 		Global.pistol_ammo -= 1
-		$Ammo_value.text = str(Global.shotgun_ammo)
+		$Ammo_value.text = str(Global.pistol_ammo)
 	elif gun == "shotgun" and Global.shotgun_ammo > 0:
 		Global.shotgun_ammo -= 2
 		$Ammo_value.text = str(Global.shotgun_ammo)
