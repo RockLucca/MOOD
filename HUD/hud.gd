@@ -60,16 +60,22 @@ func update_armor_label():
 
 #Update ammo values when shoot
 func update_ammo_label(gun):
+	var shot = false
 	#$Ammo_value.text = str(Global.pistol_ammo)
 	if gun == "pistol" and Global.pistol_ammo > 0:
 		Global.pistol_ammo -= 1
 		$Ammo_value.text = str(Global.pistol_ammo)
+		shot = true
 	elif gun == "shotgun" and Global.shotgun_ammo > 0:
 		Global.shotgun_ammo -= 2
 		$Ammo_value.text = str(Global.shotgun_ammo)
+		shot = true
 	elif gun == "minigun" and Global.minigun_ammo > 0:
 		Global.minigun_ammo -= 1
 		$Ammo_value.text = str(Global.minigun_ammo)
+		shot = true
+	if shot:
+		get_tree().get_first_node_in_group("Player").shoot(gun)
 
 #
 func change_weapon():

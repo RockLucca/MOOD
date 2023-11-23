@@ -39,8 +39,10 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
-	if Input.is_action_just_pressed("shoot"):
-		shoot(Global.current_weapon)
+	#if Input.is_action_just_pressed("shoot"):
+		#if (Global.current_weapon == "pistol" and Global.pistol_ammo > 0) or (Global.current_weapon == "shotgun" and Global.shotgun_ammo > 0):
+			#  or (Global.gun == "minigun" and Global.minigun_ammo > 0)
+			#shoot(Global.current_weapon)
 
 func shoot(gun):
 	var camera3d = $Pivot/Camera3D
@@ -59,7 +61,7 @@ func shoot(gun):
 		shotsFired = 8
 		spread = Vector2(200, 200)
 		damage = 0.3
-
+	
 	for i in range(shotsFired):
 		var from = camera3d.project_ray_origin(origin)
 		
