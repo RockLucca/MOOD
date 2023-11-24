@@ -20,16 +20,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.10597, 1.21241, 20.128)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Exit"]
 shape = SubResource("BoxShape3D_uamx1")
 
-[node name="RepeaterZombie" parent="." instance=ExtResource("3_ym64q")]
+[node name="EnemyAI" parent="." instance=ExtResource("3_ym64q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.514, 1.058, -0.644)
 enemy_scene = ExtResource("3_eicew")
-player_agro_distance = 5
-arrive_at_target_distance = 1
-enemy_speed = 3
+player_agro_distance = null
+arrive_at_target_distance = null
 
-[node name="position1" type="Node3D" parent="RepeaterZombie/Targets" index="0"]
+[node name="position1" type="Node3D" parent="EnemyAI/Targets" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.86967, 0, 0)
 
-[node name="position2" type="Node3D" parent="RepeaterZombie/Targets" index="1"]
+[node name="position2" type="Node3D" parent="EnemyAI/Targets" index="1"]
 
-[editable path="RepeaterZombie"]
+[editable path="EnemyAI"]
