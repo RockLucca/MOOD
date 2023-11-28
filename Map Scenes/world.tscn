@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cod58iasn8e20"]
+[gd_scene load_steps=7 format=3 uid="uid://cod58iasn8e20"]
 
 [ext_resource type="PackedScene" uid="uid://cnx744xxb1p6n" path="res://Demo Map/demomap.tscn" id="1_26tyv"]
+[ext_resource type="Script" path="res://Map Scenes/level1.gd" id="1_ox1s2"]
 [ext_resource type="PackedScene" uid="uid://b8tplkd32g4nh" path="res://Player/player.tscn" id="2_sgfnp"]
 [ext_resource type="PackedScene" uid="uid://c00vx3vht87yu" path="res://Sprites/Enemys/RepeaterZombie/repeater_enemy.tscn" id="3_eicew"]
+[ext_resource type="PackedScene" uid="uid://dn5ikeen1gwqy" path="res://Menu/pause.tscn" id="5_swa1f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uamx1"]
 
 [node name="World" type="Node3D"]
+script = ExtResource("1_ox1s2")
 
 [node name="demomap" parent="." instance=ExtResource("1_26tyv")]
 
@@ -21,3 +24,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.10597, 1.21241, 20.128)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Exit"]
 shape = SubResource("BoxShape3D_uamx1")
+
+[node name="Pause" parent="." instance=ExtResource("5_swa1f")]

@@ -60,7 +60,6 @@ func update_armor_label():
 
 #Update ammo values when shoot
 func update_ammo_label(gun):
-	#$Ammo_value.text = str(Global.pistol_ammo)
 	if gun == "pistol" and Global.pistol_ammo > 0:
 		$Weapons.play(Global.current_weapon + "_attack")
 		Global.pistol_ammo -= 1
