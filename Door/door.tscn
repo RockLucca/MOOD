@@ -1,0 +1,184 @@
+[gd_scene load_steps=26 format=3 uid="uid://pr7pkbfftbp5"]
+
+[ext_resource type="Script" path="res://Door/door.gd" id="1_tngxh"]
+[ext_resource type="Texture2D" uid="uid://kdf3yadf0tm5" path="res://Door/key_animation.png" id="2_oud88"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_d7wih"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_duj6f"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_on4cn"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i220h"]
+atlas = ExtResource("2_oud88")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbxlt"]
+atlas = ExtResource("2_oud88")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adloq"]
+atlas = ExtResource("2_oud88")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1k04"]
+atlas = ExtResource("2_oud88")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iojy"]
+atlas = ExtResource("2_oud88")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wsp2"]
+atlas = ExtResource("2_oud88")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky0vb"]
+atlas = ExtResource("2_oud88")
+region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b34n0"]
+atlas = ExtResource("2_oud88")
+region = Rect2(112, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7esb"]
+atlas = ExtResource("2_oud88")
+region = Rect2(128, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2ysl"]
+atlas = ExtResource("2_oud88")
+region = Rect2(144, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkp02"]
+atlas = ExtResource("2_oud88")
+region = Rect2(160, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oq6ou"]
+atlas = ExtResource("2_oud88")
+region = Rect2(176, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4jw3"]
+atlas = ExtResource("2_oud88")
+region = Rect2(192, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fhqi"]
+atlas = ExtResource("2_oud88")
+region = Rect2(208, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv1fa"]
+atlas = ExtResource("2_oud88")
+region = Rect2(224, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odn7t"]
+atlas = ExtResource("2_oud88")
+region = Rect2(240, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yupoe"]
+atlas = ExtResource("2_oud88")
+region = Rect2(256, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11fml"]
+atlas = ExtResource("2_oud88")
+region = Rect2(272, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f60rt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i220h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbxlt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adloq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1k04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8iojy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wsp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky0vb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b34n0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7esb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2ysl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkp02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oq6ou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4jw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fhqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nv1fa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odn7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yupoe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11fml")
+}],
+"loop": true,
+"name": &"default",
+"speed": 17.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_oma2g"]
+radius = 0.143977
+
+[node name="Door" type="Node3D"]
+script = ExtResource("1_tngxh")
+
+[node name="Door" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.611741, 0, 0, 0, -2.83561, 0, 0, 0, 2.96392, 0, 0, 0)
+mesh = SubResource("BoxMesh_d7wih")
+
+[node name="StaticBody3D" type="CharacterBody3D" parent="Door"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_duj6f")
+
+[node name="DoorArea" type="Area3D" parent="Door"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door/DoorArea"]
+transform = Transform3D(4.79229, 0, 0, 0, 1.06417, 0, 0, 0, 1.01593, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_on4cn")
+
+[node name="Key" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.777163, 0, 0)
+billboard = 2
+shaded = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_f60rt")
+autoplay = "default"
+frame_progress = 0.304715
+
+[node name="CaptureArea" type="Area3D" parent="Key"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Key/CaptureArea"]
+shape = SubResource("SphereShape3D_oma2g")
+
+[connection signal="body_entered" from="Door/DoorArea" to="." method="_on_door_area_body_entered"]
+[connection signal="body_entered" from="Key/CaptureArea" to="." method="_on_capture_area_body_entered"]
