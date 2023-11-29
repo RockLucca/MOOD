@@ -3,11 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://cnx744xxb1p6n" path="res://Demo Map/demomap.tscn" id="1_26tyv"]
 [ext_resource type="PackedScene" uid="uid://b8tplkd32g4nh" path="res://Player/player.tscn" id="2_sgfnp"]
 [ext_resource type="PackedScene" uid="uid://c00vx3vht87yu" path="res://Sprites/Enemys/RepeaterZombie/repeater_enemy.tscn" id="3_eicew"]
-
 [ext_resource type="PackedScene" uid="uid://u6jfc5mbnkt3" path="res://AI/EnemyAI.tscn" id="3_ym64q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uamx1"]
-
 
 [node name="World" type="Node3D"]
 
@@ -16,24 +14,19 @@
 [node name="Player" parent="." instance=ExtResource("2_sgfnp")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.5278, 1.15602, 0.108409)
 
-
 [node name="Exit" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.10597, 1.21241, 20.128)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Exit"]
 shape = SubResource("BoxShape3D_uamx1")
 
-[node name="RepeaterZombie" parent="." instance=ExtResource("3_ym64q")]
+[node name="EnemyAI" parent="." instance=ExtResource("3_ym64q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.514, 1.058, -0.644)
 enemy_scene = ExtResource("3_eicew")
-player_agro_distance = 5
-arrive_at_target_distance = 1
-enemy_speed = 3
 
-[node name="position1" type="Node3D" parent="RepeaterZombie/Targets" index="0"]
+[node name="position1" type="Node3D" parent="EnemyAI/Targets" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.86967, 0, 0)
 
-[node name="position2" type="Node3D" parent="RepeaterZombie/Targets" index="1"]
+[node name="position2" type="Node3D" parent="EnemyAI/Targets" index="1"]
 
-[editable path="RepeaterZombie"]
-
+[editable path="EnemyAI"]

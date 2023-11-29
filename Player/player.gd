@@ -58,15 +58,22 @@ func shoot(gun):
 	
 	if gun == "shotgun":
 		shotsFired = 8
-		spread = Vector2(200, 200)
-		damage = 1.0
+
+		spread = Vector2(100, 2*PI)
+		damage = 1.3
+
 
 	for i in range(shotsFired):
 		var from = camera3d.project_ray_origin(origin)
 		
 		var destiny = origin
-		destiny.x += randf_range(-spread.x/2, spread.x/2)
-		destiny.y += randf_range(-spread.y/2, spread.y/2)
+		
+		var rand_ang = randf_range(0, spread.y)
+		var rand_rad = randf_range(-spread.x/2 , spread.x)
+		
+		destiny.x += cos(rand_ang) * rand_rad
+		destiny.y += sin(rand_ang) * rand_rad
+		
 		var to = from + camera3d.project_ray_normal(destiny) * 100
 		
 		var query = PhysicsRayQueryParameters3D.create(from, to, 0xFFFFFFFF, [get_rid()])

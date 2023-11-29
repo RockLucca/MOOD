@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://u6jfc5mbnkt3"]
+
+[ext_resource type="Script" path="res://AI/EnemyAI.gd" id="1_ir1j3"]
+
+[node name="EnemyAI" type="Node3D"]
+script = ExtResource("1_ir1j3")
+
+[node name="Targets" type="Node3D" parent="."]
