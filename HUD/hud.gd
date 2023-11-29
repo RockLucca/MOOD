@@ -7,7 +7,6 @@ func _ready():
 	$Weapons.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
 	$Weapons.play(Global.current_weapon + "_idle")
 	$Wepons_icons.play(Global.current_weapon + "_icon")
-	#update_ammo_label(Global.current_weapon)
 	$Ammo_value.text = str(Global.pistol_ammo)
 
 func _process(delta):

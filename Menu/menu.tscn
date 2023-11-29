@@ -1,8 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://bqm5fmocqh6uu"]
+[gd_scene load_steps=11 format=3 uid="uid://bqm5fmocqh6uu"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_gxsbu"]
-[ext_resource type="FontFile" uid="uid://bkxeojtx5wpg2" path="res://Font/AmazDooMLeft2.ttf" id="2_3kore"]
-[ext_resource type="PackedScene" uid="uid://cvrxvlo0hfqad" path="res://Menu/Button/button.tscn" id="2_5ia32"]
 [ext_resource type="FontFile" uid="uid://dsqm0lfysiyo1" path="res://Font/DooM.ttf" id="4_tf3bp"]
 [ext_resource type="Texture2D" uid="uid://brp7p7br5538r" path="res://Sprites/Interface/Logol.png" id="5_xm8us"]
 [ext_resource type="Texture2D" uid="uid://dyq3ocaxk0eco" path="res://Sprites/Interface/logo_gamepad_80x80.png" id="6_0yy4j"]
@@ -66,7 +64,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.505882, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(320, 175)
+texture = ExtResource("5_xm8us")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -75,40 +77,42 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -26.0
-offset_top = -13.0
-offset_right = 26.0
-offset_bottom = 13.0
+offset_left = -112.0
+offset_top = 42.0
+offset_right = 103.0
+offset_bottom = 214.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Titulo" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_3kore")
-theme_override_font_sizes/font_size = 150
-horizontal_alignment = 1
-
-[node name="Jogar" parent="VBoxContainer" instance=ExtResource("2_5ia32")]
+[node name="Jogar" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_tf3bp")
-theme_override_font_sizes/font_size = 30
-_scene = "res://Map Scenes/world.tscn"
+theme_override_font_sizes/font_size = 20
+text = "Jogar"
 
-[node name="Opcoes" parent="VBoxContainer" instance=ExtResource("2_5ia32")]
+[node name="Instrucoes" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_tf3bp")
-theme_override_font_sizes/font_size = 30
-text = "OPCOES"
+theme_override_font_sizes/font_size = 20
+text = "Instrucoes"
 
-[node name="Creditos" parent="VBoxContainer" instance=ExtResource("2_5ia32")]
+[node name="Opcoes" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_tf3bp")
-theme_override_font_sizes/font_size = 30
-text = "CREDITOS"
+theme_override_font_sizes/font_size = 20
+text = "Opcoes"
 
-[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer"]
-position = Vector2(127.5, 122)
-texture = ExtResource("5_xm8us")
+[node name="Creditos" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_tf3bp")
+theme_override_font_sizes/font_size = 20
+text = "Creditos"
+
+[node name="Sair" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_tf3bp")
+theme_override_font_sizes/font_size = 20
+text = "Sair"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(593.5, 433.5)
@@ -116,3 +120,9 @@ scale = Vector2(1.1625, 1.1625)
 sprite_frames = SubResource("SpriteFrames_3klhu")
 animation = &"Logo"
 autoplay = "Logo"
+
+[connection signal="pressed" from="VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Instrucoes" to="." method="_on_instrucoes_pressed"]
+[connection signal="pressed" from="VBoxContainer/Opcoes" to="." method="_on_opcoes_pressed"]
+[connection signal="pressed" from="VBoxContainer/Creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="VBoxContainer/Sair" to="." method="_on_sair_pressed"]

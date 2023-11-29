@@ -18,18 +18,19 @@ position = Vector2(320, 240)
 texture = ExtResource("1_u7nej")
 
 [node name="Button" type="Button" parent="."]
+texture_filter = 1
 layout_mode = 1
-anchors_preset = 12
+anchors_preset = -1
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -109.0
-offset_bottom = -59.0
+offset_top = -110.0
+offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_ju8o5")
 text = "Precione
 qualquer tecla"
+flat = true
 
-[connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
