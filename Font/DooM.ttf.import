@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cla2hs6vv2720"
-path="res://.godot/imported/AmazDooMRight.ttf-71b5853fbb1e3a5c3c5c91a6458f48fa.fontdata"
+uid="uid://dsqm0lfysiyo1"
+path="res://.godot/imported/DooM.ttf-f7b61f9d64ce3858364142caf5544200.fontdata"
 
 [deps]
 
-source_file="res://Font/AmazDooMRight.ttf"
-dest_files=["res://.godot/imported/AmazDooMRight.ttf-71b5853fbb1e3a5c3c5c91a6458f48fa.fontdata"]
+source_file="res://Font/DooM.ttf"
+dest_files=["res://.godot/imported/DooM.ttf-f7b61f9d64ce3858364142caf5544200.fontdata"]
 
 [params]
 

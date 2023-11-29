@@ -13,6 +13,7 @@ const _blood_partile_res = preload("res://Particles/blood_particle.tscn")
 #Functions
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	add_to_group("Player")
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -53,12 +54,14 @@ func shoot(gun):
 	if gun == "pistol":
 		shotsFired = 1
 		spread = Vector2.ZERO
-		damage = 1
+		damage = 1.5
 	
 	if gun == "shotgun":
 		shotsFired = 8
+
 		spread = Vector2(100, 2*PI)
-		damage = 0.3
+		damage = 1.3
+
 
 	for i in range(shotsFired):
 		var from = camera3d.project_ray_origin(origin)

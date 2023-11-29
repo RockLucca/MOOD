@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt63ugqfsdrq4"]
+
+[ext_resource type="Script" path="res://Menu/title_screen.gd" id="1_jyv7j"]
+[ext_resource type="Texture2D" uid="uid://nqldcvke3vp0" path="res://Sprites/Interface/Tela inicial.png" id="1_u7nej"]
+[ext_resource type="FontFile" uid="uid://dsqm0lfysiyo1" path="res://Font/DooM.ttf" id="3_ju8o5"]
+
+[node name="Title_Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jyv7j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(320, 240)
+texture = ExtResource("1_u7nej")
+
+[node name="Button" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -110.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_ju8o5")
+text = "Precione
+qualquer tecla"
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
