@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvrxvlo0hfqad"]
-
-[ext_resource type="Script" path="res://Menu/Button/button.gd" id="1_a0tnt"]
-
-[node name="Button" type="Button"]
-text = "JOGAR"
-script = ExtResource("1_a0tnt")
-
-[connection signal="button_up" from="." to="." method="_on_button_up"]
