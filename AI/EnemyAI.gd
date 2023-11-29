@@ -16,12 +16,13 @@ var _enemy
 func _ready():
 	assert(enemy_scene, "Obrigado definir cena com inimigo")
 	_enemy  = enemy_scene.instantiate()
-	_enemy.global_position = get_global_position()
 	get_tree().get_root().add_child(_enemy)
+	
+	_enemy.global_position = get_global_position()
 	_targets = $Targets.get_children()
 	_current_target = _targets[0] if len(_targets) else self
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not _enemy:
 		queue_free()
 		return

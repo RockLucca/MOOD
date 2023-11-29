@@ -40,8 +40,6 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
-	if Input.is_action_just_pressed("shoot"):
-		shoot(Global.current_weapon)
 
 func shoot(gun):
 	var camera3d = $Pivot/Camera3D
@@ -87,13 +85,15 @@ func shoot(gun):
 			
 			if hit is StaticBody3D:
 				var hole = _bullet_hole_res.instantiate()
-				hole.create_hole(hitPos, normal)
 				get_tree().get_root().add_child(hole)
+				hole.create_hole(hitPos, normal)
+				
 			elif hit.is_in_group("enemy"):
 				hit.deal_damage(damage)
 				var blood = _blood_partile_res.instantiate()
-				blood.create_blood(hitPos, normal)
 				get_tree().get_root().add_child(blood)
+				blood.create_blood(hitPos, normal)
+				
 			else:
 				print(hit)
 
