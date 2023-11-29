@@ -3,12 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cnx744xxb1p6n" path="res://Demo Map/demomap.tscn" id="1_26tyv"]
 [ext_resource type="PackedScene" uid="uid://b8tplkd32g4nh" path="res://Player/player.tscn" id="2_sgfnp"]
 [ext_resource type="PackedScene" uid="uid://c00vx3vht87yu" path="res://Sprites/Enemys/RepeaterZombie/repeater_enemy.tscn" id="3_eicew"]
-
 [ext_resource type="PackedScene" uid="uid://u6jfc5mbnkt3" path="res://AI/EnemyAI.tscn" id="3_ym64q"]
-[ext_resource type="PackedScene" uid="uid://pr7pkbfftbp5" path="res://Door/door.tscn" id="5_33l8w"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_uamx1"]
-
+[ext_resource type="PackedScene" uid="uid://gnbr4lpttpph" path="res://Map Scenes/teleport.tscn" id="5_rt4px"]
 
 [node name="World" type="Node3D"]
 
@@ -16,13 +12,6 @@
 
 [node name="Player" parent="." instance=ExtResource("2_sgfnp")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.5278, 1.15602, 0.108409)
-
-
-[node name="Exit" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.10597, 1.21241, 20.128)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Exit"]
-shape = SubResource("BoxShape3D_uamx1")
 
 [node name="RepeaterZombie" parent="." instance=ExtResource("3_ym64q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.514, 1.058, -0.644)
@@ -35,22 +24,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.86967, 0, 0)
 
 [node name="position2" type="Node3D" parent="RepeaterZombie/Targets" index="1"]
 
-[node name="Door" parent="." instance=ExtResource("5_33l8w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.791, 1.39889, 8)
-key_color = Color(0.639216, 0.145098, 0.980392, 1)
-
-[node name="Door" parent="Door" index="0"]
-transform = Transform3D(0.611741, 0, 0, 0, -4.23083, 0, 0, 0, 4.27749, 0.0957165, 0.733405, 2.10297)
-
-[node name="Key" parent="Door" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09026, -0.403542, -3.1222)
-
-[node name="Door2" parent="." instance=ExtResource("5_33l8w")]
-transform = Transform3D(1, 0, 0, 0, 1.65666, 0, 0, 0, 1.4661, -9.91561, 1.6692, -0.0919271)
-
-[node name="Key" parent="Door2" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8144, 0, -2.03544)
+[node name="Teleport" parent="." instance=ExtResource("5_rt4px")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.94488, 0.996196, 20.2199)
+_scene = "res://Map Scenes/level_2.tscn"
 
 [editable path="RepeaterZombie"]
-[editable path="Door"]
-[editable path="Door2"]
