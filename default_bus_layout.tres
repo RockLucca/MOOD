@@ -1,0 +1,9 @@
+[gd_resource type="AudioBusLayout" format=3 uid="uid://d0ahjmyaa0faf"]
+
+[resource]
+bus/1/name = &"UI"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -5.12427
+bus/1/send = &"Master"

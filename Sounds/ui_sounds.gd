@@ -9,8 +9,8 @@ extends Node
 
 # create audio player instances
 @onready var sounds = {
-	&"UI_Hover" : AudioStreamPlayer.new(),
 	&"UI_Click" : AudioStreamPlayer.new(),
+	&"UI_Hover" : AudioStreamPlayer.new()
 	}
 
 func _ready() -> void:
@@ -20,7 +20,7 @@ func _ready() -> void:
 	for i in sounds.keys():
 		sounds[i].stream = load("res://Sounds/SFX/Interface/" + str(i) + ".ogg")
 		# assign output mixer bus
-		#sounds[i].bus = &"UI"
+		sounds[i].bus = &"UI"
 		# add them to the scene tree
 		add_child(sounds[i])
 
@@ -30,7 +30,7 @@ func _ready() -> void:
 func install_sounds(node: Node) -> void:
 	for i in node.get_children():
 		if i is Button:
-			i.focus_entered.connect(ui_sfx_play.bind(&"UI_Hover"))
+			i.mouse_entered.connect(ui_sfx_play.bind(&"UI_Hover"))
 			i.pressed.connect(ui_sfx_play.bind(&"UI_Click"))
 		# recursion
 		install_sounds(i)
