@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://kdf3yadf0tm5"
 path.s3tc="res://.godot/imported/key_animation.png-48daca974635b159c84d0fc26cf5da1f.s3tc.ctex"
+path.etc2="res://.godot/imported/key_animation.png-48daca974635b159c84d0fc26cf5da1f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Door/key_animation.png"
-dest_files=["res://.godot/imported/key_animation.png-48daca974635b159c84d0fc26cf5da1f.s3tc.ctex"]
+dest_files=["res://.godot/imported/key_animation.png-48daca974635b159c84d0fc26cf5da1f.s3tc.ctex", "res://.godot/imported/key_animation.png-48daca974635b159c84d0fc26cf5da1f.etc2.ctex"]
 
 [params]
 
