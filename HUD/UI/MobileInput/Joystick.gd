@@ -101,12 +101,8 @@ func _input(event: InputEvent) -> void:
 			_generate_input_events()
 
 
-func _new_input(_action: String, strength: float) -> void:
-	var ev: InputEventAction = InputEventAction.new()
-	ev.action = _action
-	ev.strength = strength
-	ev.pressed = true
-	Input.parse_input_event(ev)	
+func _new_input(_action: String, strength: float) -> void:	
+	Input.action_press(_action, strength)
 
 
 func _generate_input_events() -> void:

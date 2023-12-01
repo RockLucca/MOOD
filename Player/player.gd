@@ -12,7 +12,7 @@ const _blood_partile_res = preload("res://Particles/blood_particle.tscn")
 
 #Functions
 func _ready():
-	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	add_to_group("Player")
 
 func rotate_camera(dir_vector: Vector2):
@@ -22,16 +22,10 @@ func rotate_camera(dir_vector: Vector2):
 	$Pivot.rotation.x = clamp($Pivot.rotation.x, -1.5, 1.5)
 
 func _unhandled_input(event):
-	if event is InputEventAction:
-		event.get_action_strength(event.action)
-		
 	if OS.has_feature("mobile"):
 		return
-	#if event is InputEventMouseMotion:
-		#print(event.relative.x, event.relative.y)
-		#rotate_camera(event.relative)
-	#if event is InputEventMouseButton and event.pressed and event.button_index == 1:
-		#print(event.position)
+	if event is InputEventMouseMotion:
+		rotate_camera(event.relative)
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -40,15 +34,11 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var aim_dir = Input.get_vector("ui_left2", "ui_right2", "ui_up2", "ui_down2")
 	rotate_camera(aim_dir)
-	
-	
-	if Input.is_action_just_pressed("ui_left2"):
-		print(123)
-	#print(InputEventAction.new().get_action_strength("ui_left2"))
-	
+
+	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
@@ -58,14 +48,12 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
-	
-	
-	
 
 func shoot(gun):
 	var camera3d = $Pivot/Camera3D
-	var origin = get_viewport().get_mouse_position()
-	
+	# Definir a origem no meio da tela
+	var origin = get_viewport().get_visible_rect().size / 2
+
 	var shotsFired: int = 0
 	var spread: Vector2 = Vector2.ZERO
 	var damage: float = 1
