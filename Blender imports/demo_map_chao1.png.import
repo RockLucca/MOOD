@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcs8jcip2bv33"
 path.s3tc="res://.godot/imported/demo_map_chao1.png-e2457949ca0bbcfe550cb58b8c07dd06.s3tc.ctex"
+path.etc2="res://.godot/imported/demo_map_chao1.png-e2457949ca0bbcfe550cb58b8c07dd06.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Blender imports/demo_map_chao1.png"
-dest_files=["res://.godot/imported/demo_map_chao1.png-e2457949ca0bbcfe550cb58b8c07dd06.s3tc.ctex"]
+dest_files=["res://.godot/imported/demo_map_chao1.png-e2457949ca0bbcfe550cb58b8c07dd06.s3tc.ctex", "res://.godot/imported/demo_map_chao1.png-e2457949ca0bbcfe550cb58b8c07dd06.etc2.ctex"]
 
 [params]
 
