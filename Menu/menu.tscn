@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_gxsbu"]
 [ext_resource type="FontFile" uid="uid://dsqm0lfysiyo1" path="res://Font/DooM.ttf" id="4_tf3bp"]
+[ext_resource type="AudioStream" uid="uid://db18kb1uq3bxh" path="res://Sounds/Musics/main_menu.ogg" id="5_703gn"]
 [ext_resource type="PackedScene" uid="uid://dlr741w635xnf" path="res://Sounds/ui_sounds.tscn" id="5_e6kdv"]
 [ext_resource type="Texture2D" uid="uid://brp7p7br5538r" path="res://Sprites/Interface/Logol.png" id="5_xm8us"]
 [ext_resource type="Texture2D" uid="uid://dyq3ocaxk0eco" path="res://Sprites/Interface/logo_gamepad_80x80.png" id="6_0yy4j"]
-[ext_resource type="AudioStream" uid="uid://cven5o3h4ss2e" path="res://Sounds/Musics/intro.mp3" id="6_khmg7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_212j3"]
 atlas = ExtResource("6_0yy4j")
@@ -133,8 +133,9 @@ animation = &"Logo"
 autoplay = "Logo"
 
 [node name="intro_musica" type="AudioStreamPlayer" parent="UI"]
-stream = ExtResource("6_khmg7")
+stream = ExtResource("5_703gn")
 autoplay = true
+bus = &"UI"
 
 [node name="UISounds" parent="." instance=ExtResource("5_e6kdv")]
 root_path = NodePath("../UI")

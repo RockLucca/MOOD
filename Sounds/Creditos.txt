@@ -1,5 +1,18 @@
-Creditos para os sfx das armas:
-		Shotgun: Joblez (firing sound), Jerry Miculek & Captain J (reload sounds)
+Creditos para sfx das armas:  Disponivel em:
+		Shotgun: morganpurkis
 		Minigun: Pixabay
 		Pistol: Pixabay
 		Chainsaw: Pixabay
+		Interface: Jsfxr
+
+Crédito para as fontes:
+		Amazingmax
+		Font Meme
+
+Créditos para sons ambiente:  Disponivel em:
+		Gustavo S. Favaro
+		tmfinnicum            at freesound.org
+		smallclone            at freesound.org
+		BouncyTEM             at realm667
+		printz                at realm667
+		BadMojo               at realm667
