@@ -49,16 +49,25 @@ func shoot(gun):
 	var spread: Vector2 = Vector2.ZERO
 	var damage: float = 1
 	
+	if gun == "chainsaw":
+		shotsFired = 1
+		spread = Vector2.ZERO
+		damage = 1.0
+	
 	if gun == "pistol":
 		shotsFired = 1
 		spread = Vector2.ZERO
-		damage = 1.5
+		damage = 1.0
 	
 	if gun == "shotgun":
 		shotsFired = 8
-
 		spread = Vector2(100, 2*PI)
 		damage = 1.3
+	
+	if gun == "minigun":
+		shotsFired = 1
+		spread = Vector2.ZERO
+		damage = 0.7
 
 
 	for i in range(shotsFired):

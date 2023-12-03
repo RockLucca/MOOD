@@ -7,7 +7,7 @@ func _ready():
 	$Weapons.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
 	$Weapons.play(Global.current_weapon + "_idle")
 	$Wepons_icons.play(Global.current_weapon + "_icon")
-	$Ammo_value.text = str(Global.pistol_ammo)
+	$Label_Tags/Ammo_value.text = str(Global.pistol_ammo)
 
 func _process(delta):
 	time_since_last_shot += delta
@@ -52,10 +52,10 @@ func _process(delta):
 
 
 func update_health_label():
-	$Health_value.text = str(Global.player_health)
+	$Label_Tags/Health_value.text = str(Global.player_health)
 
 func update_armor_label():
-	$Armor_value.text = str(Global.player_armor)
+	$Label_Tags/Armor_value.text = str(Global.player_armor)
 
 #Update ammo values when shoot
 func update_ammo_label(gun):
@@ -63,17 +63,20 @@ func update_ammo_label(gun):
 	if gun == "pistol" and Global.pistol_ammo > 0:
 		$Weapons.play(Global.current_weapon + "_attack")
 		Global.pistol_ammo -= 1
-		$Ammo_value.text = str(Global.pistol_ammo)
+		Global.ammo = Global.pistol_ammo
+		$Label_Tags/Ammo_value.text = str(Global.pistol_ammo)
 		shot = true
 	elif gun == "shotgun" and Global.shotgun_ammo > 0:
 		$Weapons.play(Global.current_weapon + "_attack")
 		Global.shotgun_ammo -= 2
-		$Ammo_value.text = str(Global.shotgun_ammo)
+		Global.ammo = Global.shotgun_ammo
+		$Label_Tags/Ammo_value.text = str(Global.shotgun_ammo)
 		shot = true
 	elif gun == "minigun" and Global.minigun_ammo > 0:
 		$Weapons.play(Global.current_weapon + "_attack")
 		Global.minigun_ammo -= 1
-		$Ammo_value.text = str(Global.minigun_ammo)
+		Global.ammo = Global.minigun_ammo
+		$Label_Tags/Ammo_value.text = str(Global.minigun_ammo)
 		shot = true
 
 	if shot:
@@ -83,17 +86,18 @@ func update_ammo_label(gun):
 func change_weapon():
 	if Input.is_action_just_pressed("set_chainsaw"):
 		Global.current_weapon = "chainsaw"
-		$Ammo_value.text = str("∞")
+		$Label_Tags/Ammo_value.text = str("∞")
 	elif Input.is_action_just_pressed("set_pistol"):
 		Global.current_weapon = "pistol"
-		$Ammo_value.text = str(Global.pistol_ammo)
+		$Label_Tags/Ammo_value.text = str(Global.pistol_ammo)
 	elif Input.is_action_just_pressed("set_shotgun"):
 		Global.current_weapon = "shotgun"
-		$Ammo_value.text = str(Global.shotgun_ammo)
+		$Label_Tags/Ammo_value.text = str(Global.shotgun_ammo)
 	elif Input.is_action_just_pressed("set_minigun"):
 		Global.current_weapon = "minigun"
-		$Ammo_value.text = str(Global.minigun_ammo)
+		$Label_Tags/Ammo_value.text = str(Global.minigun_ammo)
 		pass
+
 
 func update_face_animation(health):
 	var face_health = ""
