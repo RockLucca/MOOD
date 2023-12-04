@@ -202,13 +202,50 @@ offset_bottom = 40.0
 
 [node name="Voltar" type="Button" parent="Creditos"]
 layout_mode = 2
-offset_left = 2.0
-offset_top = 444.0
-offset_right = 127.0
-offset_bottom = 478.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 42.0
 theme_override_fonts/font = ExtResource("4_tf3bp")
 theme_override_font_sizes/font_size = 20
 text = "Voltar"
+
+[node name="CreditosText" type="RichTextLabel" parent="Creditos"]
+layout_mode = 0
+offset_left = 112.0
+offset_right = 576.0
+offset_bottom = 1256.0
+text = "Desenvolvido por:
+Getúlio Coimbra Regis
+Lucca Toledo Bordim
+
+Creditos para sfx:             Disponivel em:
+Shotgun: morganpurkis  at freesound.org
+Minigun: Pixabay
+Pistol: Pixabay
+Chainsaw: Pixabay
+BFG: michalwa2003      at freesound.org
+Interface: Jsfxr
+
+Crédito para as fontes:
+Amazingmax
+Font Meme
+
+Créditos para sons ambiente:  Disponivel em:
+Gustavo S. Favaro
+tmfinnicum            at freesound.org  (demon voice)
+smallclone            at freesound.org  (main menu)
+BouncyTEM             at realm667  (score)
+printz                at realm667  (game over)
+BadMojo               at realm667  (intro history)
+Beetlemuse            at freesound.org  (lvl 1)
+Robbnix               at freesound.org  (lvl 2)
+Merrick079            at freesound.org  (lvl 3)
+tyops                 at freesound.org  (lvl 4)
+Sami_Hiltunen         at freespund.org  (lvl 6)
+FALL-E
+Andrastos87
+"
 
 [node name="UISounds" parent="." instance=ExtResource("5_e6kdv")]
 root_path = NodePath("..")
