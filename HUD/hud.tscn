@@ -1,7 +1,8 @@
-[gd_scene load_steps=47 format=3 uid="uid://bgo3rbluvk1nj"]
+[gd_scene load_steps=61 format=3 uid="uid://bgo3rbluvk1nj"]
 
 [ext_resource type="Script" path="res://HUD/hud.gd" id="1_xkqll"]
 [ext_resource type="Texture2D" uid="uid://dpibuonh3cg3" path="res://Sprites/Weapons/Chainsaw/chainsaw.png" id="3_5730w"]
+[ext_resource type="Texture2D" uid="uid://cvis81vdo2mxx" path="res://Sprites/Weapons/Minigun/minigun.png" id="3_glik1"]
 [ext_resource type="Texture2D" uid="uid://bggltp8a28ejf" path="res://Sprites/Weapons/Pistol/pistol.png" id="4_qo0tw"]
 [ext_resource type="Texture2D" uid="uid://cn3rf3737akq2" path="res://Sprites/Weapons/Shotgun/shotgun.png" id="5_4yfs5"]
 [ext_resource type="Texture2D" uid="uid://45xc636pb7my" path="res://HUD/UI/HUD.png" id="5_fdnls"]
@@ -12,6 +13,22 @@
 [ext_resource type="Texture2D" uid="uid://diosw0x6170tj" path="res://Sprites/Player/bjface.png" id="8_h2ap1"]
 [ext_resource type="Texture2D" uid="uid://nkhrpukaw261" path="res://Sprites/Weapons/Shotgun/shotgun_icon.png" id="8_qpj0r"]
 [ext_resource type="PackedScene" uid="uid://dxfmjk3a1rfvo" path="res://HUD/UI/MobileInput/Joystick.tscn" id="10_fv7dy"]
+[ext_resource type="AudioStream" uid="uid://bwx2uu6ol3mnb" path="res://Sounds/SFX/Weapons/chainsaw_start.ogg" id="13_s1kot"]
+[ext_resource type="AudioStream" uid="uid://cu1m07a12et8u" path="res://Sounds/SFX/Weapons/chainsaw_idle.ogg" id="14_hb7c8"]
+[ext_resource type="AudioStream" uid="uid://b1bh8l1t38apv" path="res://Sounds/SFX/Weapons/chainsaw_fire.ogg" id="16_0w7t0"]
+[ext_resource type="AudioStream" uid="uid://p8qklwr4bqdj" path="res://Sounds/SFX/Weapons/pistol_fire.ogg" id="17_sp7ay"]
+[ext_resource type="AudioStream" uid="uid://b8v7ei72g0wau" path="res://Sounds/SFX/Weapons/shotgun_fire.ogg" id="18_myc28"]
+[ext_resource type="AudioStream" uid="uid://bldcpbsobm2ql" path="res://Sounds/SFX/Weapons/minigun_start.ogg" id="19_s33mp"]
+[ext_resource type="AudioStream" uid="uid://65e5hsy7nc02" path="res://Sounds/SFX/Weapons/minigun_end.ogg" id="20_44uyu"]
+[ext_resource type="AudioStream" uid="uid://rd1tterp7erc" path="res://Sounds/SFX/Weapons/minigun_fire.ogg" id="21_0b01y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tuua"]
+atlas = ExtResource("3_5730w")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ep4b"]
+atlas = ExtResource("3_5730w")
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_40onl"]
 atlas = ExtResource("3_5730w")
@@ -20,6 +37,18 @@ region = Rect2(0, 0, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_pfc7p"]
 atlas = ExtResource("3_5730w")
 region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81twe"]
+atlas = ExtResource("3_glik1")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xaqxt"]
+atlas = ExtResource("3_glik1")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_280qy"]
+atlas = ExtResource("3_glik1")
+region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wcb8v"]
 atlas = ExtResource("4_qo0tw")
@@ -55,7 +84,13 @@ region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8c0wr"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tuua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ep4b")
+}],
 "loop": false,
 "name": &"chainsaw_attack",
 "speed": 5.0
@@ -71,15 +106,24 @@ animations = [{
 "name": &"chainsaw_idle",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81twe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xaqxt")
+}],
 "loop": false,
 "name": &"minigun_attack",
-"speed": 5.0
+"speed": 10.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_280qy")
+}],
 "loop": false,
 "name": &"minigun_idle",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -353,7 +397,7 @@ script = ExtResource("1_xkqll")
 position = Vector2(330, 330)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_8c0wr")
-animation = &"shotgun_attack"
+animation = &"minigun_idle"
 
 [node name="Sprite_hud" type="Sprite2D" parent="."]
 position = Vector2(320, 441)
@@ -371,7 +415,14 @@ scale = Vector2(2.0625, 2.12354)
 sprite_frames = SubResource("SpriteFrames_4xama")
 animation = &"100%"
 
-[node name="Health_name" type="Label" parent="."]
+[node name="Label_Tags" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Health_name" type="Label" parent="Label_Tags"]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 442.0
 offset_right = 124.0
@@ -385,7 +436,8 @@ text = "H E A L T H"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Health_value" type="Label" parent="."]
+[node name="Health_value" type="Label" parent="Label_Tags"]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 404.0
 offset_right = 42.0
@@ -397,7 +449,8 @@ theme_override_font_sizes/font_size = 30
 text = "000"
 horizontal_alignment = 1
 
-[node name="Armor_name" type="Label" parent="."]
+[node name="Armor_name" type="Label" parent="Label_Tags"]
+layout_mode = 0
 offset_left = 138.0
 offset_top = 443.0
 offset_right = 260.0
@@ -411,7 +464,8 @@ text = "A R M O R"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Armor_value" type="Label" parent="."]
+[node name="Armor_value" type="Label" parent="Label_Tags"]
+layout_mode = 0
 offset_left = 138.0
 offset_top = 404.0
 offset_right = 178.0
@@ -423,7 +477,8 @@ theme_override_font_sizes/font_size = 30
 text = "000"
 horizontal_alignment = 1
 
-[node name="Ammo_name" type="Label" parent="."]
+[node name="Ammo_name" type="Label" parent="Label_Tags"]
+layout_mode = 0
 offset_left = 411.0
 offset_top = 444.0
 offset_right = 499.0
@@ -437,7 +492,8 @@ text = "A M M O"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Ammo_value" type="Label" parent="."]
+[node name="Ammo_value" type="Label" parent="Label_Tags"]
+layout_mode = 0
 offset_left = 410.0
 offset_top = 405.0
 offset_right = 450.0
@@ -449,7 +505,8 @@ theme_override_font_sizes/font_size = 30
 text = "000"
 horizontal_alignment = 1
 
-[node name="Gun_name" type="Label" parent="."]
+[node name="Gun_name" type="Label" parent="Label_Tags"]
+layout_mode = 0
 offset_left = 527.0
 offset_top = 444.0
 offset_right = 615.0
@@ -474,3 +531,43 @@ action_right = "ui_right2"
 action_left = "ui_left2"
 action_up = "ui_up2"
 action_down = "ui_down2"
+
+[node name="Audios_Armas" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Chainsaw" type="Node" parent="Audios_Armas"]
+
+[node name="Chainsaw_start" type="AudioStreamPlayer" parent="Audios_Armas/Chainsaw"]
+stream = ExtResource("13_s1kot")
+bus = &"Guns"
+
+[node name="Chainsaw_idle" type="AudioStreamPlayer" parent="Audios_Armas/Chainsaw"]
+stream = ExtResource("14_hb7c8")
+bus = &"Guns"
+
+[node name="Chainsaw_fire" type="AudioStreamPlayer" parent="Audios_Armas/Chainsaw"]
+stream = ExtResource("16_0w7t0")
+
+[node name="Pistol" type="Node" parent="Audios_Armas"]
+
+[node name="Pistol_fire" type="AudioStreamPlayer" parent="Audios_Armas/Pistol"]
+stream = ExtResource("17_sp7ay")
+
+[node name="Shotgun" type="Node" parent="Audios_Armas"]
+
+[node name="Shotgun_fire" type="AudioStreamPlayer" parent="Audios_Armas/Shotgun"]
+stream = ExtResource("18_myc28")
+
+[node name="Minigun" type="Node" parent="Audios_Armas"]
+
+[node name="Minigun_start" type="AudioStreamPlayer" parent="Audios_Armas/Minigun"]
+stream = ExtResource("19_s33mp")
+
+[node name="Minigun_end" type="AudioStreamPlayer" parent="Audios_Armas/Minigun"]
+stream = ExtResource("20_44uyu")
+
+[node name="Minigun_fire" type="AudioStreamPlayer" parent="Audios_Armas/Minigun"]
+stream = ExtResource("21_0b01y")

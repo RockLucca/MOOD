@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bqm5fmocqh6uu"]
+[gd_scene load_steps=13 format=3 uid="uid://bqm5fmocqh6uu"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_gxsbu"]
 [ext_resource type="FontFile" uid="uid://dsqm0lfysiyo1" path="res://Font/DooM.ttf" id="4_tf3bp"]
+[ext_resource type="AudioStream" uid="uid://db18kb1uq3bxh" path="res://Sounds/Musics/main_menu.ogg" id="5_703gn"]
+[ext_resource type="PackedScene" uid="uid://dlr741w635xnf" path="res://Sounds/ui_sounds.tscn" id="5_e6kdv"]
 [ext_resource type="Texture2D" uid="uid://brp7p7br5538r" path="res://Sprites/Interface/Logol.png" id="5_xm8us"]
 [ext_resource type="Texture2D" uid="uid://dyq3ocaxk0eco" path="res://Sprites/Interface/logo_gamepad_80x80.png" id="6_0yy4j"]
 
@@ -57,14 +59,26 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gxsbu")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="UI" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 600.0
+offset_bottom = 439.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.505882, 0, 0, 1)
+
+[node name="intro_musica" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource("5_703gn")
+autoplay = true
+bus = &"UI"
 
 [node name="Main" type="Control" parent="."]
 anchors_preset = 0
@@ -91,6 +105,7 @@ grow_vertical = 2
 
 [node name="Jogar" type="Button" parent="Main/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Sair")
 theme_override_fonts/font = ExtResource("4_tf3bp")
 theme_override_font_sizes/font_size = 20
 text = "Jogar"
@@ -115,6 +130,7 @@ text = "Creditos"
 
 [node name="Sair" type="Button" parent="Main/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../Jogar")
 theme_override_fonts/font = ExtResource("4_tf3bp")
 theme_override_font_sizes/font_size = 20
 text = "Sair"
@@ -193,6 +209,9 @@ offset_bottom = 478.0
 theme_override_fonts/font = ExtResource("4_tf3bp")
 theme_override_font_sizes/font_size = 20
 text = "Voltar"
+
+[node name="UISounds" parent="." instance=ExtResource("5_e6kdv")]
+root_path = NodePath("..")
 
 [connection signal="pressed" from="Main/VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/Instrucoes" to="." method="_on_instrucoes_pressed"]
