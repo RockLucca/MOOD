@@ -1,9 +1,8 @@
 extends CharacterBody3D
 
 #Variables
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") 
-@export var mouse_sensitivity = 0.01
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") # Get the gravity from the project settings to be synced with RigidBody nodes.
+@export var mouse_sensitivity: float = 1
 @export var SPEED = 5.0
 @export var JUMP_VELOCITY = 4.5
 
@@ -16,13 +15,17 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	add_to_group("Player")
 
+func rotate_camera(dir_vector: Vector2):
+	dir_vector = dir_vector.normalized()
+	rotate_y(-dir_vector.x * mouse_sensitivity)
+	$Pivot.rotate_x(-dir_vector.y * mouse_sensitivity)
+	$Pivot.rotation.x = clamp($Pivot.rotation.x, -1.5, 1.5)
+
 func _unhandled_input(event):
+	if OS.has_feature("mobile"):
+		return
 	if event is InputEventMouseMotion:
-		rotate_y(-event.relative.x * mouse_sensitivity)
-		$Pivot.rotate_x(-event.relative.y * mouse_sensitivity)
-		$Pivot.rotation.x = clamp($Pivot.rotation.x, -1.5, 1.5)
-	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
-		print(event.position)
+		rotate_camera(event.relative)
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -31,7 +34,11 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
+	var aim_dir = Input.get_vector("ui_left2", "ui_right2", "ui_up2", "ui_down2")
+	rotate_camera(aim_dir)
+
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
@@ -44,8 +51,9 @@ func _physics_process(delta):
 
 func shoot(gun):
 	var camera3d = $Pivot/Camera3D
-	var origin = get_viewport().get_mouse_position()
-	
+	# Definir a origem no meio da tela
+	var origin = get_viewport().get_visible_rect().size / 2
+
 	var shotsFired: int = 0
 	var spread: Vector2 = Vector2.ZERO
 	var damage: float = 1

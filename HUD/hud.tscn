@@ -529,3 +529,11 @@ stream = ExtResource("13_s1kot")
 
 [node name="Chainsaw_idle" type="AudioStreamPlayer" parent="Audios"]
 stream = ExtResource("14_hb7c8")
+
+[node name="JoystickBase2" parent="." instance=ExtResource("10_fv7dy")]
+position = Vector2(507, 271)
+scale = Vector2(1.0315, 1.0315)
+action_right = "ui_right2"
+action_left = "ui_left2"
+action_up = "ui_up2"
+action_down = "ui_down2"
