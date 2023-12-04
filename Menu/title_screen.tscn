@@ -1,8 +1,110 @@
-[gd_scene load_steps=4 format=3 uid="uid://bt63ugqfsdrq4"]
+[gd_scene load_steps=10 format=3 uid="uid://bt63ugqfsdrq4"]
 
 [ext_resource type="Script" path="res://Menu/title_screen.gd" id="1_jyv7j"]
 [ext_resource type="Texture2D" uid="uid://nqldcvke3vp0" path="res://Sprites/Interface/Tela inicial.png" id="1_u7nej"]
 [ext_resource type="FontFile" uid="uid://dsqm0lfysiyo1" path="res://Font/DooM.ttf" id="3_ju8o5"]
+[ext_resource type="AudioStream" uid="uid://d3ligt3j3mgv0" path="res://Sounds/Musics/abertura.mp3" id="4_eob58"]
+[ext_resource type="AudioStream" uid="uid://dh0l6b62cu8gk" path="res://Sounds/Musics/title_screen.ogg" id="4_ooh4d"]
+[ext_resource type="Texture2D" uid="uid://dyq3ocaxk0eco" path="res://Sprites/Interface/logo_gamepad_80x80.png" id="6_ubsmt"]
+
+[sub_resource type="Animation" id="Animation_q5566"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_rbdep"]
+resource_name = "apresentacao"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.6, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.6, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 2.7, 3, 3.3, 3.6, 3.9, 4.2, 4.5, 4.8, 5.1, 5.4, 5.7, 6, 6.3, 6.6, 6.9, 7.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 1, 2, 3, 4, 1, 1, 2, 3, 4, 1, 1, 2, 3, 4, 1, 1, 2, 3, 4, 1, 1, 2, 3, 4]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [null],
+"method": &"_on_animation_player_animation_finished"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pslok"]
+_data = {
+"RESET": SubResource("Animation_q5566"),
+"apresentacao": SubResource("Animation_rbdep")
+}
 
 [node name="Title_Screen" type="Control"]
 layout_mode = 3
@@ -13,19 +115,25 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jyv7j")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="UI" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="UI"]
 position = Vector2(320, 240)
 texture = ExtResource("1_u7nej")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="UI"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -110.0
-offset_bottom = -60.0
+offset_top = 330.0
+offset_right = 600.0
+offset_bottom = 380.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_ju8o5")
@@ -33,4 +141,37 @@ text = "Precione
 qualquer tecla"
 flat = true
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Abertura" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource("4_eob58")
+
+[node name="Titulo" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource("4_ooh4d")
+autoplay = true
+
+[node name="Animation" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 57.0
+offset_bottom = 33.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
+libraries = {
+"": SubResource("AnimationLibrary_pslok")
+}
+autoplay = "apresentacao"
+
+[node name="TextureRect" type="ColorRect" parent="Animation"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Animation"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(320, 240)
+scale = Vector2(3.05, 3.05)
+texture = ExtResource("6_ubsmt")
+hframes = 5
+frame = 1
+
+[connection signal="pressed" from="UI/Button" to="." method="_on_button_pressed"]
+[connection signal="animation_finished" from="Animation/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,0 +1,26 @@
+Creditos para sfx:             Disponivel em:
+		Shotgun: morganpurkis  at freesound.org
+		Minigun: Pixabay
+		Pistol: Pixabay
+		Chainsaw: Pixabay
+		BFG: michalwa2003      at freesound.org
+		Interface: Jsfxr
+
+Crédito para as fontes:
+		Amazingmax
+		Font Meme
+
+Créditos para sons ambiente:  Disponivel em:
+		Gustavo S. Favaro
+		tmfinnicum            at freesound.org  (demon voice)
+		smallclone            at freesound.org  (main menu)
+		BouncyTEM             at realm667  (score)
+		printz                at realm667  (game over)
+		BadMojo               at realm667  (intro history)
+		Beetlemuse            at freesound.org  (lvl 1)
+		Robbnix               at freesound.org  (lvl 2)
+		Merrick079            at freesound.org  (lvl 3)
+		tyops                 at freesound.org  (lvl 4)
+		Sami_Hiltunen         at freespund.org  (lvl 6)
+		FALL-E
+		Andrastos87
