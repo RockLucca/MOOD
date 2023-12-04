@@ -546,10 +546,12 @@ bus = &"Guns"
 
 [node name="Chainsaw_idle" type="AudioStreamPlayer" parent="Audios_Armas/Chainsaw"]
 stream = ExtResource("14_hb7c8")
+autoplay = true
 bus = &"Guns"
 
 [node name="Chainsaw_fire" type="AudioStreamPlayer" parent="Audios_Armas/Chainsaw"]
 stream = ExtResource("16_0w7t0")
+autoplay = true
 
 [node name="Pistol" type="Node" parent="Audios_Armas"]
 

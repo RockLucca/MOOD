@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://nb5fuseif5up"]
+
+[ext_resource type="Script" path="res://Sounds/Guns_sounds.gd" id="1_7vlr8"]
+
+[node name="Guns_sounds" type="Node"]
+script = ExtResource("1_7vlr8")
