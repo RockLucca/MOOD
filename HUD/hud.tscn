@@ -416,6 +416,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Health_name" type="Label" parent="Label_Tags"]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 442.0
 offset_right = 124.0
@@ -430,6 +431,7 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Health_value" type="Label" parent="Label_Tags"]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 404.0
 offset_right = 42.0
@@ -442,6 +444,7 @@ text = "000"
 horizontal_alignment = 1
 
 [node name="Armor_name" type="Label" parent="Label_Tags"]
+layout_mode = 0
 offset_left = 138.0
 offset_top = 443.0
 offset_right = 260.0
@@ -456,6 +459,7 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Armor_value" type="Label" parent="Label_Tags"]
+layout_mode = 0
 offset_left = 138.0
 offset_top = 404.0
 offset_right = 178.0
@@ -468,6 +472,7 @@ text = "000"
 horizontal_alignment = 1
 
 [node name="Ammo_name" type="Label" parent="Label_Tags"]
+layout_mode = 0
 offset_left = 411.0
 offset_top = 444.0
 offset_right = 499.0
@@ -482,6 +487,7 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Ammo_value" type="Label" parent="Label_Tags"]
+layout_mode = 0
 offset_left = 410.0
 offset_top = 405.0
 offset_right = 450.0
@@ -494,6 +500,7 @@ text = "000"
 horizontal_alignment = 1
 
 [node name="Gun_name" type="Label" parent="Label_Tags"]
+layout_mode = 0
 offset_left = 527.0
 offset_top = 444.0
 offset_right = 615.0
