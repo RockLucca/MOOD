@@ -3,6 +3,10 @@ extends Control
 @onready var curr_scene = $Main
 @onready var creditos_text = $Creditos/CreditosSubindo
 @onready var credits_initial_pos = creditos_text.global_position
+@onready var master_audio = AudioServer.get_bus_index("Master")
+@onready var ui_audio = AudioServer.get_bus_index("UI")
+@onready var guns_audio = AudioServer.get_bus_index("Guns")
+@onready var ambient_audio = AudioServer.get_bus_index("Ambient")
 
 var credits_rolling = false
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bqm5fmocqh6uu"]
+[gd_scene load_steps=13 format=3 uid="uid://bqm5fmocqh6uu"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_gxsbu"]
 [ext_resource type="FontFile" uid="uid://dsqm0lfysiyo1" path="res://Font/DooM.ttf" id="4_tf3bp"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dlr741w635xnf" path="res://Sounds/ui_sounds.tscn" id="5_e6kdv"]
 [ext_resource type="Texture2D" uid="uid://brp7p7br5538r" path="res://Sprites/Interface/Logol.png" id="5_xm8us"]
 [ext_resource type="Texture2D" uid="uid://dyq3ocaxk0eco" path="res://Sprites/Interface/logo_gamepad_80x80.png" id="6_0yy4j"]
-[ext_resource type="PackedScene" uid="uid://ccbqitg33wt0v" path="res://Menu/audio_input.tscn" id="6_u41pb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_212j3"]
 atlas = ExtResource("6_0yy4j")
@@ -183,35 +182,54 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 188.0
-offset_top = 108.0
+offset_top = 255.0
 offset_right = 403.0
-offset_bottom = 347.0
+offset_bottom = 441.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Master" parent="Opcoes/VBoxContainer" instance=ExtResource("6_u41pb")]
+[node name="Volume Geral" type="VBoxContainer" parent="Opcoes/VBoxContainer"]
 layout_mode = 2
 
-[node name="UI" parent="Opcoes/VBoxContainer" instance=ExtResource("6_u41pb")]
+[node name="Geral" type="RichTextLabel" parent="Opcoes/VBoxContainer/Volume Geral"]
 layout_mode = 2
-audio_channel_name = "UI"
+bbcode_enabled = true
+text = "[center]Volume Geral[/center]"
+fit_content = true
 
-[node name="Label" parent="Opcoes/VBoxContainer/UI" index="0"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Opcoes/VBoxContainer/Volume Geral"]
+layout_mode = 2
+
+[node name="GeralSlide" type="HSlider" parent="Opcoes/VBoxContainer/Volume Geral/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="GeralValue" type="LineEdit" parent="Opcoes/VBoxContainer/Volume Geral/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "100"
+alignment = 1
+max_length = 3
+
+[node name="Interface" type="RichTextLabel" parent="Opcoes/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
 text = "[center]Volume Interface[/center]"
+fit_content = true
 
-[node name="Guns" parent="Opcoes/VBoxContainer" instance=ExtResource("6_u41pb")]
+[node name="Armas" type="RichTextLabel" parent="Opcoes/VBoxContainer"]
 layout_mode = 2
-audio_channel_name = "Guns"
-
-[node name="Label" parent="Opcoes/VBoxContainer/Guns" index="0"]
+bbcode_enabled = true
 text = "[center]Volume Armas[/center]"
+fit_content = true
 
-[node name="Ambient" parent="Opcoes/VBoxContainer" instance=ExtResource("6_u41pb")]
+[node name="Ambiente" type="RichTextLabel" parent="Opcoes/VBoxContainer"]
 layout_mode = 2
-audio_channel_name = "Ambient"
-
-[node name="Label" parent="Opcoes/VBoxContainer/Ambient" index="0"]
+bbcode_enabled = true
 text = "[center]Volume Ambiente[/center]"
+fit_content = true
 
 [node name="Voltar" type="Button" parent="Opcoes/VBoxContainer"]
 layout_mode = 2
@@ -303,10 +321,7 @@ root_path = NodePath("..")
 [connection signal="pressed" from="Main/VBoxContainer/Creditos" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/Sair" to="." method="_on_sair_pressed"]
 [connection signal="pressed" from="Instrucoes/VBoxContainer/Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="value_changed" from="Opcoes/VBoxContainer/Volume Geral/HBoxContainer/GeralSlide" to="." method="_on_geral_slide_value_changed"]
+[connection signal="text_changed" from="Opcoes/VBoxContainer/Volume Geral/HBoxContainer/GeralValue" to="." method="_on_geral_value_text_changed"]
 [connection signal="pressed" from="Opcoes/VBoxContainer/Voltar" to="." method="_on_voltar_pressed"]
 [connection signal="pressed" from="Creditos/Voltar" to="." method="_on_voltar_pressed"]
-
-[editable path="Opcoes/VBoxContainer/Master"]
-[editable path="Opcoes/VBoxContainer/UI"]
-[editable path="Opcoes/VBoxContainer/Guns"]
-[editable path="Opcoes/VBoxContainer/Ambient"]
