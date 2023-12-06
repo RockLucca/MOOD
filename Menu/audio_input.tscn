@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccbqitg33wt0v"]
+
+[ext_resource type="Script" path="res://Menu/audio_input.gd" id="1_aerwf"]
+
+[node name="Volume" type="VBoxContainer"]
+script = ExtResource("1_aerwf")
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Volume Geral[/center]"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Slider" type="HSlider" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Value" type="LineEdit" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "100"
+alignment = 1
+max_length = 5
+
+[connection signal="value_changed" from="HBoxContainer/Slider" to="." method="_on_slider_value_changed"]
+[connection signal="text_submitted" from="HBoxContainer/Value" to="." method="_on_value_text_submitted"]
