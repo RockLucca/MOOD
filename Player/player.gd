@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 #Variables
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") # Get the gravity from the project settings to be synced with RigidBody nodes.
-@export var mouse_sensitivity: float = 1
+
 @export var SPEED = 5.0
 @export var JUMP_VELOCITY = 4.5
 
@@ -17,8 +17,8 @@ func _ready():
 
 func rotate_camera(dir_vector: Vector2):
 	dir_vector = dir_vector.normalized()
-	rotate_y(-dir_vector.x * mouse_sensitivity)
-	$Pivot.rotate_x(-dir_vector.y * mouse_sensitivity)
+	rotate_y(-dir_vector.x * Global.mouse_sensitivity)
+	$Pivot.rotate_x(-dir_vector.y * Global.mouse_sensitivity)
 	$Pivot.rotation.x = clamp($Pivot.rotation.x, -1.5, 1.5)
 
 func _unhandled_input(event):
