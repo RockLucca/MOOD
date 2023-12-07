@@ -2,6 +2,7 @@ extends Node
 
 #Player settings
 var mouse_sensitivity: float = 10
+var is_full_screen: bool = false
 
 #Level variables
 var score = 0

@@ -18,7 +18,9 @@ func change_screen(scene):
 	credits_rolling = false
 	curr_scene.visible = false
 	curr_scene = scene
+	$Opcoes/VBoxContainer/CheckBox.button_pressed = Global.is_full_screen
 	curr_scene.visible = true
+	
 	
 func _process(delta: float) -> void:
 	if curr_scene == $Creditos:
@@ -61,9 +63,9 @@ func _on_voltar_pressed() -> void:
 	change_screen($Main)
 
 func _toggle_fullscreen():
-	_is_full_screen = not _is_full_screen
+	Global.is_full_screen = not Global.is_full_screen
 	
-	if _is_full_screen:
+	if Global.is_full_screen:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)

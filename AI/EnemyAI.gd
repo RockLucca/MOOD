@@ -50,9 +50,9 @@ func set_target():
 	if enemy_pos.distance_to(player_pos) < player_agro_distance:
 		var space_state = get_world_3d().direct_space_state
 		var query = PhysicsRayQueryParameters3D.create(enemy_pos, player_pos)
-		var result = space_state.intersect_ray(query).collider
-		
-		if(result == player):
+		var result = space_state.intersect_ray(query)
+
+		if(result and result.collider == player):
 			_current_target = player
 			return
 	

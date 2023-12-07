@@ -1,6 +1,7 @@
-[gd_scene load_steps=52 format=3 uid="uid://bgo3rbluvk1nj"]
+[gd_scene load_steps=53 format=3 uid="uid://bgo3rbluvk1nj"]
 
 [ext_resource type="Script" path="res://HUD/hud.gd" id="1_xkqll"]
+[ext_resource type="PackedScene" uid="uid://dn5ikeen1gwqy" path="res://Menu/pause.tscn" id="2_stwwd"]
 [ext_resource type="Texture2D" uid="uid://dpibuonh3cg3" path="res://Sprites/Weapons/Chainsaw/chainsaw.png" id="3_5730w"]
 [ext_resource type="Texture2D" uid="uid://cvis81vdo2mxx" path="res://Sprites/Weapons/Minigun/minigun.png" id="3_glik1"]
 [ext_resource type="Texture2D" uid="uid://bggltp8a28ejf" path="res://Sprites/Weapons/Pistol/pistol.png" id="4_qo0tw"]
@@ -453,6 +454,9 @@ action_right = "ui_right2"
 action_left = "ui_left2"
 action_up = "ui_up2"
 action_down = "ui_down2"
+
+[node name="Pause" parent="." instance=ExtResource("2_stwwd")]
+visible = false
 
 [node name="Audios_Armas" type="Control" parent="."]
 layout_mode = 3

@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dn5ikeen1gwqy"]
+[gd_scene load_steps=6 format=3 uid="uid://dn5ikeen1gwqy"]
 
 [ext_resource type="Script" path="res://Menu/pause_menu.gd" id="1_gfa0t"]
 [ext_resource type="FontFile" uid="uid://dsqm0lfysiyo1" path="res://Font/DooM.ttf" id="2_3swbs"]
 [ext_resource type="PackedScene" uid="uid://dlr741w635xnf" path="res://Sounds/ui_sounds.tscn" id="2_bb3y8"]
+[ext_resource type="PackedScene" uid="uid://digg0n887wxhl" path="res://Menu/mouse_sens.tscn" id="4_5bdqt"]
+[ext_resource type="PackedScene" uid="uid://ccbqitg33wt0v" path="res://Menu/audio_input.tscn" id="5_e1ln1"]
 
 [node name="Pause" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,42 +34,104 @@ offset_bottom = 40.0
 [node name="Label" type="Label" parent="UI"]
 layout_mode = 0
 offset_left = 153.0
-offset_top = 124.0
+offset_top = 16.0
 offset_right = 477.0
-offset_bottom = 175.0
+offset_bottom = 67.0
 theme_override_fonts/font = ExtResource("2_3swbs")
 theme_override_font_sizes/font_size = 40
 text = "Game Pause"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+[node name="MainPause" type="VBoxContainer" parent="UI"]
 layout_mode = 2
 offset_left = 240.0
-offset_top = 280.0
+offset_top = 192.0
 offset_right = 388.0
-offset_bottom = 390.0
+offset_bottom = 302.0
 alignment = 1
 
-[node name="Resume" type="Button" parent="UI/VBoxContainer"]
+[node name="Resume" type="Button" parent="UI/MainPause"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Quit")
 theme_override_fonts/font = ExtResource("2_3swbs")
 theme_override_font_sizes/font_size = 20
 text = "Continuar"
 
-[node name="Opcoes" type="Button" parent="UI/VBoxContainer"]
+[node name="Opcoes" type="Button" parent="UI/MainPause"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_3swbs")
 theme_override_font_sizes/font_size = 20
 text = "Opcoes"
 
-[node name="Quit" type="Button" parent="UI/VBoxContainer"]
+[node name="Quit" type="Button" parent="UI/MainPause"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../Resume")
 theme_override_fonts/font = ExtResource("2_3swbs")
 theme_override_font_sizes/font_size = 20
 text = "Sair"
 
-[connection signal="pressed" from="UI/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="UI/VBoxContainer/Opcoes" to="." method="_on_opcoes_pressed"]
-[connection signal="pressed" from="UI/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[node name="Opcoes" type="VBoxContainer" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 176.0
+offset_top = 72.0
+offset_right = 448.0
+offset_bottom = 368.0
+alignment = 1
+
+[node name="MouseSens" parent="UI/Opcoes" instance=ExtResource("4_5bdqt")]
+layout_mode = 2
+
+[node name="Master" parent="UI/Opcoes" instance=ExtResource("5_e1ln1")]
+layout_mode = 2
+
+[node name="Label" parent="UI/Opcoes/Master" index="0"]
+theme_override_fonts/normal_font = ExtResource("2_3swbs")
+
+[node name="UI" parent="UI/Opcoes" instance=ExtResource("5_e1ln1")]
+layout_mode = 2
+audio_channel_name = "UI"
+
+[node name="Label" parent="UI/Opcoes/UI" index="0"]
+theme_override_fonts/normal_font = ExtResource("2_3swbs")
+text = "[center]Volume Interface[/center]"
+
+[node name="Guns" parent="UI/Opcoes" instance=ExtResource("5_e1ln1")]
+layout_mode = 2
+audio_channel_name = "Guns"
+
+[node name="Label" parent="UI/Opcoes/Guns" index="0"]
+theme_override_fonts/normal_font = ExtResource("2_3swbs")
+text = "[center]Volume Armas[/center]"
+
+[node name="Ambient" parent="UI/Opcoes" instance=ExtResource("5_e1ln1")]
+layout_mode = 2
+audio_channel_name = "Ambient"
+
+[node name="Label" parent="UI/Opcoes/Ambient" index="0"]
+theme_override_fonts/normal_font = ExtResource("2_3swbs")
+text = "[center]Volume Ambiente[/center]"
+
+[node name="CheckBox" type="CheckBox" parent="UI/Opcoes"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3swbs")
+text = "Fullscreen"
+alignment = 1
+icon_alignment = 2
+
+[node name="Voltar" type="Button" parent="UI/Opcoes"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3swbs")
+theme_override_font_sizes/font_size = 20
+text = "Voltar"
+
+[connection signal="pressed" from="UI/MainPause/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="UI/MainPause/Opcoes" to="." method="_on_opcoes_pressed"]
+[connection signal="pressed" from="UI/MainPause/Quit" to="." method="_on_quit_pressed"]
+[connection signal="toggled" from="UI/Opcoes/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="pressed" from="UI/Opcoes/Voltar" to="." method="_on_voltar_pressed"]
+
+[editable path="UI/Opcoes/Master"]
+[editable path="UI/Opcoes/UI"]
+[editable path="UI/Opcoes/Guns"]
+[editable path="UI/Opcoes/Ambient"]
