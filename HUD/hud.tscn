@@ -476,24 +476,30 @@ bus = &"Guns"
 
 [node name="Chainsaw_fire" type="AudioStreamPlayer" parent="Audios_Armas/Chainsaw"]
 stream = ExtResource("16_0w7t0")
+bus = &"Guns"
 
 [node name="Pistol" type="Node" parent="Audios_Armas"]
 
 [node name="Pistol_fire" type="AudioStreamPlayer" parent="Audios_Armas/Pistol"]
 stream = ExtResource("17_sp7ay")
+bus = &"Guns"
 
 [node name="Shotgun" type="Node" parent="Audios_Armas"]
 
 [node name="Shotgun_fire" type="AudioStreamPlayer" parent="Audios_Armas/Shotgun"]
 stream = ExtResource("18_myc28")
+bus = &"Guns"
 
 [node name="Minigun" type="Node" parent="Audios_Armas"]
 
 [node name="Minigun_start" type="AudioStreamPlayer" parent="Audios_Armas/Minigun"]
 stream = ExtResource("19_s33mp")
+bus = &"Guns"
 
 [node name="Minigun_end" type="AudioStreamPlayer" parent="Audios_Armas/Minigun"]
 stream = ExtResource("20_44uyu")
+bus = &"Guns"
 
 [node name="Minigun_fire" type="AudioStreamPlayer" parent="Audios_Armas/Minigun"]
 stream = ExtResource("21_0b01y")
+bus = &"Guns"

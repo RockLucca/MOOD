@@ -23,11 +23,16 @@ func pause_menu():
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		show()
 		$UI/Opcoes/CheckBox.button_pressed = Global.is_full_screen
-		$UI/MainPause/Resume.grab_focus()
+		start_pause_menu()
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		hide()
 	paused = !paused
+
+func start_pause_menu():
+	$UI/Opcoes.hide()
+	$UI/MainPause.show()
+	$UI/MainPause/Resume.grab_focus()
 
 func _on_opcoes_pressed():
 	$UI/MainPause.hide()
@@ -35,9 +40,7 @@ func _on_opcoes_pressed():
 	pass
 
 func _on_voltar_pressed() -> void:
-	$UI/Opcoes.hide()
-	$UI/MainPause.show()
-	$UI/MainPause/Resume.grab_focus()
+	start_pause_menu()
 
 
 func _on_check_box_toggled(toggled_on: bool) -> void:
