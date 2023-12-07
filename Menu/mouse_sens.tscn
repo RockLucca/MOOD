@@ -1,12 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://digg0n887wxhl"]
+[gd_scene load_steps=3 format=3 uid="uid://digg0n887wxhl"]
 
 [ext_resource type="Script" path="res://Menu/mouse_sens.gd" id="1_tbcbp"]
+[ext_resource type="FontFile" uid="uid://dsqm0lfysiyo1" path="res://Font/DooM.ttf" id="2_sy7ob"]
 
 [node name="MouseSens" type="VBoxContainer"]
 script = ExtResource("1_tbcbp")
 
 [node name="Label" type="RichTextLabel" parent="."]
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_sy7ob")
 bbcode_enabled = true
 text = "[center]Sensibilidade Mouse[/center]"
 fit_content = true

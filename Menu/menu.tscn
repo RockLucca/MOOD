@@ -201,7 +201,6 @@ autoplay = true
 bus = &"UI"
 
 [node name="Main" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -264,6 +263,7 @@ animation = &"Logo"
 autoplay = "Logo"
 
 [node name="Instrucoes" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -347,11 +347,15 @@ layout_mode = 2
 [node name="Master" parent="Opcoes/VBoxContainer" instance=ExtResource("6_u41pb")]
 layout_mode = 2
 
+[node name="Label" parent="Opcoes/VBoxContainer/Master" index="0"]
+theme_override_fonts/normal_font = ExtResource("4_tf3bp")
+
 [node name="UI" parent="Opcoes/VBoxContainer" instance=ExtResource("6_u41pb")]
 layout_mode = 2
 audio_channel_name = "UI"
 
 [node name="Label" parent="Opcoes/VBoxContainer/UI" index="0"]
+theme_override_fonts/normal_font = ExtResource("4_tf3bp")
 text = "[center]Volume Interface[/center]"
 
 [node name="Guns" parent="Opcoes/VBoxContainer" instance=ExtResource("6_u41pb")]
@@ -359,6 +363,7 @@ layout_mode = 2
 audio_channel_name = "Guns"
 
 [node name="Label" parent="Opcoes/VBoxContainer/Guns" index="0"]
+theme_override_fonts/normal_font = ExtResource("4_tf3bp")
 text = "[center]Volume Armas[/center]"
 
 [node name="Ambient" parent="Opcoes/VBoxContainer" instance=ExtResource("6_u41pb")]
@@ -366,7 +371,15 @@ layout_mode = 2
 audio_channel_name = "Ambient"
 
 [node name="Label" parent="Opcoes/VBoxContainer/Ambient" index="0"]
+theme_override_fonts/normal_font = ExtResource("4_tf3bp")
 text = "[center]Volume Ambiente[/center]"
+
+[node name="CheckBox" type="CheckBox" parent="Opcoes/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_tf3bp")
+text = "Fullscreen"
+alignment = 1
+icon_alignment = 2
 
 [node name="Voltar" type="Button" parent="Opcoes/VBoxContainer"]
 layout_mode = 2
@@ -458,6 +471,7 @@ root_path = NodePath("..")
 [connection signal="pressed" from="Main/VBoxContainer/Creditos" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/Sair" to="." method="_on_sair_pressed"]
 [connection signal="pressed" from="Instrucoes/VBoxContainer/Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="Opcoes/VBoxContainer/CheckBox" to="." method="_on_check_box_pressed"]
 [connection signal="pressed" from="Opcoes/VBoxContainer/Voltar" to="." method="_on_voltar_pressed"]
 [connection signal="pressed" from="Creditos/Voltar" to="." method="_on_voltar_pressed"]
 

@@ -9,6 +9,7 @@ extends Control
 @onready var ambient_audio = AudioServer.get_bus_index("Ambient")
 
 var credits_rolling = false
+var _is_full_screen: bool = false
 
 func change_screen(scene):
 	credits_rolling = false
@@ -54,3 +55,13 @@ func _on_sair_pressed():
 
 func _on_voltar_pressed() -> void:
 	change_screen($Main)
+
+func _toggle_fullscreen():
+	_is_full_screen = not _is_full_screen
+	
+	if _is_full_screen:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+func _on_check_box_pressed():
+	_toggle_fullscreen()
