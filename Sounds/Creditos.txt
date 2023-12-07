@@ -1,19 +1,26 @@
-Desenvolvido por:
-Getúlio Coimbra Regis
-Lucca Toledo Bordim
+Desenvolvido por
+Getúlio Coimbra Regis  
+Lucca Toledo Bordim    @RockLucca
 
-Creditos para sfx de armas e UI:
+Pixel Art's
+One More Pixel         instagram: @0nemorepixel
+
+Programação e Design
+Getúlio Coimbra Regis  
+Lucca Toledo Bordim    @RockLucca
+
+SFX de armas e UI
 morganpurkis           at freesound.org
 Pixabay                at pixabay.com
 michalwa2003           at freesound.org
 Jsfxr                  at sfxr.me
 
-Crédito para as fontes:
+Fontes de texto
 Amazingmax            at dafont.com
 Font Meme             at fontmeme.com
 
-Créditos para sons ambiente:
-Gustavo S. Favaro     @
+Sons ambiente
+Gustavo S. Favaro     instagram: @gustavin.fav
 BouncyTEM             at realm667
 printz                at realm667
 BadMojo               at realm667
@@ -27,3 +34,18 @@ Sami_Hiltunen         at freespund.org
 FALL-E                at freespund.org
 Andrastos87           at freespund.org
 ruiiiimaiaa           at freespund.org
+
+Meteriais e Tutoriais utilizados
+Godot 4 Documentation at docs.godotengine.org
+AJ's Code Lab         at youtube.com
+DevLogLogan           at youtube.com
+LukeRS                at youtube.com
+Kron                  at youtube.com
+Master Albert         at youtube.com
+Liblast               at youtube.com
+
+
+
+
+
+
