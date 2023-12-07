@@ -16,28 +16,57 @@ script = ExtResource("1_gfa0t")
 [node name="UISounds" parent="." instance=ExtResource("2_bb3y8")]
 root_path = NodePath("../UI")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(15.9998, 11.9976)
+color = Color(0.898039, 0, 0.0941176, 0.407843)
+
 [node name="UI" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Label" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 124.0
+offset_right = 477.0
+offset_bottom = 175.0
+theme_override_fonts/font = ExtResource("2_3swbs")
+theme_override_font_sizes/font_size = 40
+text = "Game Pause"
+horizontal_alignment = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="UI"]
 layout_mode = 2
-offset_right = 148.0
-offset_bottom = 72.0
+offset_left = 240.0
+offset_top = 280.0
+offset_right = 388.0
+offset_bottom = 390.0
 alignment = 1
 
 [node name="Resume" type="Button" parent="UI/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Quit")
 theme_override_fonts/font = ExtResource("2_3swbs")
 theme_override_font_sizes/font_size = 20
 text = "Continuar"
 
+[node name="Opcoes" type="Button" parent="UI/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3swbs")
+theme_override_font_sizes/font_size = 20
+text = "Opcoes"
+
 [node name="Quit" type="Button" parent="UI/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../Resume")
 theme_override_fonts/font = ExtResource("2_3swbs")
 theme_override_font_sizes/font_size = 20
 text = "Sair"
 
 [connection signal="pressed" from="UI/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/Opcoes" to="." method="_on_opcoes_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -11,6 +11,9 @@ extends Control
 var credits_rolling = false
 var _is_full_screen: bool = false
 
+func _ready():
+	$Main/VBoxContainer/Jogar.grab_focus()
+	
 func change_screen(scene):
 	credits_rolling = false
 	curr_scene.visible = false
@@ -38,6 +41,7 @@ func _on_jogar_pressed():
 
 func _on_instrucoes_pressed():
 	await get_tree().create_timer(0.6).timeout
+	$Instrucoes/VBoxContainer/Voltar.grab_focus()
 	change_screen($Instrucoes)
 
 func _on_opcoes_pressed():
@@ -63,5 +67,6 @@ func _toggle_fullscreen():
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
 func _on_check_box_pressed():
 	_toggle_fullscreen()

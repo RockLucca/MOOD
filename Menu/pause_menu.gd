@@ -4,6 +4,9 @@ extends Control
 @onready var paused_menu = $Pause
 var paused = false
 
+func _ready():
+	$UI/VBoxContainer/Resume.grab_focus()
+
 func _process(_delta):
 	if Input.is_action_just_pressed("Pause"):
 		pause_menu()
@@ -24,3 +27,6 @@ func pause_menu():
 		Engine.time_scale = 0
 		
 	paused = !paused
+
+func _on_opcoes_pressed():
+	pass

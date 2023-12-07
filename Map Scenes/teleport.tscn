@@ -6,7 +6,6 @@
 size = Vector3(1, 0.0954067, 1)
 
 [node name="Teleport" type="Area3D"]
-disable_mode = 1
 script = ExtResource("1_aeuit")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

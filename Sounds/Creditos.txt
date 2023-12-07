@@ -2,29 +2,28 @@ Desenvolvido por:
 Getúlio Coimbra Regis
 Lucca Toledo Bordim
 
-Creditos para sfx:
-Shotgun: morganpurkis  at freesound.org
-Minigun: Pixabay
-Pistol: Pixabay
-Chainsaw: Pixabay
-BFG: michalwa2003      at freesound.org
-Interface: Jsfxr
+Creditos para sfx de armas e UI:
+morganpurkis           at freesound.org
+Pixabay                at pixabay.com
+michalwa2003           at freesound.org
+Jsfxr                  at sfxr.me
 
 Crédito para as fontes:
-Amazingmax
-Font Meme
+Amazingmax            at dafont.com
+Font Meme             at fontmeme.com
 
 Créditos para sons ambiente:
-Gustavo S. Favaro
-tmfinnicum            at freesound.org  (demon voice)
-smallclone            at freesound.org  (main menu)
-BouncyTEM             at realm667  (score)
-printz                at realm667  (game over)
-BadMojo               at realm667  (intro history)
-Beetlemuse            at freesound.org  (lvl 1)
-Robbnix               at freesound.org  (lvl 2)
-Merrick079            at freesound.org  (lvl 3)
-tyops                 at freesound.org  (lvl 4)
-Sami_Hiltunen         at freespund.org  (lvl 6)
-FALL-E
-Andrastos87
+Gustavo S. Favaro     @
+BouncyTEM             at realm667
+printz                at realm667
+BadMojo               at realm667
+tmfinnicum            at freesound.org
+smallclone            at freesound.org
+Beetlemuse            at freesound.org
+Robbnix               at freesound.org
+Merrick079            at freesound.org
+tyops                 at freesound.org
+Sami_Hiltunen         at freespund.org
+FALL-E                at freespund.org
+Andrastos87           at freespund.org
+ruiiiimaiaa           at freespund.org
