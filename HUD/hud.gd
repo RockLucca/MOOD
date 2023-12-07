@@ -115,20 +115,14 @@ func change_weapon():
 
 func update_face_animation(health):
 	var face_health = ""
-	if health > 90:
+	if health > 75:
 		face_health = "100%"
-	elif health > 75:
-		face_health = "90%"
-	elif health > 60:
+	elif health > 50:
 		face_health = "75%"
-	elif health > 45:
-		face_health = "60%"
-	elif health > 30:
-		face_health = "45%"
-	elif health > 15:
-		face_health = "30%"
+	elif health > 25:
+		face_health = "50%"
 	else:
-		face_health = "15%"
+		face_health = "25%"
 	$Face.play(face_health)
 
 func _on_AnimatedSprite2D_animation_finished():
