@@ -16,9 +16,11 @@ func _ready():
 	add_to_group("Player")
 
 func rotate_camera(dir_vector: Vector2):
-	dir_vector = dir_vector.normalized()
-	rotate_y(-dir_vector.x * Global.mouse_sensitivity)
-	$Pivot.rotate_x(-dir_vector.y * Global.mouse_sensitivity)
+	#dir_vector = dir_vector.normalized()
+	#rotate_y(-dir_vector.x * Global.mouse_sensitivity/100)
+	#$Pivot.rotate_x(-dir_vector.y * Global.mouse_sensitivity/100)
+	rotate_y(deg_to_rad(-dir_vector.x * Global.mouse_sensitivity/100))
+	$Pivot.rotate_x(deg_to_rad(-dir_vector.y * Global.mouse_sensitivity/100))
 	$Pivot.rotation.x = clamp($Pivot.rotation.x, -1.5, 1.5)
 
 func _unhandled_input(event):

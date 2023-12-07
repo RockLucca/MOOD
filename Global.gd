@@ -1,7 +1,7 @@
 extends Node
 
 #Player settings
-var mouse_sensitivity: float = 1
+var mouse_sensitivity: float = 10
 
 #Level variables
 var score = 0
