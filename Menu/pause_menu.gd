@@ -52,5 +52,5 @@ func _on_check_box_toggled(toggled_on: bool) -> void:
 
 
 func _on_return_pressed():
-	paused = false
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Menu/menu.tscn")
