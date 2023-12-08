@@ -415,48 +415,63 @@ layout_mode = 0
 offset_left = 104.0
 offset_top = -146.0
 offset_right = 568.0
-offset_bottom = 557.0
+offset_bottom = 898.0
 bbcode_enabled = true
-text = "[center][b]Desenvolvido por:[/b][/center]
-[center]Getúlio Coimbra Regis[/center]
-[center]Lucca Toledo Bordim[/center]
+text = "[center][b]Desenvolvido por[/b][/center]
+[center]Getúlio Coimbra Regis    @getuliobr[/center]
+[center]Lucca Toledo Bordim    @RockLucca[/center]
 
-[center]Creditos para sfx:[/center]
-[center]Shotgun: morganpurkis  em freesound.org[/center]
-[center]Minigun: Pixabay[/center]
-[center]Pistol: Pixabay[/center]
-[center]Chainsaw: Pixabay[/center]
-[center]BFG: michalwa2003 em freesound.org[/center]
-[center]Interface: Jsfxr[/center]
+[center][b]Pixel Art's[/b][/center]
+[center]One More Pixel instagram: @0nemorepixel[/center]
 
-[center]Crédito para as fontes:[/center]
-[center]Amazingmax[/center]
-[center]Font Meme[/center]
+[center][b]Programação e Design[/b][/center]
+[center]Getúlio Coimbra Regis    @getuliobr[/center]
+[center]Lucca Toledo Bordim    @RockLucca[/center]
 
-[center]Créditos para sons ambiente:[/center]
-[center]Gustavo S. Favaro[/center]
-[center]tmfinnicum em freesound.org  (demon voice)[/center]
-[center]smallclone em freesound.org  (main menu)[/center]
-[center]BouncyTEM em realm667  (score)[/center]
-[center]printz em realm667  (game over)[/center]
-[center]BadMojo em realm667  (intro history)[/center]
-[center]Beetlemuse em freesound.org  (lvl 1)[/center]
-[center]Robbnix em freesound.org  (lvl 2)[/center]
-[center]Merrick079 em freesound.org  (lvl 3)[/center]
-[center]tyops em freesound.org  (lvl 4)[/center]
-[center]Sami_Hiltunen em freespund.org  (lvl 6)[/center]
-[center]FALL-E[/center]
-[center]Andrastos87[/center]
+[center][b]SFX de armas e UI[/b][/center]
+[center]morganpurkis em freesound.org[/center]
+[center]Pixabay em pixabay.com[/center]
+[center]michalwa2003 em freesound.org[/center]
+[center]Jsfxr em sfxr.me[/center]
+
+[center][b]Fontes de texto[/b][/center]
+[center]Amazingmax em dafont.com[/center]
+[center]Font Meme em fontmeme.com[/center]
+
+[center][b]Sons ambiente[/b][/center]
+[center]Gustavo S. Favaro instagram: @gustavin.fav[/center]
+[center]BouncyTEM em realm667[/center]
+[center]printz em realm667[/center]
+[center]BadMojo em realm667[/center]
+[center]tmfinnicum em freesound.org[/center]
+[center]smallclone em freesound.org[/center]
+[center]Beetlemuse em freesound.org[/center]
+[center]Robbnix em freesound.org[/center]
+[center]Merrick079 em freesound.org[/center]
+[center]tyops em freesound.org[/center]
+[center]Sami_Hiltunen em freespund.org[/center]
+[center]FALL-E em freespund.org[/center]
+[center]Andrastos87 em freespund.org[/center]
+[center]ruiiiimaiaa em freespund.org[/center]
+
+[center][b]Meteriais e Tutoriais utilizados[/b][/center]
+[center]Godot 4 Documentation em docs.godotengine.org[/center]
+[center]AJ's Code Labem  youtube.com[/center]
+[center]DevLogLogan em  youtube.com[/center]
+[center]LukeRS em youtube.com[/center]
+[center]Kron em youtube.com[/center]
+[center]Master Albert em youtube.com[/center]
+[center]Liblast em youtube.com[/center]
 "
 scroll_active = false
 
 [node name="LogoMood" type="Sprite2D" parent="Creditos/CreditosSubindo"]
-position = Vector2(328, 856)
+position = Vector2(328, 1158)
 scale = Vector2(0.383333, 0.383333)
 texture = ExtResource("5_xm8us")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Creditos/CreditosSubindo"]
-position = Vector2(336, 952)
+position = Vector2(336, 1247)
 scale = Vector2(1.1625, 1.1625)
 sprite_frames = SubResource("SpriteFrames_3klhu")
 animation = &"Logo"

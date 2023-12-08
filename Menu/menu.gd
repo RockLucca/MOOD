@@ -53,7 +53,7 @@ func _on_opcoes_pressed():
 	change_screen($Opcoes)
 
 func _on_creditos_pressed():
-	$Creditos/Voltar.grab_focus()
+	#$Creditos/Voltar.grab_focus()
 	await get_tree().create_timer(0.6).timeout
 	creditos_text.global_position = credits_initial_pos
 	change_screen($Creditos)
