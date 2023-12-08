@@ -138,5 +138,4 @@ func _on_AnimatedSprite2D_animation_finished():
 	$Wepons_icons.play(Global.current_weapon + "_icon")
 
 func _on_button_pressed():
-	
-	pass
+	Input.action_press("Pause")
