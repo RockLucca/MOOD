@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c435mqir154r"]
+[gd_scene load_steps=5 format=3 uid="uid://coieqn5xo0kt1"]
 
 [ext_resource type="Script" path="res://Collectables/quadruple_damage.gd" id="1_cdkwr"]
 [ext_resource type="Texture2D" uid="uid://cyx0lmv6aujkd" path="res://Sprites/Player/powerups.png" id="2_4qw5b"]
@@ -23,7 +23,7 @@ shape = SubResource("BoxShape3D_7rskj")
 billboard = 1
 texture_filter = 0
 texture = ExtResource("2_4qw5b")
-hframes = 4
+hframes = 5
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 8.0
