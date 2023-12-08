@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bgo3rbluvk1nj"]
+[gd_scene load_steps=54 format=3 uid="uid://bgo3rbluvk1nj"]
 
 [ext_resource type="Script" path="res://HUD/hud.gd" id="1_xkqll"]
 [ext_resource type="PackedScene" uid="uid://dn5ikeen1gwqy" path="res://Menu/pause.tscn" id="2_stwwd"]
@@ -22,6 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://bldcpbsobm2ql" path="res://Sounds/SFX/Weapons/minigun_start.ogg" id="19_s33mp"]
 [ext_resource type="AudioStream" uid="uid://65e5hsy7nc02" path="res://Sounds/SFX/Weapons/minigun_end.ogg" id="20_44uyu"]
 [ext_resource type="AudioStream" uid="uid://rd1tterp7erc" path="res://Sounds/SFX/Weapons/minigun_fire.ogg" id="21_0b01y"]
+[ext_resource type="FontFile" uid="uid://dsqm0lfysiyo1" path="res://Font/DooM.ttf" id="23_lox8o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6tuua"]
 atlas = ExtResource("3_5730w")
@@ -443,26 +444,10 @@ text = "G U N"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="JoystickBase" parent="." instance=ExtResource("10_fv7dy")]
-position = Vector2(0, 270)
-scale = Vector2(1.01563, 1.01563)
-
-[node name="JoystickBase2" parent="." instance=ExtResource("10_fv7dy")]
-position = Vector2(507, 271)
-scale = Vector2(1.0315, 1.0315)
-action_right = "ui_right2"
-action_left = "ui_left2"
-action_up = "ui_up2"
-action_down = "ui_down2"
-
 [node name="Pause" parent="." instance=ExtResource("2_stwwd")]
 visible = false
 
-[node name="Audios_Armas" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Audios_Armas" type="Node" parent="."]
 
 [node name="Chainsaw" type="Node" parent="Audios_Armas"]
 
@@ -503,3 +488,30 @@ bus = &"Guns"
 [node name="Minigun_fire" type="AudioStreamPlayer" parent="Audios_Armas/Minigun"]
 stream = ExtResource("21_0b01y")
 bus = &"Guns"
+
+[node name="Mobile" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="JoystickBase" parent="Mobile" instance=ExtResource("10_fv7dy")]
+position = Vector2(0, 270)
+scale = Vector2(1.01563, 1.01563)
+
+[node name="JoystickBase2" parent="Mobile" instance=ExtResource("10_fv7dy")]
+position = Vector2(507, 271)
+scale = Vector2(1.0315, 1.0315)
+action_right = "ui_right2"
+action_left = "ui_left2"
+action_up = "ui_up2"
+action_down = "ui_down2"
+
+[node name="Button" type="Button" parent="Mobile"]
+layout_mode = 0
+offset_left = 552.0
+offset_right = 641.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("23_lox8o")
+theme_override_font_sizes/font_size = 20
+text = "Pause"
+
+[connection signal="pressed" from="Mobile/Button" to="." method="_on_button_pressed"]

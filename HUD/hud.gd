@@ -4,6 +4,8 @@ var time_since_last_shot = 0.0
 var fire_rate = 1.0
 
 func _ready():
+	if OS.has_feature("mobile"):
+		$Mobile.hide()
 	$Weapons.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
 	$Weapons.play(Global.current_weapon + "_idle")
 	$Wepons_icons.play(Global.current_weapon + "_icon")
@@ -94,7 +96,7 @@ func update_ammo_label(gun):
 		$Label_Tags/Ammo_value.text = str(Global.shotgun_ammo)
 	elif gun == "minigun" and Global.minigun_ammo > 0:
 		$Label_Tags/Ammo_value.text = str(Global.minigun_ammo)
-#
+
 func change_weapon():
 	if Input.is_action_pressed("set_chainsaw"):
 		Global.current_weapon = "chainsaw"
@@ -119,7 +121,6 @@ func change_weapon():
 		$Label_Tags/Ammo_value.text = str(Global.minigun_ammo)
 		pass
 
-
 func update_face_animation(health):
 	var face_health = ""
 	if health > 75:
@@ -135,3 +136,7 @@ func update_face_animation(health):
 func _on_AnimatedSprite2D_animation_finished():
 	$Weapons.play(Global.current_weapon + "_idle")
 	$Wepons_icons.play(Global.current_weapon + "_icon")
+
+func _on_button_pressed():
+	
+	pass

@@ -43,11 +43,11 @@ func _physics_process(delta):
 
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED * Global.bust_velocity
-		velocity.z = direction.z * SPEED * Global.bust_velocity
+		velocity.x = direction.x * SPEED * Global.boost_velocity
+		velocity.z = direction.z * SPEED * Global.boost_velocity
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED * Global.bust_velocity)
-		velocity.z = move_toward(velocity.z, 0, SPEED * Global.bust_velocity)
+		velocity.x = move_toward(velocity.x, 0, SPEED * Global.boost_velocity)
+		velocity.z = move_toward(velocity.z, 0, SPEED * Global.boost_velocity)
 
 	move_and_slide()
 
