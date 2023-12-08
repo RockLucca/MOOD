@@ -81,7 +81,8 @@ func shoot(gun):
 		# Recoil da arma
 		rotate_camera(Vector2(randf_range(-5, 5), randf_range(-5, -3)))
 		damage = 0.7
-
+	
+	damage *= Global.boost_damage
 
 	for i in range(shotsFired):
 		var from = camera3d.project_ray_origin(origin)

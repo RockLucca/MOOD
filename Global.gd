@@ -12,6 +12,7 @@ var current_level = 1
 var player_armor: int = 100 
 var player_health: int = 100
 var boost_velocity: int = 1
+var boost_damage: int = 1
 
 #Guns Ammo
 var current_weapon = "pistol"
