@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt4k33b6j137o"]
+
+[ext_resource type="Script" path="res://Sprites/Weapons/Bullet/chainsaw_cut.gd" id="1_8disn"]
+[ext_resource type="Texture2D" uid="uid://b8hsbpvmqpn5r" path="res://Sprites/Weapons/Bullet/cut_chainsaw.png" id="2_viix0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00tb5"]
+transparency = 1
+albedo_texture = ExtResource("2_viix0")
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_qqrdw"]
+material = SubResource("StandardMaterial3D_00tb5")
+
+[node name="ChainsawCut" type="Node3D"]
+script = ExtResource("1_8disn")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 0, 0, -0.02)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_qqrdw")
+skeleton = NodePath("")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

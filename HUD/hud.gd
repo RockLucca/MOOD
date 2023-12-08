@@ -4,7 +4,7 @@ var time_since_last_shot = 0.0
 var fire_rate = 1.0
 
 func _ready():
-	if OS.has_feature("mobile"):
+	if not OS.has_feature("mobile"):
 		$Mobile.hide()
 	$Weapons.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
 	$Weapons.play(Global.current_weapon + "_idle")
@@ -27,8 +27,8 @@ func _process(delta):
 			$Weapons.play(Global.current_weapon + "_attack")
 		
 		time_since_last_shot = 0.0
-		if Global.current_weapon != "chainsaw":
-			shoot(Global.current_weapon) 
+		print("MATAR")
+		shoot(Global.current_weapon) 
 	
 	match Global.current_weapon:
 		"chainsaw":
@@ -64,7 +64,7 @@ func shoot(gun):
 	if gun == "chainsaw":
 		#$Audios_Armas/Chainsaw/Chainsaw_idle.stop()
 		$Audios_Armas/Chainsaw/Chainsaw_fire.play()
-		pass
+		shot = true
 	
 	if gun == "pistol" and Global.pistol_ammo > 0:
 		$Weapons.play(Global.current_weapon + "_attack")

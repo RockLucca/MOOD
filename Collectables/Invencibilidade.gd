@@ -1,12 +1,14 @@
 extends Area3D
 
 var temp = Global.player_health
+var running = false
 
 func _ready():
 	$Timer.paused = true
 
 func _on_body_entered(body):
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") and not running:
+		running = true
 		$Timer.paused = false
 		$Timer.start()
 		$Label.show()
@@ -17,5 +19,5 @@ func _on_body_entered(body):
 
 func _on_timer_timeout():
 	$Label.hide()
-	Global.boost_velocity = temp
+	Global.player_health = temp
 	queue_free()

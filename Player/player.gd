@@ -8,6 +8,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 #Gun Variables
 const _bullet_hole_res = preload("res://Sprites/Weapons/Bullet/bullet_hole.tscn")
+const _chainsaw_cut_res = preload("res://Sprites/Weapons/Bullet/chainsaw_cut.tscn")
 const _blood_partile_res = preload("res://Particles/blood_particle.tscn")
 
 #Functions
@@ -100,16 +101,21 @@ func shoot(gun):
 		var query = PhysicsRayQueryParameters3D.create(from, to, 0xFFFFFFFF, [get_rid()])
 		query.collide_with_areas = true
 		var result = get_world_3d().direct_space_state.intersect_ray(query)
-		
+		print(result)
 		if(result):
 			var hit = result.collider
-			var hitPos = result.position
+			var hitPos: Vector3 = result.position
 			var normal = result.normal
 			
+			var hitDis = hitPos.distance_to(from)
+			print(hitDis)
+			if gun == "chainsaw" and hitDis > 2:
+				return
+			
 			if hit is StaticBody3D:
-				var hole = _bullet_hole_res.instantiate()
-				get_tree().get_root().add_child(hole)
-				hole.create_hole(hitPos, normal)
+				var decal = _bullet_hole_res.instantiate() if gun != "chainsaw" else _chainsaw_cut_res.instantiate()
+				get_tree().get_root().add_child(decal)
+				decal.create_decal(hitPos, normal)
 				
 			elif hit.is_in_group("enemy"):
 				hit.deal_damage(damage)

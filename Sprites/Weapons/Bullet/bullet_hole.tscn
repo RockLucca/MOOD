@@ -3,13 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://c3cytuhf1vdn7" path="res://Sprites/Weapons/Bullet/BulletHole.png" id="1_x5faf"]
 [ext_resource type="Script" path="res://Sprites/Weapons/Bullet/bullet_hole.gd" id="2_ktwwr"]
 
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4n7ls"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k2x4n"]
 transparency = 1
 albedo_texture = ExtResource("1_x5faf")
 
 [sub_resource type="QuadMesh" id="QuadMesh_p2tbd"]
-material = SubResource("StandardMaterial3D_4n7ls")
+material = SubResource("StandardMaterial3D_k2x4n")
 
 [node name="BulletHole" type="Node3D"]
 script = ExtResource("2_ktwwr")
