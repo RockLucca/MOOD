@@ -20,7 +20,7 @@ func _process(delta):
 		#$Wepons_icons.play("chainsaw_icon")
 	
 	#Shoot control
-	if Input.is_action_just_pressed("shoot") and can_shoot:
+	if Input.is_action_pressed("shoot") and can_shoot:
 		if Global.current_weapon == "chainsaw":
 			$Weapons.play(Global.current_weapon + "_attack")
 		
@@ -91,7 +91,7 @@ func update_ammo_label(gun):
 
 #
 func change_weapon():
-	if Input.is_action_just_pressed("set_chainsaw"):
+	if Input.is_action_pressed("set_chainsaw"):
 		Global.current_weapon = "chainsaw"
 		#$Audios_Armas/Chainsaw/Chainsaw_start.play()
 		$Audios_Armas/Chainsaw/Chainsaw_idle.autoplay = true
@@ -102,10 +102,12 @@ func change_weapon():
 		Global.current_weapon = "pistol"
 		$Audios_Armas/Chainsaw/Chainsaw_idle.stop()
 		$Label_Tags/Ammo_value.text = str(Global.pistol_ammo)
+		
 	elif Input.is_action_just_pressed("set_shotgun"):
 		Global.current_weapon = "shotgun"
 		$Audios_Armas/Chainsaw/Chainsaw_idle.stop()
 		$Label_Tags/Ammo_value.text = str(Global.shotgun_ammo)
+		
 	elif Input.is_action_just_pressed("set_minigun"):
 		Global.current_weapon = "minigun"
 		$Audios_Armas/Chainsaw/Chainsaw_idle.stop()

@@ -2,7 +2,6 @@ extends Control
 
 #@onready var main = $"res://../"
 var paused = true
-var _is_full_screen = false
 
 #func _ready():
 	#$UI/VBoxContainer/Resume.grab_focus()
@@ -50,3 +49,8 @@ func _on_check_box_toggled(toggled_on: bool) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+
+func _on_return_pressed():
+	paused = false
+	get_tree().change_scene_to_file("res://Menu/menu.tscn")

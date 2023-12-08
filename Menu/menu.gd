@@ -9,7 +9,6 @@ extends Control
 @onready var ambient_audio = AudioServer.get_bus_index("Ambient")
 
 var credits_rolling = false
-var _is_full_screen: bool = false
 
 func _ready():
 	$Main/VBoxContainer/Jogar.grab_focus()
@@ -47,10 +46,12 @@ func _on_instrucoes_pressed():
 	change_screen($Instrucoes)
 
 func _on_opcoes_pressed():
+	$Opcoes/VBoxContainer/Voltar.grab_focus()
 	await get_tree().create_timer(0.6).timeout
 	change_screen($Opcoes)
 
 func _on_creditos_pressed():
+	$Creditos/Voltar.grab_focus()
 	await get_tree().create_timer(0.6).timeout
 	creditos_text.global_position = credits_initial_pos
 	change_screen($Creditos)
@@ -61,6 +62,7 @@ func _on_sair_pressed():
 
 func _on_voltar_pressed() -> void:
 	change_screen($Main)
+	$Main/VBoxContainer/Jogar.grab_focus()
 
 func _toggle_fullscreen():
 	Global.is_full_screen = not Global.is_full_screen

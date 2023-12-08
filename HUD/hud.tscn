@@ -320,7 +320,8 @@ script = ExtResource("1_xkqll")
 position = Vector2(330, 330)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_8c0wr")
-animation = &"minigun_idle"
+animation = &"minigun_attack"
+frame_progress = 0.0163148
 
 [node name="Sprite_hud" type="Sprite2D" parent="."]
 position = Vector2(320, 441)
@@ -330,7 +331,7 @@ texture = ExtResource("5_fdnls")
 position = Vector2(581, 430)
 scale = Vector2(2.90222, 2.90222)
 sprite_frames = SubResource("SpriteFrames_j241g")
-animation = &"chainsaw_icon"
+animation = &"minigun_icon"
 
 [node name="Face" type="AnimatedSprite2D" parent="."]
 position = Vector2(319, 443)

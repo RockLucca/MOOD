@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7v4l5kywf8aj"]
+
+[ext_resource type="Script" path="res://Collectibles/Pistol_bullet.gd" id="1_ehw71"]
+[ext_resource type="Texture2D" uid="uid://bqi8yns5cgn43" path="res://Sprites/Weapons/Bullet/Bullet_icons.png" id="2_bc86h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qjw3n"]
+
+[node name="Pistol_bullet" type="Area3D"]
+script = ExtResource("1_ehw71")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_qjw3n")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 2
+texture_filter = 2
+texture = ExtResource("2_bc86h")
+hframes = 4
+vframes = 2
+frame = 1
