@@ -77,7 +77,9 @@ func shoot(gun):
 	
 	if gun == "minigun":
 		shotsFired = 1
-		spread = Vector2.ZERO
+		spread = Vector2(30, -PI)
+		# Recoil da arma
+		rotate_camera(Vector2(randf_range(-5, 5), randf_range(-5, -3)))
 		damage = 0.7
 
 
