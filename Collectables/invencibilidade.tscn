@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://di68ynuuy3qem"]
+
+[ext_resource type="Script" path="res://Collectables/Invencibilidade.gd" id="1_vcih8"]
+[ext_resource type="Texture2D" uid="uid://cyx0lmv6aujkd" path="res://Sprites/Player/powerups.png" id="2_ltnxg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eha2n"]
+
+[node name="Invencibilidade" type="Area3D"]
+script = ExtResource("1_vcih8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.2, 0, 0, 0, -0.2, 0, 0, 0, -0.2, 0, 0, 0)
+shape = SubResource("BoxShape3D_eha2n")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 2
+texture_filter = 2
+texture = ExtResource("2_ltnxg")
+hframes = 4
+frame = 2
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Invensibilidade"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

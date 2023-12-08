@@ -21,9 +21,13 @@ hframes = 4
 frame = 3
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("3_sqqat")
 text = "+ Municao"
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
