@@ -26,6 +26,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 [node name="Gun" type="Node3D" parent="Pivot"]
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
+current = true
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Pivot"]
 spot_range = 10.0

@@ -26,7 +26,7 @@ func _process(delta):
 		
 		time_since_last_shot = 0.0
 		if Global.current_weapon != "chainsaw":
-			update_ammo_label(Global.current_weapon) 
+			shoot(Global.current_weapon) 
 	
 	match Global.current_weapon:
 		"chainsaw":
@@ -44,6 +44,7 @@ func _process(delta):
 		_:
 			fire_rate = 1.0
 	
+	update_ammo_label(Global.current_weapon)
 	update_health_label()
 	update_armor_label()
 	update_face_animation(Global.player_health)
@@ -56,8 +57,7 @@ func update_health_label():
 func update_armor_label():
 	$Label_Tags/Armor_value.text = str(Global.player_armor)
 
-#Update ammo values when shoot
-func update_ammo_label(gun):
+func shoot(gun):
 	var shot = false
 	if gun == "chainsaw":
 		#$Audios_Armas/Chainsaw/Chainsaw_idle.stop()
@@ -69,26 +69,31 @@ func update_ammo_label(gun):
 		$Audios_Armas/Pistol/Pistol_fire.play()
 		Global.pistol_ammo -= 1
 		Global.ammo = Global.pistol_ammo
-		$Label_Tags/Ammo_value.text = str(Global.pistol_ammo)
 		shot = true
 	elif gun == "shotgun" and Global.shotgun_ammo > 0:
 		$Weapons.play(Global.current_weapon + "_attack")
 		$Audios_Armas/Shotgun/Shotgun_fire.play()
 		Global.shotgun_ammo -= 2
 		Global.ammo = Global.shotgun_ammo
-		$Label_Tags/Ammo_value.text = str(Global.shotgun_ammo)
 		shot = true
 	elif gun == "minigun" and Global.minigun_ammo > 0:
 		$Weapons.play(Global.current_weapon + "_attack")
 		$Audios_Armas/Minigun/Minigun_fire.play()
 		Global.minigun_ammo -= 1
 		Global.ammo = Global.minigun_ammo
-		$Label_Tags/Ammo_value.text = str(Global.minigun_ammo)
 		shot = true
 
 	if shot:
 		get_tree().get_first_node_in_group("Player").shoot(gun)
 
+#Update ammo values when shoot
+func update_ammo_label(gun):
+	if gun == "pistol" and Global.pistol_ammo > 0:
+		$Label_Tags/Ammo_value.text = str(Global.pistol_ammo)
+	elif gun == "shotgun" and Global.shotgun_ammo > 0:
+		$Label_Tags/Ammo_value.text = str(Global.shotgun_ammo)
+	elif gun == "minigun" and Global.minigun_ammo > 0:
+		$Label_Tags/Ammo_value.text = str(Global.minigun_ammo)
 #
 func change_weapon():
 	if Input.is_action_pressed("set_chainsaw"):

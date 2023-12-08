@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cod58iasn8e20"]
+[gd_scene load_steps=7 format=3 uid="uid://cod58iasn8e20"]
 
 [ext_resource type="PackedScene" uid="uid://cnx744xxb1p6n" path="res://Demo Map/demomap.tscn" id="1_26tyv"]
 [ext_resource type="PackedScene" uid="uid://b8tplkd32g4nh" path="res://Player/player.tscn" id="2_sgfnp"]
 [ext_resource type="PackedScene" uid="uid://c00vx3vht87yu" path="res://Sprites/Enemys/RepeaterZombie/repeater_enemy.tscn" id="3_eicew"]
 [ext_resource type="PackedScene" uid="uid://u6jfc5mbnkt3" path="res://AI/EnemyAI.tscn" id="3_ym64q"]
 [ext_resource type="PackedScene" uid="uid://gnbr4lpttpph" path="res://Map Scenes/teleport.tscn" id="5_rt4px"]
+[ext_resource type="PackedScene" uid="uid://s1uqthv3hbbd" path="res://Collectibles/shotgun_bullet.tscn" id="6_kinv6"]
 
 [node name="World" type="Node3D"]
 
@@ -27,5 +28,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.86967, 0, 0)
 [node name="Teleport" parent="." instance=ExtResource("5_rt4px")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.94488, 0.996196, 20.2199)
 _scene = "res://Map Scenes/level_2.tscn"
+
+[node name="Shotgun_bullet" parent="." instance=ExtResource("6_kinv6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0546, 1.14096, 5.35796)
 
 [editable path="RepeaterZombie"]
