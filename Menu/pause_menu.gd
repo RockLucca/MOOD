@@ -1,10 +1,11 @@
 extends Control
 
-#@onready var main = $"res://../"
 var paused = true
 
-#func _ready():
-	#$UI/VBoxContainer/Resume.grab_focus()
+func _ready():
+	if OS.has_feature("mobile"):
+		$UI/Opcoes/CheckBox.hide()
+		$UI/MainPause/Resume.grab_focus()
 
 func _process(_delta):
 	if Input.is_action_just_pressed("Pause"):
