@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8wktkppr27t6"]
+
+[ext_resource type="Script" path="res://Collectables/firerate_up.gd" id="1_4ipuv"]
+[ext_resource type="FontFile" uid="uid://dsqm0lfysiyo1" path="res://Font/DooM.ttf" id="2_i4c3x"]
+[ext_resource type="Texture2D" uid="uid://cyx0lmv6aujkd" path="res://Sprites/Player/powerups.png" id="3_bl4k7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_obhcj"]
+
+[node name="Firerate_up" type="Area3D"]
+script = ExtResource("1_4ipuv")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_i4c3x")
+text = "Taxa de tiro em dobro"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.2, 0, 0, 0, -0.2, 0, 0, 0, -0.2, 0, 0, 0)
+shape = SubResource("BoxShape3D_obhcj")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 2
+texture_filter = 2
+texture = ExtResource("3_bl4k7")
+hframes = 5
+frame = 4
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -13,7 +13,7 @@ func _ready():
 
 func _process(delta):
 	time_since_last_shot += delta
-	var can_shoot = time_since_last_shot >= (1.0 / fire_rate)
+	var can_shoot = time_since_last_shot >= (1.0 / (fire_rate * Global.boost_firerate))
 	
 	#Change to chainsaw if player is out of ammo
 	#if Global.current_weapon != "chainsaw" and Global.ammo <= 0:
@@ -27,7 +27,6 @@ func _process(delta):
 			$Weapons.play(Global.current_weapon + "_attack")
 		
 		time_since_last_shot = 0.0
-		print("MATAR")
 		shoot(Global.current_weapon) 
 	
 	match Global.current_weapon:
