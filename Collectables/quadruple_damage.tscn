@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://c435mqir154r"]
+
+[ext_resource type="Script" path="res://Collectables/quadruple_damage.gd" id="1_cdkwr"]
+[ext_resource type="Texture2D" uid="uid://cyx0lmv6aujkd" path="res://Sprites/Player/powerups.png" id="2_4qw5b"]
+[ext_resource type="FontFile" uid="uid://dsqm0lfysiyo1" path="res://Font/DooM.ttf" id="2_5lx72"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7rskj"]
+
+[node name="Quadruple_damage" type="Area3D"]
+script = ExtResource("1_cdkwr")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_5lx72")
+text = "Dano quadruplo"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+shape = SubResource("BoxShape3D_7rskj")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_4qw5b")
+hframes = 4
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

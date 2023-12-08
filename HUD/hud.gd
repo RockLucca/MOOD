@@ -90,11 +90,11 @@ func shoot(gun):
 
 #Update ammo values when shoot
 func update_ammo_label(gun):
-	if gun == "pistol" and Global.pistol_ammo > 0:
+	if gun == "pistol":
 		$Label_Tags/Ammo_value.text = str(Global.pistol_ammo)
-	elif gun == "shotgun" and Global.shotgun_ammo > 0:
+	elif gun == "shotgun":
 		$Label_Tags/Ammo_value.text = str(Global.shotgun_ammo)
-	elif gun == "minigun" and Global.minigun_ammo > 0:
+	elif gun == "minigun":
 		$Label_Tags/Ammo_value.text = str(Global.minigun_ammo)
 
 func change_weapon():
