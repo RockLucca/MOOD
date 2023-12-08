@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://0451c48ok21x"]
+
+[ext_resource type="Script" path="res://Collectables/Speed_up.gd" id="1_36ggt"]
+[ext_resource type="Texture2D" uid="uid://bqi8yns5cgn43" path="res://Sprites/Weapons/Bullet/Bullet_icons.png" id="2_4t0mo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_obhcj"]
+
+[node name="Speed_up" type="Area3D"]
+script = ExtResource("1_36ggt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.25, 0, 0, 0, -0.25, 0, 0, 0, -0.25, 0, 0, 0)
+shape = SubResource("BoxShape3D_obhcj")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 2
+texture_filter = 2
+texture = ExtResource("2_4t0mo")
+hframes = 4
+vframes = 2
+frame = 7
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
