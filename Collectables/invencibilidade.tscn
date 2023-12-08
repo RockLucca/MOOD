@@ -16,7 +16,7 @@ shape = SubResource("BoxShape3D_eha2n")
 billboard = 2
 texture_filter = 2
 texture = ExtResource("2_ltnxg")
-hframes = 4
+hframes = 5
 frame = 2
 
 [node name="Label" type="Label" parent="."]
