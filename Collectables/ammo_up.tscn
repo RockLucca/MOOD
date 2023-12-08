@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch5sflhouqrhg"]
+
+[ext_resource type="Script" path="res://Collectables/Ammo_up.gd" id="1_s7gdl"]
+[ext_resource type="Texture2D" uid="uid://cyx0lmv6aujkd" path="res://Sprites/Player/powerups.png" id="2_ab6xv"]
+[ext_resource type="FontFile" uid="uid://dsqm0lfysiyo1" path="res://Font/DooM.ttf" id="3_sqqat"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vd8ra"]
+
+[node name="Ammo_up" type="Area3D"]
+script = ExtResource("1_s7gdl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.2, 0, 0, 0, -0.2, 0, 0, 0, -0.2, 0, 0, 0)
+shape = SubResource("BoxShape3D_vd8ra")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 2
+texture_filter = 2
+texture = ExtResource("2_ab6xv")
+hframes = 4
+frame = 3
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("3_sqqat")
+text = "+ Municao"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cod58iasn8e20"]
+[gd_scene load_steps=10 format=3 uid="uid://cod58iasn8e20"]
 
 [ext_resource type="PackedScene" uid="uid://cnx744xxb1p6n" path="res://Demo Map/demomap.tscn" id="1_26tyv"]
 [ext_resource type="PackedScene" uid="uid://b8tplkd32g4nh" path="res://Player/player.tscn" id="2_sgfnp"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://s1uqthv3hbbd" path="res://Collectables/shotgun_bullet.tscn" id="6_kinv6"]
 [ext_resource type="PackedScene" uid="uid://flbv7dvlpoas" path="res://Collectables/health_value.tscn" id="7_x1tq3"]
 [ext_resource type="PackedScene" uid="uid://0451c48ok21x" path="res://Collectables/speed_up.tscn" id="8_tutnn"]
+[ext_resource type="PackedScene" uid="uid://ch5sflhouqrhg" path="res://Collectables/ammo_up.tscn" id="9_rqef8"]
 
 [node name="World" type="Node3D"]
 
@@ -47,5 +48,8 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.7277, 0.624657, 0)
 
 [node name="Speed_up" parent="Collectables" instance=ExtResource("8_tutnn")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.0137, 0.937798, 3.22715)
+
+[node name="Ammo_up" parent="Collectables" instance=ExtResource("9_rqef8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4, 1, -2)
 
 [editable path="RepeaterZombie"]
