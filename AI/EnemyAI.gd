@@ -22,7 +22,7 @@ var _aiming = false
 func _ready():
 	assert(enemy_scene, "Obrigado definir cena com inimigo")
 	_enemy  = enemy_scene.instantiate()
-	get_tree().get_root().add_child(_enemy)
+	add_child(_enemy)
 	
 	_enemy.global_position = get_global_position()
 	_targets = $Targets.get_children()
