@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cod58iasn8e20"]
+[gd_scene load_steps=14 format=3 uid="uid://cod58iasn8e20"]
 
 [ext_resource type="PackedScene" uid="uid://cnx744xxb1p6n" path="res://Demo Map/demomap.tscn" id="1_26tyv"]
 [ext_resource type="PackedScene" uid="uid://b8tplkd32g4nh" path="res://Player/player.tscn" id="2_sgfnp"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://0451c48ok21x" path="res://Collectables/speed_up.tscn" id="8_tutnn"]
 [ext_resource type="PackedScene" uid="uid://ch5sflhouqrhg" path="res://Collectables/ammo_up.tscn" id="9_rqef8"]
 [ext_resource type="PackedScene" uid="uid://pr7pkbfftbp5" path="res://Door/door.tscn" id="12_e8kdh"]
+[ext_resource type="AudioStream" uid="uid://dxqsl4bestqtr" path="res://Sounds/Musics/level1.ogg" id="13_qpvlg"]
 
 [node name="World" type="Node3D"]
 
@@ -77,6 +78,10 @@ transform = Transform3D(0.611741, 0, 0, 0, -2.83561, 0, 0, 0, 2.96392, 0, 0, 0.2
 
 [node name="Key" parent="Doors/Door2" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8002, 0, 0.722386)
+
+[node name="Background Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_qpvlg")
+autoplay = true
 
 [editable path="RepeaterZombie"]
 [editable path="Doors/Door"]
