@@ -155,6 +155,7 @@ animations = [{
 radius = 0.143977
 
 [node name="Door" type="Node3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("1_tngxh")
 
 [node name="Door" type="MeshInstance3D" parent="."]
