@@ -27,6 +27,31 @@ var plasma_ammo: int = 0           #6
 var ammo = 20
 var lives = 3
 
+func reset_variables():
+	#Player settings
+	mouse_sensitivity = 10
+	is_full_screen= false
+
+	#Level variables
+	score = 0
+	current_level = 1
+
+	#Player Stats
+	player_armor = 100 
+	player_health = 100
+	boost_velocity = 1
+	boost_damage = 1
+	boost_firerate = 1
+
+	#Guns Ammo
+	current_weapon = "pistol"
+	chainsaw_ammo = 100       #1
+	pistol_ammo = 20          #2
+	shotgun_ammo = 14         #3
+	minigun_ammo = 100          #4
+	rpg_ammo = 2              #5
+	plasma_ammo = 0           #6
+
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("fullscreen"):
 		Global.is_full_screen = not Global.is_full_screen

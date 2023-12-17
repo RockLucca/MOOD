@@ -12,6 +12,9 @@ func _ready():
 	$Label_Tags/Ammo_value.text = str(Global.pistol_ammo)
 
 func _process(delta):
+	if Global.player_health <= 0:
+		$Pause.set_game_over_screen()
+	
 	time_since_last_shot += delta
 	var can_shoot = time_since_last_shot >= (1.0 / (fire_rate * Global.boost_firerate))
 	
