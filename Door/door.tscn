@@ -1,7 +1,13 @@
-[gd_scene load_steps=26 format=3 uid="uid://pr7pkbfftbp5"]
+[gd_scene load_steps=28 format=3 uid="uid://pr7pkbfftbp5"]
 
 [ext_resource type="Script" path="res://Door/door.gd" id="1_tngxh"]
+[ext_resource type="Texture2D" uid="uid://daoo1llmwgb6" path="res://Door/door.png" id="2_1114y"]
 [ext_resource type="Texture2D" uid="uid://kdf3yadf0tm5" path="res://Door/key_animation.png" id="2_oud88"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kh01o"]
+albedo_texture = ExtResource("2_1114y")
+uv1_scale = Vector3(-3, -2, 20)
+texture_filter = 2
 
 [sub_resource type="BoxMesh" id="BoxMesh_d7wih"]
 
@@ -149,10 +155,12 @@ animations = [{
 radius = 0.143977
 
 [node name="Door" type="Node3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("1_tngxh")
 
 [node name="Door" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.611741, 0, 0, 0, -2.83561, 0, 0, 0, 2.96392, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_kh01o")
 mesh = SubResource("BoxMesh_d7wih")
 
 [node name="StaticBody3D" type="CharacterBody3D" parent="Door"]
