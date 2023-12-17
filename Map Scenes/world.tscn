@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://cod58iasn8e20"]
+[gd_scene load_steps=14 format=3 uid="uid://cod58iasn8e20"]
 
 [ext_resource type="PackedScene" uid="uid://cnx744xxb1p6n" path="res://Demo Map/demomap.tscn" id="1_26tyv"]
-[ext_resource type="Script" path="res://Map Scenes/world.gd" id="1_yc2a8"]
 [ext_resource type="PackedScene" uid="uid://b8tplkd32g4nh" path="res://Player/player.tscn" id="2_sgfnp"]
 [ext_resource type="PackedScene" uid="uid://c00vx3vht87yu" path="res://Sprites/Enemys/RepeaterZombie/repeater_enemy.tscn" id="3_eicew"]
 [ext_resource type="PackedScene" uid="uid://u6jfc5mbnkt3" path="res://AI/EnemyAI.tscn" id="3_ym64q"]
@@ -16,7 +15,6 @@
 [ext_resource type="AudioStream" uid="uid://dxqsl4bestqtr" path="res://Sounds/Musics/level1.ogg" id="13_qpvlg"]
 
 [node name="World" type="Node3D"]
-script = ExtResource("1_yc2a8")
 
 [node name="demomap" parent="." instance=ExtResource("1_26tyv")]
 
