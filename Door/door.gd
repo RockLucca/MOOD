@@ -9,6 +9,8 @@ func _ready() -> void:
 	$Key.modulate = key_color
 	$Door/Lado1.modulate = key_color
 	$Door/Lado2.modulate = key_color
+	$Door/OmniLight3D.light_color = key_color
+
 func _on_capture_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
 		has_key = true
