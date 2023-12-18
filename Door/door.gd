@@ -14,6 +14,7 @@ func _ready() -> void:
 func _on_capture_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
 		has_key = true
+		$Door/OmniLight3D.light_energy = 1
 		$Key.queue_free()
 
 func _on_door_area_body_entered(body: Node3D) -> void:

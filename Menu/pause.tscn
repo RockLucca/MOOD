@@ -31,9 +31,9 @@ offset_bottom = 40.0
 [node name="Label" type="Label" parent="UI"]
 layout_mode = 0
 offset_left = 160.0
-offset_top = 48.0
+offset_top = 19.0
 offset_right = 484.0
-offset_bottom = 99.0
+offset_bottom = 70.0
 theme_override_fonts/font = ExtResource("2_3swbs")
 theme_override_font_sizes/font_size = 40
 text = "Game Pause"

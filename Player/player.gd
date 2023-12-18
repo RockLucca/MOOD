@@ -52,6 +52,16 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+func get_bullet_ignore_list():
+	var ignore = []
+	
+	for doors in get_tree().get_nodes_in_group("DoorArea"):
+		ignore.append(doors.get_rid())
+
+	ignore.append(get_rid())
+
+	return ignore
+
 func shoot(gun):
 	var camera3d = $Pivot/Camera3D
 	# Definir a origem no meio da tela
@@ -98,17 +108,17 @@ func shoot(gun):
 		
 		var to = from + camera3d.project_ray_normal(destiny) * 100
 		
-		var query = PhysicsRayQueryParameters3D.create(from, to, 0xFFFFFFFF, [get_rid()])
+		
+		
+		var query = PhysicsRayQueryParameters3D.create(from, to, 0xFFFFFFFF, get_bullet_ignore_list())
 		query.collide_with_areas = true
 		var result = get_world_3d().direct_space_state.intersect_ray(query)
-		print(result)
 		if(result):
 			var hit = result.collider
 			var hitPos: Vector3 = result.position
 			var normal = result.normal
 			
 			var hitDis = hitPos.distance_to(from)
-			print(hitDis)
 			if gun == "chainsaw" and hitDis > 2:
 				return
 			
@@ -122,7 +132,6 @@ func shoot(gun):
 				var blood = _blood_partile_res.instantiate()
 				get_tree().get_root().add_child(blood)
 				blood.create_blood(hitPos, normal)
-				
 			else:
 				print(hit)
 
