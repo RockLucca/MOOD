@@ -165,8 +165,8 @@ transform = Transform3D(0.611741, 0, 0, 0, -2.83561, 0, 0, 0, 2.96392, 0, 0, 0)
 mesh = SubResource("BoxMesh_d7wih")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Door"]
-transform = Transform3D(-1.27362e-08, 1.83985e-15, -0.817339, -2.54723e-08, -0.176329, -1.55953e-22, -0.168696, 2.43696e-08, 2.62869e-09, 0.22205, -1.77636e-21, 0)
-light_energy = 5.0
+transform = Transform3D(-1.27362e-08, 1.83985e-15, -0.817339, -2.54723e-08, -0.176329, -1.55953e-22, -0.168696, 2.43696e-08, 2.62869e-09, 0, 0, 0)
+light_energy = 0.429
 
 [node name="StaticBody3D" type="CharacterBody3D" parent="Door"]
 
