@@ -1,15 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://gnbr4lpttpph"]
+[gd_scene load_steps=4 format=3 uid="uid://gnbr4lpttpph"]
 
 [ext_resource type="Script" path="res://Map Scenes/teleport.gd" id="1_aeuit"]
+[ext_resource type="Texture2D" uid="uid://btir5sk261sv" path="res://Sprites/Textures/exit.png" id="2_jy7r3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yst1m"]
-size = Vector3(1, 0.0954067, 1)
+size = Vector3(1, 0.547703, 1)
 
 [node name="Teleport" type="Area3D"]
 script = ExtResource("1_aeuit")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.524924, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.226148, 0)
 shape = SubResource("BoxShape3D_yst1m")
+
+[node name="Sprite2D" type="Sprite3D" parent="."]
+transform = Transform3D(2.40666, 0, 0, 0, 2.53043e-08, 1, 0, -2.12198, 1.19249e-08, 0, 0, 0)
+texture_filter = 0
+texture = ExtResource("2_jy7r3")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

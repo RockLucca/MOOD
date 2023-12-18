@@ -34,7 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.86967, 0, 0)
 [node name="position2" type="Node3D" parent="RepeaterZombie/Targets" index="1"]
 
 [node name="Teleport" parent="." instance=ExtResource("5_rt4px")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6.04438, 0.996196, 22.0452)
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -6.04438, 0.996196, 21.972)
 _scene = "res://Map Scenes/level_2.tscn"
 
 [node name="Collectables" type="Node" parent="."]
@@ -74,6 +74,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.73698, 0, -2.85479)
 
 [node name="Door2" parent="Doors" instance=ExtResource("12_e8kdh")]
 transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -6.57743, 1.18485, 18.8168)
+key_color = Color(1, 0, 0, 1)
 
 [node name="Door" parent="Doors/Door2" index="0"]
 transform = Transform3D(0.611741, 0, 0, 0, -2.01165, 0, 0, 0, 2.35969, 0, 0.40378, 0.286427)
