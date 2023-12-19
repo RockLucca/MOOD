@@ -1,10 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://do43od5wofort"]
+[gd_scene load_steps=6 format=3 uid="uid://do43od5wofort"]
 
 [ext_resource type="Script" path="res://Sprites/Enemys/Lost Soul/enemy_basic_grunt.gd" id="1_0ywgv"]
 [ext_resource type="Texture2D" uid="uid://budklad30ykno" path="res://Sprites/Enemys/Lost Soul/inimigo1.png" id="1_v7u06"]
-
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kxs00"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n5ri6"]
 animations = [{
@@ -17,19 +14,26 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="EnemyBasicGrunt" type="CharacterBody3D" groups=["Enemy"]]
+[sub_resource type="SphereShape3D" id="SphereShape3D_sspx6"]
+radius = 0.360484
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xekyc"]
+radius = 0.01
+
+[node name="EnemyBasicGrunt" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("1_0ywgv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_kxs00")
-
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.646138, 0)
 billboard = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_n5ri6")
 animation = &"idle"
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.633525, 0)
+shape = SubResource("SphereShape3D_sspx6")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Body" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0316246, 0)
+shape = SubResource("CapsuleShape3D_xekyc")

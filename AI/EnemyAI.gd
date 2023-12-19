@@ -84,7 +84,6 @@ func attack(delta):
 	
 func set_target():
 	var player = get_tree().get_first_node_in_group("Player")
-	
 	var player_pos = player.get_global_position() if player else get_global_position()
 	var enemy_pos = _enemy.get_global_position()
 	var current_agro = _current_target

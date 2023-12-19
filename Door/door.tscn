@@ -164,7 +164,7 @@ script = ExtResource("1_tngxh")
 transform = Transform3D(0.611741, 0, 0, 0, -2.83561, 0, 0, 0, 2.96392, 0, 0, 0)
 mesh = SubResource("BoxMesh_d7wih")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Door"]
+[node name="DoorLight" type="OmniLight3D" parent="Door"]
 transform = Transform3D(-1.27362e-08, 1.83985e-15, -0.817339, -2.54723e-08, -0.176329, -1.55953e-22, -0.168696, 2.43696e-08, 2.62869e-09, 0, 0, 0)
 light_energy = 0.0
 
@@ -203,11 +203,8 @@ frame_progress = 0.304715
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Key/CaptureArea"]
 shape = SubResource("SphereShape3D_oma2g")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Key"]
-transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, -0.794029, 0)
-light_size = 1.0
-spot_range = 2.0
-spot_angle = 15.5262
+[node name="KeyLight" type="OmniLight3D" parent="Key"]
+omni_range = 2.01001
 
 [connection signal="body_entered" from="Door/DoorArea" to="." method="_on_door_area_body_entered"]
 [connection signal="body_entered" from="Key/CaptureArea" to="." method="_on_capture_area_body_entered"]

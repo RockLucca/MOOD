@@ -52,6 +52,12 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+func get_pivot_global_position():
+	return $Pivot.get_global_position()
+	
+func get_pivot():
+	return $Pivot
+
 func get_bullet_ignore_list():
 	var ignore = []
 	
@@ -120,6 +126,10 @@ func shoot(gun):
 			
 			var hitDis = hitPos.distance_to(from)
 			if gun == "chainsaw" and hitDis > 2:
+				return
+			
+			if hit.is_in_group("ignore"):
+				print(hit)
 				return
 			
 			if hit is StaticBody3D:
