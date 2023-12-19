@@ -7,6 +7,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_7rskj"]
 
 [node name="Quadruple_damage" type="Area3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 script = ExtResource("1_cdkwr")
 
 [node name="Label" type="Label" parent="."]

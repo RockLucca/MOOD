@@ -1,12 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://cod58iasn8e20"]
+[gd_scene load_steps=12 format=3 uid="uid://cod58iasn8e20"]
 
 [ext_resource type="PackedScene" uid="uid://cnx744xxb1p6n" path="res://Demo Map/demomap.tscn" id="1_26tyv"]
 [ext_resource type="PackedScene" uid="uid://b8tplkd32g4nh" path="res://Player/player.tscn" id="2_sgfnp"]
 [ext_resource type="PackedScene" uid="uid://c00vx3vht87yu" path="res://Sprites/Enemys/RepeaterZombie/repeater_enemy.tscn" id="3_eicew"]
 [ext_resource type="PackedScene" uid="uid://u6jfc5mbnkt3" path="res://AI/EnemyAI.tscn" id="3_ym64q"]
 [ext_resource type="PackedScene" uid="uid://gnbr4lpttpph" path="res://Map Scenes/teleport.tscn" id="5_rt4px"]
-[ext_resource type="PackedScene" uid="uid://c8wktkppr27t6" path="res://Collectables/firerate_up.tscn" id="6_5gont"]
-[ext_resource type="PackedScene" uid="uid://coieqn5xo0kt1" path="res://Collectables/quadruple_damage.tscn" id="6_8q5r8"]
 [ext_resource type="PackedScene" uid="uid://s1uqthv3hbbd" path="res://Collectables/shotgun_bullet.tscn" id="6_kinv6"]
 [ext_resource type="PackedScene" uid="uid://flbv7dvlpoas" path="res://Collectables/health_value.tscn" id="7_x1tq3"]
 [ext_resource type="PackedScene" uid="uid://0451c48ok21x" path="res://Collectables/speed_up.tscn" id="8_tutnn"]
@@ -39,12 +37,6 @@ _scene = "res://Map Scenes/level_2.tscn"
 
 [node name="Collectables" type="Node" parent="."]
 
-[node name="Firerate_up" parent="Collectables" instance=ExtResource("6_5gont")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -5.11188, 0.360339, 14.3529)
-
-[node name="Quadruple_damage" parent="Collectables" instance=ExtResource("6_8q5r8")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -5.63041, 0.552299, 11.5518)
-
 [node name="Shotgun_bullet" parent="Collectables" instance=ExtResource("6_kinv6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0546, 1.14096, 5.35796)
 
@@ -58,7 +50,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -10.7277, 0.624657, 0)
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -15.0137, 0.937798, 3.22715)
 
 [node name="Ammo_up" parent="Collectables" instance=ExtResource("9_rqef8")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -4.39779, 1, -3.41514)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -3.62462, 0.439298, -4.0873)
 
 [node name="Doors" type="Node" parent="."]
 

@@ -203,5 +203,11 @@ frame_progress = 0.304715
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Key/CaptureArea"]
 shape = SubResource("SphereShape3D_oma2g")
 
+[node name="SpotLight3D" type="SpotLight3D" parent="Key"]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, -0.794029, 0)
+light_size = 1.0
+spot_range = 2.0
+spot_angle = 15.5262
+
 [connection signal="body_entered" from="Door/DoorArea" to="." method="_on_door_area_body_entered"]
 [connection signal="body_entered" from="Key/CaptureArea" to="." method="_on_capture_area_body_entered"]

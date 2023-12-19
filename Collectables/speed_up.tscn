@@ -7,6 +7,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_obhcj"]
 
 [node name="Speed_up" type="Area3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 script = ExtResource("1_36ggt")
 
 [node name="Label" type="Label" parent="."]

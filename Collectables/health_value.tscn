@@ -6,6 +6,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_qhpvq"]
 
 [node name="Health_value" type="Area3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 script = ExtResource("1_jc4p1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
