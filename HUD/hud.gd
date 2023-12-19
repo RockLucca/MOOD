@@ -103,8 +103,8 @@ func change_weapon():
 	if Input.is_action_pressed("set_chainsaw"):
 		Global.current_weapon = "chainsaw"
 		#$Audios_Armas/Chainsaw/Chainsaw_start.play()
-		$Audios_Armas/Chainsaw/Chainsaw_idle.autoplay = true
 		$Audios_Armas/Chainsaw/Chainsaw_idle.play()
+		$Audios_Armas/Chainsaw/Chainsaw_idle.autoplay = true
 		$Label_Tags/Ammo_value.text = str("∞")
 	
 	elif Input.is_action_just_pressed("set_pistol"):

@@ -14,7 +14,7 @@ func _on_body_entered(body):
 		$Label.show()
 		$CollisionShape3D.disabled = true
 		$Sprite3D.hide()
-		var temp = Global.player_health
+		temp = Global.player_health
 		Global.player_health = 999
 
 func _on_timer_timeout():

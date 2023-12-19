@@ -11,6 +11,8 @@ var current_level = 1
 #Player Stats
 var player_armor: int = 100 
 var player_health: int = 100
+
+#Boost Variables
 var boost_velocity: int = 1
 var boost_damage: int = 1
 var boost_firerate: int = 1
@@ -48,7 +50,7 @@ func reset_variables():
 	chainsaw_ammo = 100       #1
 	pistol_ammo = 20          #2
 	shotgun_ammo = 14         #3
-	minigun_ammo = 100          #4
+	minigun_ammo = 100        #4
 	rpg_ammo = 2              #5
 	plasma_ammo = 0           #6
 
