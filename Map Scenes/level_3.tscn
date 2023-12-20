@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b8tplkd32g4nh" path="res://Player/player.tscn" id="1_boxvt"]
 [ext_resource type="PackedScene" uid="uid://pr7pkbfftbp5" path="res://Door/door.tscn" id="1_sfbdl"]
-[ext_resource type="Texture2D" uid="uid://fnffpb12ytc" path="res://Sprites/Textures/teto3.png" id="2_5udub"]
+[ext_resource type="Texture2D" uid="uid://cv15rubchs644" path="res://Sprites/Textures/chao6.png" id="2_ys8g6"]
 [ext_resource type="PackedScene" uid="uid://0451c48ok21x" path="res://Collectables/speed_up.tscn" id="3_a67gy"]
 [ext_resource type="Texture2D" uid="uid://1b568ybvnwxb" path="res://Sprites/Textures/wall2.png" id="3_g5yik"]
 [ext_resource type="PackedScene" uid="uid://b7v4l5kywf8aj" path="res://Collectables/pistol_bullet.tscn" id="4_l0147"]
@@ -14,8 +14,8 @@
 [ext_resource type="AudioStream" uid="uid://bwrupi05c42ha" path="res://Sounds/Musics/level3.ogg" id="10_rjgax"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nkc38"]
-albedo_texture = ExtResource("2_5udub")
-uv1_scale = Vector3(21, 8, 1)
+albedo_texture = ExtResource("2_ys8g6")
+uv1_scale = Vector3(18, 8, 1)
 texture_filter = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wusk7"]
@@ -58,7 +58,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.16
 [node name="SalaSpawn" type="Node3D" parent="."]
 
 [node name="Chao" type="MeshInstance3D" parent="SalaSpawn"]
-transform = Transform3D(25.56, 0, 0, 0, 1.16828, 0, 0, 0, 10.5839, 7.5867, 0, 6.15999)
+transform = Transform3D(25.8504, 0, 0, 0, 1.16828, 0, 0, 0, 10.7517, 7.67657, 0, 6.15999)
 material_override = SubResource("StandardMaterial3D_nkc38")
 mesh = SubResource("PlaneMesh_wusk7")
 skeleton = NodePath("../..")
@@ -89,7 +89,7 @@ mesh = SubResource("BoxMesh_grat1")
 shape = SubResource("ConcavePolygonShape3D_u4ch0")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="SalaSpawn/Parede"]
-transform = Transform3D(-9.18778e-07, 0, 0.470059, 0, 3.60907, 0, -21.0192, 0, -2.05469e-08, -17.7855, 1.74831, 5.8038)
+transform = Transform3D(-8.96657e-07, 0, 0.470059, 0, 3.60907, 0, -20.5131, 0, -2.05469e-08, -17.7855, 1.74831, 6.17275)
 mesh = SubResource("BoxMesh_grat1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SalaSpawn/Parede/MeshInstance3D3"]
@@ -518,8 +518,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3662, 0, 13.8607)
 [node name="Firerate_up" parent="Collectables" instance=ExtResource("9_yqbup")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.15823, 0, 3.03573)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Background Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_rjgax")
+autoplay = true
+bus = &"Ambient"
 
 [editable path="Salas/Sala/Door"]
 [editable path="Salas/Sala2/Door"]
