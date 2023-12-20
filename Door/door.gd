@@ -7,8 +7,6 @@ var is_opening = false
 
 func _ready() -> void:
 	$Key.modulate = key_color
-	$Door/Lado1.modulate = key_color
-	$Door/Lado2.modulate = key_color
 	$Door/DoorLight.light_color = key_color
 	$Key/KeyLight.light_color = key_color
 
@@ -23,7 +21,7 @@ func _on_door_area_body_entered(body: Node3D) -> void:
 		if not is_opening:
 			is_opening = true
 			var tween = get_tree().create_tween()
-			var endPosition = $Door.position + Vector3(0, 4, 0)
+			var endPosition = $Door.position + Vector3(0, 0, 4)
 			
 			tween.tween_property($Door, "position", endPosition, 2)
 			tween.tween_callback(queue_free)
