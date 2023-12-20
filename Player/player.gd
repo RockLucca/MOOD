@@ -54,7 +54,10 @@ func _physics_process(delta):
 
 func get_pivot_global_position():
 	return $Pivot.get_global_position()
-	
+
+func get_player_chest_position():
+	return $PlayerChest.get_global_position()
+
 func get_pivot():
 	return $Pivot
 

@@ -29,7 +29,7 @@ player_agro_distance = 5
 enemy_speed = 3
 damage = 15
 meele = false
-aim_distance = 3.0
+aim_distance = 5.0
 
 [node name="position1" type="Node3D" parent="Enemys/RepeaterZombie/Targets" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.86967, 0, 0)
