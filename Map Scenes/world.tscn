@@ -1,15 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://cod58iasn8e20"]
+[gd_scene load_steps=9 format=3 uid="uid://cod58iasn8e20"]
 
 [ext_resource type="PackedScene" uid="uid://cnx744xxb1p6n" path="res://Demo Map/demomap.tscn" id="1_26tyv"]
 [ext_resource type="PackedScene" uid="uid://b8tplkd32g4nh" path="res://Player/player.tscn" id="2_sgfnp"]
-[ext_resource type="PackedScene" uid="uid://c00vx3vht87yu" path="res://Sprites/Enemys/RepeaterZombie/repeater_enemy.tscn" id="3_eicew"]
+[ext_resource type="PackedScene" uid="uid://c00vx3vht87yu" path="res://Sprites/Enemys/Zombie Soldier/zombie_soldier.tscn" id="3_eicew"]
 [ext_resource type="PackedScene" uid="uid://u6jfc5mbnkt3" path="res://AI/EnemyAI.tscn" id="3_ym64q"]
 [ext_resource type="PackedScene" uid="uid://gnbr4lpttpph" path="res://Map Scenes/teleport.tscn" id="5_rt4px"]
-[ext_resource type="PackedScene" uid="uid://s1uqthv3hbbd" path="res://Collectables/shotgun_bullet.tscn" id="6_kinv6"]
-[ext_resource type="PackedScene" uid="uid://flbv7dvlpoas" path="res://Collectables/health_value.tscn" id="7_x1tq3"]
-[ext_resource type="PackedScene" uid="uid://0451c48ok21x" path="res://Collectables/speed_up.tscn" id="8_tutnn"]
-[ext_resource type="PackedScene" uid="uid://ch5sflhouqrhg" path="res://Collectables/ammo_up.tscn" id="9_rqef8"]
-[ext_resource type="PackedScene" uid="uid://do43od5wofort" path="res://Sprites/Enemys/Lost Soul/enemy_basic_grunt.tscn" id="12_6ex01"]
+[ext_resource type="PackedScene" uid="uid://do43od5wofort" path="res://Sprites/Enemys/Skull Fire/skull_fire.tscn" id="12_6ex01"]
 [ext_resource type="PackedScene" uid="uid://pr7pkbfftbp5" path="res://Door/door.tscn" id="12_e8kdh"]
 [ext_resource type="AudioStream" uid="uid://dxqsl4bestqtr" path="res://Sounds/Musics/level1.ogg" id="13_qpvlg"]
 
@@ -20,41 +16,49 @@
 [node name="Player" parent="." instance=ExtResource("2_sgfnp")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.581805, 0.641488, 0.108409)
 
-[node name="RepeaterZombie" parent="." instance=ExtResource("3_ym64q")]
+[node name="Teleport" parent="." instance=ExtResource("5_rt4px")]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -6.04438, 0.996196, 21.972)
+_scene = "res://Map Scenes/level_2.tscn"
+
+[node name="Enemys" type="Node3D" parent="."]
+
+[node name="RepeaterZombie" parent="Enemys" instance=ExtResource("3_ym64q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.514, 1.058, -0.644)
 enemy_scene = ExtResource("3_eicew")
 player_agro_distance = 5
 enemy_speed = 3
 damage = 15
 meele = false
+aim_distance = 3.0
 
-[node name="position1" type="Node3D" parent="RepeaterZombie/Targets" index="0"]
+[node name="position1" type="Node3D" parent="Enemys/RepeaterZombie/Targets" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.86967, 0, 0)
 
-[node name="position2" type="Node3D" parent="RepeaterZombie/Targets" index="1"]
+[node name="position2" type="Node3D" parent="Enemys/RepeaterZombie/Targets" index="1"]
 
-[node name="Teleport" parent="." instance=ExtResource("5_rt4px")]
-transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -6.04438, 0.996196, 21.972)
-_scene = "res://Map Scenes/level_2.tscn"
+[node name="Caveira" parent="Enemys" instance=ExtResource("3_ym64q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.21376, 1.50366, -4.85273)
+enemy_scene = ExtResource("12_6ex01")
+player_agro_distance = 10
+enemy_speed = 3
+damage = 5
+fire_rate = 2.0
 
-[node name="Collectables" type="Node" parent="."]
+[node name="Node3D" type="Node3D" parent="Enemys/Caveira/Targets" index="0"]
 
-[node name="Shotgun_bullet" parent="Collectables" instance=ExtResource("6_kinv6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0546, 1.14096, 5.35796)
+[node name="Caveira2" parent="Enemys" instance=ExtResource("3_ym64q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.42992, 1.50366, 10.6888)
+enemy_scene = ExtResource("12_6ex01")
+player_agro_distance = 10
+enemy_speed = 3
+damage = 5
+fire_rate = 2.0
 
-[node name="Health_value2" parent="Collectables" instance=ExtResource("7_x1tq3")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.713758, 0.38871, 12.8635)
+[node name="Node3D" type="Node3D" parent="Enemys/Caveira2/Targets" index="0"]
 
-[node name="Health_value3" parent="Collectables" instance=ExtResource("7_x1tq3")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -10.7277, 0.624657, 0)
+[node name="Collectables" type="Node3D" parent="."]
 
-[node name="Speed_up" parent="Collectables" instance=ExtResource("8_tutnn")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -15.0137, 0.937798, 3.22715)
-
-[node name="Ammo_up" parent="Collectables" instance=ExtResource("9_rqef8")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -3.62462, 0.439298, -4.0873)
-
-[node name="Doors" type="Node" parent="."]
+[node name="Doors" type="Node3D" parent="."]
 
 [node name="Door" parent="Doors" instance=ExtResource("12_e8kdh")]
 transform = Transform3D(-6.55671e-08, 0, -1.40618, 0, 1.5, 0, 1.5, 0, -6.14662e-08, -5.13834, 1.57578, -2.69655)
@@ -80,28 +84,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8002, 0, 0.722386)
 stream = ExtResource("13_qpvlg")
 autoplay = true
 
-[node name="Caveira" parent="." instance=ExtResource("3_ym64q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.42992, 1.50366, 9.27996)
-enemy_scene = ExtResource("12_6ex01")
-player_agro_distance = 10
-enemy_speed = 3
-damage = 5
-fire_rate = 2.0
-
-[node name="Node3D" type="Node3D" parent="Caveira/Targets" index="0"]
-
-[node name="Caveira2" parent="." instance=ExtResource("3_ym64q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.42992, 1.50366, 10.6888)
-enemy_scene = ExtResource("12_6ex01")
-player_agro_distance = 10
-enemy_speed = 3
-damage = 5
-fire_rate = 2.0
-
-[node name="Node3D" type="Node3D" parent="Caveira2/Targets" index="0"]
-
-[editable path="RepeaterZombie"]
+[editable path="Enemys/RepeaterZombie"]
+[editable path="Enemys/Caveira"]
+[editable path="Enemys/Caveira2"]
 [editable path="Doors/Door"]
 [editable path="Doors/Door2"]
-[editable path="Caveira"]
-[editable path="Caveira2"]

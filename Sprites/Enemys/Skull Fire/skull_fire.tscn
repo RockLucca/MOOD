@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://do43od5wofort"]
 
-[ext_resource type="Script" path="res://Sprites/Enemys/Lost Soul/enemy_basic_grunt.gd" id="1_0ywgv"]
-[ext_resource type="Texture2D" uid="uid://budklad30ykno" path="res://Sprites/Enemys/Lost Soul/inimigo1.png" id="1_v7u06"]
+[ext_resource type="Script" path="res://Sprites/Enemys/Skull Fire/skull_fire.gd" id="1_klw63"]
+[ext_resource type="Texture2D" uid="uid://budklad30ykno" path="res://Sprites/Enemys/Skull Fire/inimigo1.png" id="1_v7u06"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n5ri6"]
 animations = [{
@@ -21,7 +21,7 @@ radius = 0.360484
 radius = 0.01
 
 [node name="EnemyBasicGrunt" type="CharacterBody3D" groups=["enemy"]]
-script = ExtResource("1_0ywgv")
+script = ExtResource("1_klw63")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.646138, 0)

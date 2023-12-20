@@ -1,8 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://dj15glplv64tp"]
+[gd_scene load_steps=25 format=3 uid="uid://dj15glplv64tp"]
 
 [ext_resource type="PackedScene" uid="uid://b8tplkd32g4nh" path="res://Player/player.tscn" id="1_boxvt"]
 [ext_resource type="PackedScene" uid="uid://pr7pkbfftbp5" path="res://Door/door.tscn" id="1_sfbdl"]
+[ext_resource type="Texture2D" uid="uid://fnffpb12ytc" path="res://Sprites/Textures/teto3.png" id="2_5udub"]
 [ext_resource type="PackedScene" uid="uid://0451c48ok21x" path="res://Collectables/speed_up.tscn" id="3_a67gy"]
+[ext_resource type="Texture2D" uid="uid://1b568ybvnwxb" path="res://Sprites/Textures/wall2.png" id="3_g5yik"]
 [ext_resource type="PackedScene" uid="uid://b7v4l5kywf8aj" path="res://Collectables/pistol_bullet.tscn" id="4_l0147"]
 [ext_resource type="PackedScene" uid="uid://80g6wjjx2ogq" path="res://Collectables/minigun_bullet.tscn" id="5_14vmn"]
 [ext_resource type="PackedScene" uid="uid://s1uqthv3hbbd" path="res://Collectables/shotgun_bullet.tscn" id="6_c06l0"]
@@ -10,6 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://flbv7dvlpoas" path="res://Collectables/health_value.tscn" id="8_qxd8j"]
 [ext_resource type="PackedScene" uid="uid://c8wktkppr27t6" path="res://Collectables/firerate_up.tscn" id="9_yqbup"]
 [ext_resource type="AudioStream" uid="uid://bwrupi05c42ha" path="res://Sounds/Musics/level3.ogg" id="10_rjgax"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nkc38"]
+albedo_texture = ExtResource("2_5udub")
+uv1_scale = Vector3(21, 8, 1)
+texture_filter = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wusk7"]
 
@@ -38,6 +45,11 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yxpok"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j846w"]
+albedo_texture = ExtResource("3_g5yik")
+uv1_scale = Vector3(18, 4, 1)
+texture_filter = 2
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_boxvt")]
@@ -47,6 +59,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.16
 
 [node name="Chao" type="MeshInstance3D" parent="SalaSpawn"]
 transform = Transform3D(25.56, 0, 0, 0, 1.16828, 0, 0, 0, 10.5839, 7.5867, 0, 6.15999)
+material_override = SubResource("StandardMaterial3D_nkc38")
 mesh = SubResource("PlaneMesh_wusk7")
 skeleton = NodePath("../..")
 
@@ -396,7 +409,7 @@ mesh = SubResource("BoxMesh_f4gkk")
 shape = SubResource("ConcavePolygonShape3D_u24i8")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Salas/Sala6/Paredes"]
-transform = Transform3D(0.0998611, 0, 0, 0, 3.54937, 0, 0, 0, 1.99438, -0.95001, 1.76719, 0)
+transform = Transform3D(0.0998611, 0, 0, 0, 3.54937, 0, 0, 0, 1.99438, -0.950011, 1.76719, 4.76837e-07)
 mesh = SubResource("BoxMesh_f4gkk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Salas/Sala6/Paredes/MeshInstance3D2"]
@@ -438,6 +451,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 15.575
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SalaFinal/Parede"]
 transform = Transform3D(14.2615, 0, 0, 0, 3.60907, 0, 0, 0, 0.470059, -10.9151, 1.74831, -4.22698)
+material_override = SubResource("StandardMaterial3D_j846w")
 mesh = SubResource("BoxMesh_grat1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SalaFinal/Parede/MeshInstance3D"]
@@ -447,6 +461,7 @@ shape = SubResource("ConcavePolygonShape3D_u4ch0")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="SalaFinal/Parede"]
 transform = Transform3D(14.2615, 0, 0, 0, 3.60907, 0, 0, 0, 0.470059, -10.9151, 1.74831, 16.4821)
+material_override = SubResource("StandardMaterial3D_j846w")
 mesh = SubResource("BoxMesh_grat1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SalaFinal/Parede/MeshInstance3D2"]
@@ -456,6 +471,7 @@ shape = SubResource("ConcavePolygonShape3D_u4ch0")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="SalaFinal/Parede"]
 transform = Transform3D(-9.18778e-07, 0, 0.470059, 0, 3.60907, 0, -21.0192, 0, -2.05469e-08, -17.7855, 1.74831, 5.8038)
+material_override = SubResource("StandardMaterial3D_j846w")
 mesh = SubResource("BoxMesh_grat1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SalaFinal/Parede/MeshInstance3D3"]

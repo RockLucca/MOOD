@@ -1,7 +1,0 @@
-RepeaterZombie/Steam		RPZMSTEM
-
-Weapons/RepeaterFire		REPGFIRE
-Weapons/RepeaterHit			REPGHIT
-Weapons/RepeaterSpinup		REPGSPIN
-Weapons/RepeaterSpindown	REPGSTOP
-$Limit Weapons/RepeaterHit	0

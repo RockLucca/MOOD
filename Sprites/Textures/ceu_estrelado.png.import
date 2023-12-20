@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fnffpb12ytc"
-path.s3tc="res://.godot/imported/teto3.png-2b068b2276de5f019f720b59eedfb2b6.s3tc.ctex"
-path.etc2="res://.godot/imported/teto3.png-2b068b2276de5f019f720b59eedfb2b6.etc2.ctex"
+uid="uid://dj035hdjydgbp"
+path.s3tc="res://.godot/imported/ceu_estrelado.png-2add31b5339ff5146ae8b333800929d4.s3tc.ctex"
+path.etc2="res://.godot/imported/ceu_estrelado.png-2add31b5339ff5146ae8b333800929d4.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Textures/teto3.png"
-dest_files=["res://.godot/imported/teto3.png-2b068b2276de5f019f720b59eedfb2b6.s3tc.ctex", "res://.godot/imported/teto3.png-2b068b2276de5f019f720b59eedfb2b6.etc2.ctex"]
+source_file="res://Sprites/Textures/ceu_estrelado.png"
+dest_files=["res://.godot/imported/ceu_estrelado.png-2add31b5339ff5146ae8b333800929d4.s3tc.ctex", "res://.godot/imported/ceu_estrelado.png-2add31b5339ff5146ae8b333800929d4.etc2.ctex"]
 
 [params]
 

@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0rt4yg21yiw1"
-path.s3tc="res://.godot/imported/zumbi.png-da3fc69709e4db4d309428ca276c9a27.s3tc.ctex"
-path.etc2="res://.godot/imported/zumbi.png-da3fc69709e4db4d309428ca276c9a27.etc2.ctex"
+path.s3tc="res://.godot/imported/zumbi.png-aaf110e646da4fad4303a95dc958bc72.s3tc.ctex"
+path.etc2="res://.godot/imported/zumbi.png-aaf110e646da4fad4303a95dc958bc72.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Enemys/RepeaterZombie/zumbi.png"
-dest_files=["res://.godot/imported/zumbi.png-da3fc69709e4db4d309428ca276c9a27.s3tc.ctex", "res://.godot/imported/zumbi.png-da3fc69709e4db4d309428ca276c9a27.etc2.ctex"]
+source_file="res://Sprites/Enemys/Zombie Soldier/zumbi.png"
+dest_files=["res://.godot/imported/zumbi.png-aaf110e646da4fad4303a95dc958bc72.s3tc.ctex", "res://.godot/imported/zumbi.png-aaf110e646da4fad4303a95dc958bc72.etc2.ctex"]
 
 [params]
 
