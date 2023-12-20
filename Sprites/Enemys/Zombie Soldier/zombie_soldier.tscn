@@ -35,9 +35,17 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j0n3o")
+}],
+"loop": true,
+"name": &"aim",
+"speed": 1.0
 }, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j2uss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0n3o")
 }],
 "loop": false,
 "name": &"attack",
@@ -82,4 +90,10 @@ billboard = 2
 shaded = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_c43lg")
-animation = &"idle"
+animation = &"attack"
+autoplay = "idle"
+
+[node name="AimHeight" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+
+[connection signal="animation_finished" from="AnimatedSprite3D" to="." method="_on_animated_sprite_3d_animation_finished"]
