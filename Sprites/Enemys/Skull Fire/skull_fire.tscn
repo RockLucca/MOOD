@@ -84,7 +84,10 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.646138, 0)
 billboard = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_n5ri6")
-animation = &"idle"
+animation = &"attack"
+autoplay = "idle"
+frame = 1
+frame_progress = 1.0
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.633525, 0)
@@ -93,3 +96,5 @@ shape = SubResource("SphereShape3D_sspx6")
 [node name="Body" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0316246, 0)
 shape = SubResource("CapsuleShape3D_xekyc")
+
+[connection signal="animation_finished" from="AnimatedSprite3D" to="." method="_on_animated_sprite_3d_animation_finished"]
