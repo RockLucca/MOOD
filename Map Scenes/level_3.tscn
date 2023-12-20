@@ -177,7 +177,7 @@ mesh = SubResource("BoxMesh_grat1")
 shape = SubResource("ConcavePolygonShape3D_u4ch0")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="SalaFinal/Parede"]
-transform = Transform3D(-9.18778e-07, 0, 0.470059, 0, 3.60907, 0, -21.0192, 0, -2.05469e-08, -17.7855, 1.74831, 5.8038)
+transform = Transform3D(-4.41551e-07, 0, 0.470059, 0, 3.60907, 0, -10.1015, 0, -2.05469e-08, -17.7855, 1.74831, 5.8038)
 material_override = SubResource("StandardMaterial3D_j846w")
 mesh = SubResource("BoxMesh_grat1")
 
