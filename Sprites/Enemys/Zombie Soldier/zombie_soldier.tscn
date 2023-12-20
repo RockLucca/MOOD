@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c00vx3vht87yu"]
+[gd_scene load_steps=11 format=3 uid="uid://c00vx3vht87yu"]
 
 [ext_resource type="Script" path="res://Sprites/Enemys/Enemy.gd" id="1_lk6ok"]
 [ext_resource type="Texture2D" uid="uid://0rt4yg21yiw1" path="res://Sprites/Enemys/Zombie Soldier/zumbi.png" id="2_fkhxl"]
@@ -6,15 +6,64 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_20yr5"]
 height = 2.37
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0n3o"]
+atlas = ExtResource("2_fkhxl")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2uss"]
+atlas = ExtResource("2_fkhxl")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_630yu"]
+atlas = ExtResource("2_fkhxl")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu5wu"]
+atlas = ExtResource("2_fkhxl")
+region = Rect2(160, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuy58"]
+atlas = ExtResource("2_fkhxl")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7dxd"]
+atlas = ExtResource("2_fkhxl")
+region = Rect2(32, 0, 32, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_c43lg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_fkhxl")
+"texture": SubResource("AtlasTexture_j0n3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2uss")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_630yu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wu5wu")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuy58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7dxd")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"idle",
+"speed": 1.5
 }]
 
 [node name="RepeaterEnemy" type="CharacterBody3D" groups=["enemy"]]
@@ -33,3 +82,4 @@ billboard = 2
 shaded = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_c43lg")
+animation = &"idle"

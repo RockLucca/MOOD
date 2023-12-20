@@ -1065,8 +1065,6 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -18.0444, 0.243011, 14.7781)
 [node name="Pistol_bullet2" parent="Collectables" instance=ExtResource("9_avna5")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -18.2572, 0.370049, 11.5183)
 
-[node name="Enemies" type="Node3D" parent="."]
-
 [node name="Lights" type="Node3D" parent="."]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
@@ -1094,6 +1092,8 @@ light_volumetric_fog_energy = 0.0
 light_specular = 2.0
 distance_fade_enabled = true
 omni_range = 3.91081
+
+[node name="Enemies" type="Node3D" parent="."]
 
 [editable path="Doors/Door"]
 [editable path="Doors/Door2"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dj15glplv64tp"]
+[gd_scene load_steps=26 format=3 uid="uid://dj15glplv64tp"]
 
 [ext_resource type="PackedScene" uid="uid://b8tplkd32g4nh" path="res://Player/player.tscn" id="1_boxvt"]
 [ext_resource type="PackedScene" uid="uid://pr7pkbfftbp5" path="res://Door/door.tscn" id="1_sfbdl"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://flbv7dvlpoas" path="res://Collectables/health_value.tscn" id="8_qxd8j"]
 [ext_resource type="PackedScene" uid="uid://c8wktkppr27t6" path="res://Collectables/firerate_up.tscn" id="9_yqbup"]
 [ext_resource type="AudioStream" uid="uid://bwrupi05c42ha" path="res://Sounds/Musics/level3.ogg" id="10_rjgax"]
+[ext_resource type="PackedScene" uid="uid://gnbr4lpttpph" path="res://Map Scenes/teleport.tscn" id="13_cbvbt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nkc38"]
 albedo_texture = ExtResource("2_ys8g6")
@@ -522,6 +523,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.15823, 0, 3.03573)
 stream = ExtResource("10_rjgax")
 autoplay = true
 bus = &"Ambient"
+
+[node name="Teleport" parent="." instance=ExtResource("13_cbvbt")]
+transform = Transform3D(-0.00698124, -0.999976, 4.37103e-08, 0, -4.37114e-08, -1, 0.999976, -0.00698124, 3.0516e-10, 33.1208, 0.964472, 7.33444)
 
 [editable path="Salas/Sala/Door"]
 [editable path="Salas/Sala2/Door"]
