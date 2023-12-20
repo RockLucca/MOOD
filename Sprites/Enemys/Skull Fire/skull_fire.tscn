@@ -1,17 +1,73 @@
-[gd_scene load_steps=6 format=3 uid="uid://do43od5wofort"]
+[gd_scene load_steps=13 format=3 uid="uid://do43od5wofort"]
 
 [ext_resource type="Script" path="res://Sprites/Enemys/Skull Fire/skull_fire.gd" id="1_klw63"]
-[ext_resource type="Texture2D" uid="uid://budklad30ykno" path="res://Sprites/Enemys/Skull Fire/inimigo1.png" id="1_v7u06"]
+[ext_resource type="Texture2D" uid="uid://dgq6sqoqbv0vw" path="res://Sprites/Enemys/Skull Fire/AlmaPerdida.png" id="2_4qqxv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylxkt"]
+atlas = ExtResource("2_4qqxv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8dp7"]
+atlas = ExtResource("2_4qqxv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qv2t"]
+atlas = ExtResource("2_4qqxv")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d46ej"]
+atlas = ExtResource("2_4qqxv")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gafw"]
+atlas = ExtResource("2_4qqxv")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pc87"]
+atlas = ExtResource("2_4qqxv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_278ex"]
+atlas = ExtResource("2_4qqxv")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n5ri6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_v7u06")
+"texture": SubResource("AtlasTexture_ylxkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8dp7")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qv2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d46ej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gafw")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pc87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_278ex")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 4.0
 }]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_sspx6"]
