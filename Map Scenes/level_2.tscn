@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://djtl8gqnb7tnl"]
+[gd_scene load_steps=107 format=3 uid="uid://djtl8gqnb7tnl"]
 
 [ext_resource type="PackedScene" uid="uid://gnbr4lpttpph" path="res://Map Scenes/teleport.tscn" id="1_0rk3x"]
 [ext_resource type="PackedScene" uid="uid://b8tplkd32g4nh" path="res://Player/player.tscn" id="1_8ou77"]
@@ -21,6 +21,9 @@
 [ext_resource type="PackedScene" uid="uid://ch5sflhouqrhg" path="res://Collectables/ammo_up.tscn" id="19_ixw50"]
 [ext_resource type="PackedScene" uid="uid://0451c48ok21x" path="res://Collectables/speed_up.tscn" id="20_mpp4m"]
 [ext_resource type="PackedScene" uid="uid://coieqn5xo0kt1" path="res://Collectables/quadruple_damage.tscn" id="21_qgmjt"]
+[ext_resource type="PackedScene" uid="uid://u6jfc5mbnkt3" path="res://AI/EnemyAI.tscn" id="22_27a85"]
+[ext_resource type="PackedScene" uid="uid://do43od5wofort" path="res://Sprites/Enemys/Skull Fire/skull_fire.tscn" id="23_7m37t"]
+[ext_resource type="PackedScene" uid="uid://c00vx3vht87yu" path="res://Sprites/Enemys/Zombie Soldier/zombie_soldier.tscn" id="23_r6y6g"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_djjvq"]
 panorama = ExtResource("1_vvuik")
@@ -1157,8 +1160,181 @@ omni_range = 3.91081
 
 [node name="Enemies" type="Node3D" parent="."]
 
+[node name="CabecaSaida2" parent="Enemies" instance=ExtResource("22_27a85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5278, 1.233, 13.146)
+enemy_scene = ExtResource("23_7m37t")
+player_agro_distance = 10
+enemy_speed = 3
+damage = 5
+fire_rate = 2.0
+
+[node name="Node3D" type="Node3D" parent="Enemies/CabecaSaida2/Targets" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.1795)
+
+[node name="Node3D2" type="Node3D" parent="Enemies/CabecaSaida2/Targets" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0680962, 0.0079664, 2.38159)
+
+[node name="CabecaSaida1" parent="Enemies" instance=ExtResource("22_27a85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.774, 1.233, 13.146)
+enemy_scene = ExtResource("23_7m37t")
+player_agro_distance = 10
+enemy_speed = 3
+damage = 5
+fire_rate = 2.0
+
+[node name="Node3D" type="Node3D" parent="Enemies/CabecaSaida1/Targets" index="0"]
+
+[node name="ZUMBISPRIMEIROSALAO" parent="Enemies" instance=ExtResource("22_27a85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.467, 1.058, 13.605)
+enemy_scene = ExtResource("23_r6y6g")
+player_agro_distance = 8
+enemy_speed = 3
+damage = 15
+meele = false
+aim_distance = 5.0
+
+[node name="Node3D" type="Node3D" parent="Enemies/ZUMBISPRIMEIROSALAO/Targets" index="0"]
+
+[node name="Node3D2" type="Node3D" parent="Enemies/ZUMBISPRIMEIROSALAO/Targets" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1842, 0, 0)
+
+[node name="CAVEIRAESQ" parent="Enemies" instance=ExtResource("22_27a85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.211, 1.331, 8.163)
+enemy_scene = ExtResource("23_7m37t")
+player_agro_distance = 10
+enemy_speed = 3
+damage = 5
+fire_rate = 2.0
+
+[node name="Node3D" type="Node3D" parent="Enemies/CAVEIRAESQ/Targets" index="0"]
+
+[node name="CAVEIRADIREITA" parent="Enemies" instance=ExtResource("22_27a85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.60656, 1.331, 8.163)
+enemy_scene = ExtResource("23_7m37t")
+player_agro_distance = 10
+enemy_speed = 3
+damage = 5
+fire_rate = 2.0
+
+[node name="Node3D" type="Node3D" parent="Enemies/CAVEIRADIREITA/Targets" index="0"]
+
+[node name="CAVEIRACORREDOR" parent="Enemies" instance=ExtResource("22_27a85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5167, 1.331, -22.0289)
+enemy_scene = ExtResource("23_7m37t")
+player_agro_distance = 10
+enemy_speed = 3
+damage = 5
+fire_rate = 2.0
+
+[node name="Node3D" type="Node3D" parent="Enemies/CAVEIRACORREDOR/Targets" index="0"]
+
+[node name="CAVEIRACORREDOR2" parent="Enemies" instance=ExtResource("22_27a85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4573, 1.331, -25.8599)
+enemy_scene = ExtResource("23_7m37t")
+player_agro_distance = 10
+enemy_speed = 3
+damage = 5
+fire_rate = 2.0
+
+[node name="Node3D" type="Node3D" parent="Enemies/CAVEIRACORREDOR2/Targets" index="0"]
+
+[node name="CAVEIRACORREDOR3" parent="Enemies" instance=ExtResource("22_27a85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.949, 1.331, -30.0652)
+enemy_scene = ExtResource("23_7m37t")
+player_agro_distance = 10
+enemy_speed = 3
+damage = 5
+fire_rate = 2.0
+
+[node name="Node3D" type="Node3D" parent="Enemies/CAVEIRACORREDOR3/Targets" index="0"]
+
+[node name="ZUMBISPRIMEIROSALAO2" parent="Enemies" instance=ExtResource("22_27a85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.467, 1.058, -16.8506)
+enemy_scene = ExtResource("23_r6y6g")
+player_agro_distance = 8
+enemy_speed = 3
+damage = 15
+meele = false
+aim_distance = 5.0
+
+[node name="Node3D" type="Node3D" parent="Enemies/ZUMBISPRIMEIROSALAO2/Targets" index="0"]
+
+[node name="Node3D2" type="Node3D" parent="Enemies/ZUMBISPRIMEIROSALAO2/Targets" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.973358, 0, 13.3007)
+
+[node name="ZUMBISPRIMEIROSALAO3" parent="Enemies" instance=ExtResource("22_27a85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6151, 1.058, -16.8506)
+enemy_scene = ExtResource("23_r6y6g")
+player_agro_distance = 8
+enemy_speed = 3
+damage = 15
+meele = false
+aim_distance = 5.0
+
+[node name="Node3D" type="Node3D" parent="Enemies/ZUMBISPRIMEIROSALAO3/Targets" index="0"]
+
+[node name="Node3D2" type="Node3D" parent="Enemies/ZUMBISPRIMEIROSALAO3/Targets" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.973358, 0, 13.3007)
+
+[node name="ZUMBISPRIMEIROSALAO4" parent="Enemies" instance=ExtResource("22_27a85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.319268, 1.058, -16.5301)
+enemy_scene = ExtResource("23_r6y6g")
+player_agro_distance = 8
+enemy_speed = 3
+damage = 15
+meele = false
+aim_distance = 5.0
+
+[node name="Node3D" type="Node3D" parent="Enemies/ZUMBISPRIMEIROSALAO4/Targets" index="0"]
+
+[node name="Node3D3" type="Node3D" parent="Enemies/ZUMBISPRIMEIROSALAO4/Targets" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.95019)
+
+[node name="Node3D4" type="Node3D" parent="Enemies/ZUMBISPRIMEIROSALAO4/Targets" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.62106, 0, 5.7911)
+
+[node name="Node3D5" type="Node3D" parent="Enemies/ZUMBISPRIMEIROSALAO4/Targets" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.88896, 0, -3.23741)
+
+[node name="ZUMBISPRIMEIROSALAO5" parent="Enemies" instance=ExtResource("22_27a85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.81489, 1.058, -26.2943)
+enemy_scene = ExtResource("23_r6y6g")
+player_agro_distance = 8
+enemy_speed = 3
+damage = 15
+meele = false
+aim_distance = 5.0
+
+[node name="Node3D" type="Node3D" parent="Enemies/ZUMBISPRIMEIROSALAO5/Targets" index="0"]
+
+[node name="Node3D2" type="Node3D" parent="Enemies/ZUMBISPRIMEIROSALAO5/Targets" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.85606, 0, 2.43176)
+
+[node name="CAVEIRADIREITA2" parent="Enemies" instance=ExtResource("22_27a85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.35628, 2.20956, -6.15679)
+enemy_scene = ExtResource("23_7m37t")
+player_agro_distance = 10
+enemy_speed = 3
+damage = 5
+fire_rate = 2.0
+
+[node name="Node3D" type="Node3D" parent="Enemies/CAVEIRADIREITA2/Targets" index="0"]
+
 [editable path="Doors/Door"]
 [editable path="Doors/Door2"]
 [editable path="Doors/Door3"]
 [editable path="Doors/Door4"]
 [editable path="Doors/Door5"]
+[editable path="Enemies/CabecaSaida2"]
+[editable path="Enemies/CabecaSaida1"]
+[editable path="Enemies/ZUMBISPRIMEIROSALAO"]
+[editable path="Enemies/CAVEIRAESQ"]
+[editable path="Enemies/CAVEIRADIREITA"]
+[editable path="Enemies/CAVEIRACORREDOR"]
+[editable path="Enemies/CAVEIRACORREDOR2"]
+[editable path="Enemies/CAVEIRACORREDOR3"]
+[editable path="Enemies/ZUMBISPRIMEIROSALAO2"]
+[editable path="Enemies/ZUMBISPRIMEIROSALAO3"]
+[editable path="Enemies/ZUMBISPRIMEIROSALAO4"]
+[editable path="Enemies/ZUMBISPRIMEIROSALAO5"]
+[editable path="Enemies/CAVEIRADIREITA2"]
