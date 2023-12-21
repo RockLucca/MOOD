@@ -27,6 +27,21 @@ _scene = "res://Map Scenes/level_2.tscn"
 
 [node name="Enemys" type="Node3D" parent="."]
 
+[node name="ZumbiSaida" parent="Enemys" instance=ExtResource("3_ym64q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.811, 1.058, 20.663)
+enemy_scene = ExtResource("3_eicew")
+player_agro_distance = 10
+enemy_speed = 3
+damage = 5
+meele = false
+aim_distance = 5.0
+
+[node name="pos1" type="Node3D" parent="Enemys/ZumbiSaida/Targets" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.765)
+
+[node name="pos2" type="Node3D" parent="Enemys/ZumbiSaida/Targets" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0718002)
+
 [node name="RepeaterZombie" parent="Enemys" instance=ExtResource("3_ym64q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.514, 1.058, -0.644)
 enemy_scene = ExtResource("3_eicew")
@@ -114,8 +129,29 @@ stream = ExtResource("13_qpvlg")
 autoplay = true
 bus = &"Ambient"
 
+[node name="EnemyAI" parent="." instance=ExtResource("3_ym64q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.439, 1.324, 10.026)
+enemy_scene = ExtResource("12_6ex01")
+player_agro_distance = 10
+enemy_speed = 3
+damage = 5
+fire_rate = 2.0
+
+[node name="Node3D" type="Node3D" parent="EnemyAI/Targets" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75941, -0.00511134, 3.21938)
+
+[node name="Node3D2" type="Node3D" parent="EnemyAI/Targets" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.22999)
+
+[node name="Node3D3" type="Node3D" parent="EnemyAI/Targets" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.20286, 0, 0)
+
+[node name="Node3D4" type="Node3D" parent="EnemyAI/Targets" index="3"]
+
+[editable path="Enemys/ZumbiSaida"]
 [editable path="Enemys/RepeaterZombie"]
 [editable path="Enemys/Caveira"]
 [editable path="Enemys/Caveira2"]
 [editable path="Doors/Door"]
 [editable path="Doors/Door2"]
+[editable path="EnemyAI"]
