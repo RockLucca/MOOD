@@ -29,6 +29,9 @@ var plasma_ammo: int = 0           #6
 var ammo = 20
 var lives = 3
 
+#Ending stuff
+var play_credits = false
+
 func reset_variables():
 	#Player settings
 	mouse_sensitivity = 10
@@ -53,6 +56,9 @@ func reset_variables():
 	minigun_ammo = 100        #4
 	rpg_ammo = 2              #5
 	plasma_ammo = 0           #6
+	
+	#Ending stuff
+	play_credits = false
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("fullscreen"):

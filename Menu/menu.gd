@@ -14,6 +14,9 @@ func _ready():
 	$Main/VBoxContainer/Jogar.grab_focus()
 	if OS.has_feature("mobile"):
 		$Opcoes/VBoxContainer/CheckBox.hide()
+	if Global.play_credits:
+		change_screen($Creditos)
+		Global.play_credits = false
 	
 func change_screen(scene):
 	credits_rolling = false
