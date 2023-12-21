@@ -142,6 +142,11 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_yi8j0")
 
+[node name="Background Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_bqyke")
+autoplay = true
+bus = &"Ambient"
+
 [node name="Player" parent="." instance=ExtResource("1_boxvt")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.1671, 0, 6.78086)
 
@@ -269,11 +274,6 @@ mesh = SubResource("BoxMesh_grat1")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SalaFinal/Parede/MeshInstance3D12/StaticBody3D"]
 transform = Transform3D(1, 0, -9.31323e-10, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_u4ch0")
-
-[node name="Background Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_bqyke")
-autoplay = true
-bus = &"Ambient"
 
 [node name="Doors" type="Node3D" parent="."]
 

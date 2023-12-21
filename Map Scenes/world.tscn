@@ -83,6 +83,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8002, 0, 0.722386)
 [node name="Background Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_qpvlg")
 autoplay = true
+bus = &"Ambient"
 
 [editable path="Enemys/RepeaterZombie"]
 [editable path="Enemys/Caveira"]
