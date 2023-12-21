@@ -78,6 +78,7 @@ radius = 0.01
 
 [node name="EnemyBasicGrunt" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("1_klw63")
+health = 10.0
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.646138, 0)
