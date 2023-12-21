@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd4amsbqoq4ro"]
+[gd_scene load_steps=5 format=3 uid="uid://cd4amsbqoq4ro"]
 
 [ext_resource type="Texture2D" uid="uid://dfqa6ktgh2ao7" path="res://Sprites/Interface/trofeu.png" id="1_rp81v"]
 [ext_resource type="Script" path="res://Menu/win_screen.gd" id="1_vb27f"]
 [ext_resource type="FontFile" uid="uid://dsqm0lfysiyo1" path="res://Font/DooM.ttf" id="2_qt72m"]
+[ext_resource type="AudioStream" uid="uid://cr5walyn6cghj" path="res://Sounds/Musics/plimplimplom.ogg" id="4_3vtj1"]
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -50,5 +51,10 @@ text = "[center]PARABENS![/center]
 wait_time = 7.0
 one_shot = true
 autostart = true
+
+[node name="Background Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3vtj1")
+autoplay = true
+bus = &"Ambient"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
