@@ -1,27 +1,30 @@
-[gd_scene load_steps=42 format=3 uid="uid://dj15glplv64tp"]
+[gd_scene load_steps=45 format=3 uid="uid://dj15glplv64tp"]
 
 [ext_resource type="PackedScene" uid="uid://b8tplkd32g4nh" path="res://Player/player.tscn" id="1_boxvt"]
+[ext_resource type="Texture2D" uid="uid://dj035hdjydgbp" path="res://Sprites/Textures/ceu_estrelado.png" id="1_ipn1e"]
 [ext_resource type="PackedScene" uid="uid://pr7pkbfftbp5" path="res://Door/door.tscn" id="1_sfbdl"]
 [ext_resource type="Texture2D" uid="uid://cv15rubchs644" path="res://Sprites/Textures/chao6.png" id="2_ys8g6"]
 [ext_resource type="Texture2D" uid="uid://1b568ybvnwxb" path="res://Sprites/Textures/wall2.png" id="3_g5yik"]
+[ext_resource type="AudioStream" uid="uid://qlgjfktiyyxr" path="res://Sounds/Musics/level5.ogg" id="5_bqyke"]
 [ext_resource type="Texture2D" uid="uid://nu5xq8y3fub4" path="res://Sprites/Textures/wall5.png" id="8_n48bu"]
 [ext_resource type="Texture2D" uid="uid://b0r1kb10hget0" path="res://Sprites/Textures/parede1.png" id="9_3b82p"]
 [ext_resource type="Texture2D" uid="uid://xvwfe81l8hw4" path="res://Sprites/Textures/wall4.png" id="9_lsbox"]
 [ext_resource type="Texture2D" uid="uid://d3imwkpq33wm" path="res://Sprites/Textures/teto2.png" id="10_a3n70"]
-[ext_resource type="AudioStream" uid="uid://bwrupi05c42ha" path="res://Sounds/Musics/level3.ogg" id="10_rjgax"]
+[ext_resource type="Texture2D" uid="uid://7027ind156px" path="res://Sprites/Textures/teto1.png" id="10_y3wgo"]
 [ext_resource type="PackedScene" uid="uid://gnbr4lpttpph" path="res://Map Scenes/teleport.tscn" id="13_cbvbt"]
 [ext_resource type="PackedScene" uid="uid://c34eddgbubapi" path="res://Door/door2.tscn" id="14_qnxwx"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_reaa5"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ev2b7"]
+panorama = ExtResource("1_ipn1e")
 
 [sub_resource type="Sky" id="Sky_islrx"]
-sky_material = SubResource("ProceduralSkyMaterial_reaa5")
+sky_material = SubResource("PanoramaSkyMaterial_ev2b7")
 
 [sub_resource type="Environment" id="Environment_yi8j0"]
 background_mode = 2
 sky = SubResource("Sky_islrx")
+ambient_light_color = Color(0.678431, 0, 0, 1)
+ambient_light_energy = 5.0
 tonemap_mode = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j846w"]
@@ -99,9 +102,14 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojief"]
+albedo_texture = ExtResource("10_y3wgo")
+uv1_scale = Vector3(60, 42, 1)
 texture_filter = 2
 
 [sub_resource type="BoxMesh" id="BoxMesh_n8114"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_x8pja"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nkc38"]
 albedo_texture = ExtResource("2_ys8g6")
@@ -125,11 +133,20 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 
 [node name="Level_3" type="Node3D"]
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0.364706, 0, 0, 1)
+light_energy = 5.0
+shadow_enabled = true
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_yi8j0")
 
 [node name="Player" parent="." instance=ExtResource("1_boxvt")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.1671, 0, 6.78086)
+
+[node name="Teleport" parent="." instance=ExtResource("13_cbvbt")]
+transform = Transform3D(-0.00698124, -0.999976, 4.37103e-08, 0, -4.37114e-08, -1, 0.999976, -0.00698124, 3.0516e-10, 48.5621, 0.964472, 6.19328)
 
 [node name="SalaFinal" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 15.5753, 0, 12.2189)
@@ -253,16 +270,10 @@ mesh = SubResource("BoxMesh_grat1")
 transform = Transform3D(1, 0, -9.31323e-10, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_u4ch0")
 
-[node name="Collectables" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.900858, 0)
-
 [node name="Background Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_rjgax")
+stream = ExtResource("5_bqyke")
 autoplay = true
 bus = &"Ambient"
-
-[node name="Teleport" parent="." instance=ExtResource("13_cbvbt")]
-transform = Transform3D(-0.00698124, -0.999976, 4.37103e-08, 0, -4.37114e-08, -1, 0.999976, -0.00698124, 3.0516e-10, 48.5621, 0.964472, 6.19328)
 
 [node name="Doors" type="Node3D" parent="."]
 
@@ -636,9 +647,14 @@ mesh = SubResource("BoxMesh_4lls7")
 shape = SubResource("ConcavePolygonShape3D_pjn81")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="Roof"]
-transform = Transform3D(38.251, 0, 0, 0, 0.425206, 0, 0, 0, 21.3135, 0.590318, 3.69888, 6.03111)
+transform = Transform3D(-9.17939e-07, 0, 38, 0, 0.425, 0, -21, 0, -1.66103e-06, 0.6, 3.699, 6.031)
 material_override = SubResource("StandardMaterial3D_ojief")
 mesh = SubResource("BoxMesh_n8114")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Roof/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roof/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_x8pja")
 
 [node name="Floor" type="Node3D" parent="."]
 
@@ -662,6 +678,9 @@ mesh = SubResource("PlaneMesh_vxnyo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_yd3na")
+
+[node name="Collectables" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.900858, 0)
 
 [editable path="Doors/Door"]
 [editable path="Doors/Door7"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://djtl8gqnb7tnl"]
+[gd_scene load_steps=104 format=3 uid="uid://djtl8gqnb7tnl"]
 
 [ext_resource type="PackedScene" uid="uid://gnbr4lpttpph" path="res://Map Scenes/teleport.tscn" id="1_0rk3x"]
 [ext_resource type="PackedScene" uid="uid://b8tplkd32g4nh" path="res://Player/player.tscn" id="1_8ou77"]
@@ -18,6 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://b360ji668138f" path="res://Collectables/armor_value.tscn" id="12_l6xen"]
 [ext_resource type="PackedScene" uid="uid://s1uqthv3hbbd" path="res://Collectables/shotgun_bullet.tscn" id="13_2fmw5"]
 [ext_resource type="PackedScene" uid="uid://flbv7dvlpoas" path="res://Collectables/health_value.tscn" id="14_iptw8"]
+[ext_resource type="PackedScene" uid="uid://ch5sflhouqrhg" path="res://Collectables/ammo_up.tscn" id="19_ixw50"]
+[ext_resource type="PackedScene" uid="uid://0451c48ok21x" path="res://Collectables/speed_up.tscn" id="20_mpp4m"]
+[ext_resource type="PackedScene" uid="uid://coieqn5xo0kt1" path="res://Collectables/quadruple_damage.tscn" id="21_qgmjt"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_djjvq"]
 panorama = ExtResource("1_vvuik")
@@ -1072,6 +1075,57 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -18.0444, 0.243011, 14.7781)
 
 [node name="Pistol_bullet2" parent="Collectables" instance=ExtResource("9_avna5")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -18.2572, 0.370049, 11.5183)
+
+[node name="Ammo_up" parent="Collectables" instance=ExtResource("19_ixw50")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.49617, 2.47005, -13.1898)
+
+[node name="Health_value2" parent="Collectables" instance=ExtResource("14_iptw8")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -8.509, 0.583265, -26.2973)
+
+[node name="Shotgun_bullet2" parent="Collectables" instance=ExtResource("13_2fmw5")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -1.59629, 0.480359, 21.9477)
+
+[node name="Shotgun_bullet3" parent="Collectables" instance=ExtResource("13_2fmw5")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -1.80929, 0.350261, 23.4218)
+
+[node name="Armor_value2" parent="Collectables" instance=ExtResource("12_l6xen")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 5.14904, 0.527785, 18.0947)
+
+[node name="Health_value3" parent="Collectables" instance=ExtResource("14_iptw8")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 5.44251, 0.502921, 21.7615)
+
+[node name="Speed_up" parent="Collectables" instance=ExtResource("20_mpp4m")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 2.0906, 0.527192, 25.4545)
+
+[node name="Ammo_up2" parent="Collectables" instance=ExtResource("19_ixw50")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -16.2424, 0.462346, 14.9198)
+
+[node name="Pistol_bullet3" parent="Collectables" instance=ExtResource("9_avna5")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -16.7576, 0.521455, 11.6152)
+
+[node name="Quadruple_damage" parent="Collectables" instance=ExtResource("21_qgmjt")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 4.68948, 0.680948, -5.60882)
+
+[node name="Shotgun_bullet4" parent="Collectables" instance=ExtResource("13_2fmw5")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -10.5963, 0.7878, -18.1696)
+
+[node name="Pistol_bullet4" parent="Collectables" instance=ExtResource("9_avna5")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -19.3994, 0.224259, -31.7744)
+
+[node name="Minigun_bullet2" parent="Collectables" instance=ExtResource("10_o62lw")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -7.45656, 0.362507, -21.3301)
+
+[node name="Minigun_bullet3" parent="Collectables" instance=ExtResource("10_o62lw")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -7.73052, 0.44505, -19.6361)
+
+[node name="Health_value4" parent="Collectables" instance=ExtResource("14_iptw8")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -15.8019, 0.376083, -4.43415)
+
+[node name="Armor_value3" parent="Collectables" instance=ExtResource("12_l6xen")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -15.773, 0.551896, -3.53039)
+
+[node name="Armor_value4" parent="Collectables" instance=ExtResource("12_l6xen")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -15.6206, 0.551896, -1.80291)
 
 [node name="Lights" type="Node3D" parent="."]
 
