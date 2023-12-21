@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://dj15glplv64tp"]
+[gd_scene load_steps=57 format=3 uid="uid://dj15glplv64tp"]
 
 [ext_resource type="PackedScene" uid="uid://b8tplkd32g4nh" path="res://Player/player.tscn" id="1_boxvt"]
 [ext_resource type="Texture2D" uid="uid://dj035hdjydgbp" path="res://Sprites/Textures/ceu_estrelado.png" id="1_ipn1e"]
@@ -22,6 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://b7v4l5kywf8aj" path="res://Collectables/pistol_bullet.tscn" id="20_d4xvc"]
 [ext_resource type="PackedScene" uid="uid://flbv7dvlpoas" path="res://Collectables/health_value.tscn" id="21_w7188"]
 [ext_resource type="PackedScene" uid="uid://b360ji668138f" path="res://Collectables/armor_value.tscn" id="22_5wwru"]
+[ext_resource type="PackedScene" uid="uid://u6jfc5mbnkt3" path="res://AI/EnemyAI.tscn" id="23_vnrjh"]
+[ext_resource type="PackedScene" uid="uid://do43od5wofort" path="res://Sprites/Enemys/Skull Fire/skull_fire.tscn" id="24_2o67l"]
+[ext_resource type="PackedScene" uid="uid://c00vx3vht87yu" path="res://Sprites/Enemys/Zombie Soldier/zombie_soldier.tscn" id="25_d38qp"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ev2b7"]
 panorama = ExtResource("1_ipn1e")
@@ -609,7 +612,6 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_u4ch0")
 
 [node name="Roof" type="Node3D" parent="."]
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Roof"]
 transform = Transform3D(2.8, 0, 0, 0, 0.55, 0, 0, 0, 0.421, -0.229, 3.17, 4.2)
@@ -751,6 +753,100 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 12.795, -0.32437, -0.825251)
 
 [node name="Armor_value2" parent="Collectables" instance=ExtResource("22_5wwru")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 16.6519, -0.32437, -0.703228)
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="EnemyAI" parent="Enemies" instance=ExtResource("23_vnrjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5076, 1, 12.1203)
+enemy_scene = ExtResource("24_2o67l")
+player_agro_distance = 1
+enemy_speed = 1
+
+[node name="EnemyAI2" parent="Enemies" instance=ExtResource("23_vnrjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5726, 1, 0.771455)
+enemy_scene = ExtResource("25_d38qp")
+player_agro_distance = 1
+enemy_speed = 1
+
+[node name="EnemyAI3" parent="Enemies" instance=ExtResource("23_vnrjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.082818, 1, 0.771455)
+enemy_scene = ExtResource("24_2o67l")
+player_agro_distance = 1
+enemy_speed = 1
+
+[node name="EnemyAI4" parent="Enemies" instance=ExtResource("23_vnrjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.35505, 1, -0.466952)
+enemy_scene = ExtResource("24_2o67l")
+player_agro_distance = 1
+enemy_speed = 1
+
+[node name="EnemyAI5" parent="Enemies" instance=ExtResource("23_vnrjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8271, 1, 11.3061)
+enemy_scene = ExtResource("25_d38qp")
+player_agro_distance = 1
+enemy_speed = 1
+
+[node name="EnemyAI6" parent="Enemies" instance=ExtResource("23_vnrjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.5377, 1, 6.42986)
+enemy_scene = ExtResource("24_2o67l")
+player_agro_distance = 1
+enemy_speed = 1
+
+[node name="EnemyAI7" parent="Enemies" instance=ExtResource("23_vnrjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.5203, 1, -4.07277)
+enemy_scene = ExtResource("25_d38qp")
+player_agro_distance = 1
+enemy_speed = 1
+
+[node name="EnemyAI8" parent="Enemies" instance=ExtResource("23_vnrjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.7128, 1, 0.771455)
+enemy_scene = ExtResource("25_d38qp")
+player_agro_distance = 1
+enemy_speed = 1
+
+[node name="EnemyAI9" parent="Enemies" instance=ExtResource("23_vnrjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.3438, 1, 12.2006)
+enemy_scene = ExtResource("24_2o67l")
+player_agro_distance = 1
+enemy_speed = 1
+
+[node name="EnemyAI10" parent="Enemies" instance=ExtResource("23_vnrjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.9285, 1, -0.277995)
+enemy_scene = ExtResource("24_2o67l")
+player_agro_distance = 1
+enemy_speed = 1
+
+[node name="EnemyAI11" parent="Enemies" instance=ExtResource("23_vnrjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.077, 1, 18.4859)
+enemy_scene = ExtResource("25_d38qp")
+player_agro_distance = 1
+enemy_speed = 1
+
+[node name="EnemyAI12" parent="Enemies" instance=ExtResource("23_vnrjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3323, 1, 6.68572)
+enemy_scene = ExtResource("25_d38qp")
+player_agro_distance = 1
+enemy_speed = 1
+
+[node name="EnemyAI13" parent="Enemies" instance=ExtResource("23_vnrjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.3426, 1, 5.03368)
+enemy_scene = ExtResource("25_d38qp")
+
+[node name="EnemyAI14" parent="Enemies" instance=ExtResource("23_vnrjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.5735, 1, 12.8314)
+enemy_scene = ExtResource("24_2o67l")
+
+[node name="EnemyAI15" parent="Enemies" instance=ExtResource("23_vnrjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.8453, 1, 10.7574)
+enemy_scene = ExtResource("24_2o67l")
+
+[node name="EnemyAI16" parent="Enemies" instance=ExtResource("23_vnrjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6127, 1, 5.32127)
+enemy_scene = ExtResource("24_2o67l")
+
+[node name="EnemyAI17" parent="Enemies" instance=ExtResource("23_vnrjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.6637, 1, 8.94868)
+enemy_scene = ExtResource("25_d38qp")
 
 [editable path="Doors/Door"]
 [editable path="Doors/Door2"]
