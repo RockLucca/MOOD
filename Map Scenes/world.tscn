@@ -1,10 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://cod58iasn8e20"]
+[gd_scene load_steps=14 format=3 uid="uid://cod58iasn8e20"]
 
 [ext_resource type="PackedScene" uid="uid://cnx744xxb1p6n" path="res://Demo Map/demomap.tscn" id="1_26tyv"]
 [ext_resource type="PackedScene" uid="uid://b8tplkd32g4nh" path="res://Player/player.tscn" id="2_sgfnp"]
 [ext_resource type="PackedScene" uid="uid://c00vx3vht87yu" path="res://Sprites/Enemys/Zombie Soldier/zombie_soldier.tscn" id="3_eicew"]
 [ext_resource type="PackedScene" uid="uid://u6jfc5mbnkt3" path="res://AI/EnemyAI.tscn" id="3_ym64q"]
 [ext_resource type="PackedScene" uid="uid://gnbr4lpttpph" path="res://Map Scenes/teleport.tscn" id="5_rt4px"]
+[ext_resource type="PackedScene" uid="uid://c8wktkppr27t6" path="res://Collectables/firerate_up.tscn" id="7_60bhv"]
+[ext_resource type="PackedScene" uid="uid://flbv7dvlpoas" path="res://Collectables/health_value.tscn" id="8_g8e5l"]
+[ext_resource type="PackedScene" uid="uid://80g6wjjx2ogq" path="res://Collectables/minigun_bullet.tscn" id="9_gm1ke"]
+[ext_resource type="PackedScene" uid="uid://s1uqthv3hbbd" path="res://Collectables/shotgun_bullet.tscn" id="10_jwgj5"]
+[ext_resource type="PackedScene" uid="uid://b7v4l5kywf8aj" path="res://Collectables/pistol_bullet.tscn" id="11_ug38p"]
 [ext_resource type="PackedScene" uid="uid://do43od5wofort" path="res://Sprites/Enemys/Skull Fire/skull_fire.tscn" id="12_6ex01"]
 [ext_resource type="PackedScene" uid="uid://pr7pkbfftbp5" path="res://Door/door.tscn" id="12_e8kdh"]
 [ext_resource type="AudioStream" uid="uid://dxqsl4bestqtr" path="res://Sounds/Musics/level1.ogg" id="13_qpvlg"]
@@ -57,6 +62,30 @@ fire_rate = 2.0
 [node name="Node3D" type="Node3D" parent="Enemys/Caveira2/Targets" index="0"]
 
 [node name="Collectables" type="Node3D" parent="."]
+
+[node name="Firerate_up" parent="Collectables" instance=ExtResource("7_60bhv")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -13.1015, 0.501295, 9.84961)
+
+[node name="Health_value" parent="Collectables" instance=ExtResource("8_g8e5l")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -0.812122, 0.760744, 11.0246)
+
+[node name="Health_value2" parent="Collectables" instance=ExtResource("8_g8e5l")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -0.321101, 0.54308, 12.3352)
+
+[node name="Minigun_bullet" parent="Collectables" instance=ExtResource("9_gm1ke")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -1.074, 0.65402, 16.5066)
+
+[node name="Shotgun_bullet" parent="Collectables" instance=ExtResource("10_jwgj5")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -4.48905, 0.415149, 0.25148)
+
+[node name="Pistol_bullet" parent="Collectables" instance=ExtResource("11_ug38p")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -3.62467, 0.436037, -3.85831)
+
+[node name="Pistol_bullet2" parent="Collectables" instance=ExtResource("11_ug38p")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -3.64182, 0.436037, -4.76556)
+
+[node name="Health_value3" parent="Collectables" instance=ExtResource("8_g8e5l")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.34663, 0.408066, -3.55625)
 
 [node name="Doors" type="Node3D" parent="."]
 
