@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cod58iasn8e20"]
+[gd_scene load_steps=17 format=3 uid="uid://cod58iasn8e20"]
 
 [ext_resource type="PackedScene" uid="uid://cnx744xxb1p6n" path="res://Demo Map/demomap.tscn" id="1_26tyv"]
 [ext_resource type="PackedScene" uid="uid://b8tplkd32g4nh" path="res://Player/player.tscn" id="2_sgfnp"]
@@ -14,7 +14,26 @@
 [ext_resource type="PackedScene" uid="uid://pr7pkbfftbp5" path="res://Door/door.tscn" id="12_e8kdh"]
 [ext_resource type="AudioStream" uid="uid://dxqsl4bestqtr" path="res://Sounds/Musics/level1.ogg" id="13_qpvlg"]
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_avitb"]
+
+[sub_resource type="Sky" id="Sky_5yb6q"]
+sky_material = SubResource("PanoramaSkyMaterial_avitb")
+
+[sub_resource type="Environment" id="Environment_sg44k"]
+background_mode = 2
+sky = SubResource("Sky_5yb6q")
+tonemap_mode = 2
+
 [node name="World" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0, 0, 0, 1)
+light_energy = 5.0
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sg44k")
 
 [node name="demomap" parent="." instance=ExtResource("1_26tyv")]
 

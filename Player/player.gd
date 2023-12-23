@@ -35,7 +35,8 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		#velocity.y = JUMP_VELOCITY
+		pass
 
 	var aim_dir = Input.get_vector("ui_left2", "ui_right2", "ui_up2", "ui_down2")
 	rotate_camera(aim_dir)

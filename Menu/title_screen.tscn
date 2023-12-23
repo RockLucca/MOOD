@@ -137,7 +137,7 @@ offset_bottom = 380.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_ju8o5")
-text = "Precione
+text = "Pressione
 qualquer tecla"
 flat = true
 
